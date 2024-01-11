@@ -7,26 +7,31 @@ module.exports = function (plop) {
         name: 'name',
         message: 'Component name:',
       },
+      {
+        type: 'input',
+        name: 'parent',
+        message: 'Parent component (optional):'
+      }
     ],
     actions: [
       {
         type: 'add',
-        path: 'src/components/{{name}}/{{name}}.tsx',
+        path: 'src/components/{{parent}}/{{name}}/{{name}}.tsx',
         templateFile: 'plop-templates/component.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{name}}/{{name}}.module.scss',
+        path: 'src/components/{{parent}}/{{name}}/{{name}}.module.scss',
         templateFile: 'plop-templates/styles.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{name}}/index.ts',
+        path: 'src/components/{{parent}}/{{name}}/index.ts',
         templateFile: 'plop-templates/index.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{name}}/{{name}}.types.ts',
+        path: 'src/components/{{parent}}/{{name}}/{{name}}.types.ts',
         templateFile: 'plop-templates/types.hbs',
       },
     ],

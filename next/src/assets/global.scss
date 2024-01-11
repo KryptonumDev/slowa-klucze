@@ -86,7 +86,7 @@ main {
   }
 
   max-width: 1680px;
-  width: calc(100% 0 var(--pageMargin)*2);
+  width: calc(100% - var(--pageMargin)*2);
   margin: 0 auto;
   grid-template-columns: 1fr;
   row-gap: 75px;
