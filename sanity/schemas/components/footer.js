@@ -17,7 +17,7 @@ export default {
       type: 'markdown',
     },
     {
-      name: 'portait',
+      name: 'portrait',
       type: 'image',
     }
   ],

@@ -66,6 +66,8 @@
   --green-700: #21A67E;
   --green-800: #1F996D;
   --green-900: #1A835D;
+
+  --background: #EFEFEF;
 }
 
 body {
@@ -77,7 +79,8 @@ body {
   display: grid;
 }
 
-main {
+main,
+.maxWidth {
   display: grid;
   --pageMargin: 100px;
 
@@ -96,6 +99,9 @@ main {
     padding-top: clamp(80px, calc(136vw/7.68), 136px);
   }
 }
+main {
+  height: 100vh;
+}
 
 svg {
   vertical-align: top;
@@ -103,7 +109,7 @@ svg {
 
 a {
   text-decoration: none;
-  color: var(--neutral-100);
+  color: var(--dark-neutral-900);
 }
 
 button {
