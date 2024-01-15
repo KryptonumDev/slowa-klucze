@@ -1,18 +1,12 @@
-import {domain} from '../global/Seo';
+import { type MetadataRoute } from 'next';
+import { domain } from '../global/Seo';
 
-const currentDate= new Date();
-const staticPages = [
-  '/',
-];
-
-export default function sitemap() {
-
-  const mappedStaticPages = staticPages.map((slug) => ({
-    url: `${domain}${slug}`,
-    lastModified: currentDate,
-  }));
-
-  return [
-    ...mappedStaticPages
-  ];
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      disallow: '/',
+    },
+    sitemap: `${domain}/sitemap.xml`,
+  }
 }
