@@ -1,0 +1,48 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  position: relative;
+  background: var(--background);
+  margin: 0px calc(var(--pageMargin) *-1);
+
+  .content {
+    display: grid;
+    grid-row-gap: 14px;
+    padding: 75px var(--pageMargin);
+
+    .subheading {
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      display: grid;
+      row-gap: 20px;
+      margin-bottom: 56px;
+      font-size: clamp(calc(16rem/16), calc(16vw/7.68), calc(20rem/16));
+    }
+  }
+
+  .img {
+    height: calc(100% + 95px);
+    width: auto;
+    top: -95px;
+    position: absolute;
+    right: 0px;
+    display: block;
+  }
+
+  @media (max-width: 1199px) {
+    grid-template-columns: 1fr;
+
+    .img {
+      position: relative;
+      height: auto;
+      width: 100%;
+      max-width: 500px;
+      top: unset;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
