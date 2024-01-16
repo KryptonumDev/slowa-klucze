@@ -7,22 +7,18 @@ export interface global {
     footer: footer;
     logo: Image;
     navigation: navigation;
+    socialsList: {
+      icon: Image;
+      href: string;
+    }[];
   };
 }
 
 export interface navigation {
   cta: Cta;
-  socialsList: {
-    icon: Image;
-    href: string;
-  }[];
 }
 
 export interface footer {
-  socialsList: {
-    icon: Image;
-    href: string;
-  }[];
   description: string;
   portrait: Image;
 }

@@ -4,15 +4,6 @@ export default {
   type: "object",
   fields: [
     {
-      name: 'socialsList',
-      type: 'array',
-      of: [
-        {
-          type: 'social'
-        }
-      ]
-    },
-    {
       name: 'description',
       type: 'markdown',
     },
@@ -23,34 +14,13 @@ export default {
   ],
   preview: {
     select: {
-      title: 'text',
-      theme: 'theme',
-      href: 'href'
+      title: 'description',
     },
-    prepare({ title, theme, href }) {
+    prepare({ title }) {
       return {
-        title: title,
-        subtitle: `${theme} button linked to ${href}`,
+        title: title
       }
     }
   }
 }
 
-export const social = {
-  name: 'social',
-  type: 'object',
-  fields: [
-    {
-      name: 'href',
-      type: 'string',
-      title: 'Link',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'icon',
-      type: 'image',
-      title: 'Icon',
-      validation: Rule => Rule.required()
-    }
-  ]
-}

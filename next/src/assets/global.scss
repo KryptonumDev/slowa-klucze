@@ -82,11 +82,7 @@ body {
 main,
 .maxWidth {
   display: grid;
-  --pageMargin: 100px;
-
-  @media (max-width: 1399px) {
-    --pageMargin: 24px;
-  }
+  --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
 
   max-width: 1680px;
   width: calc(100% - var(--pageMargin)*2);

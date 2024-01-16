@@ -5,7 +5,7 @@ import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Footer({ data: { socialsList, description, portrait }, logo }: Props) {
+export default function Footer({ data: {description, portrait }, logo, socialsList }: Props) {
   return (
     <footer className={` ${styles.footer}`}>
       <div className={`${styles.footerWrapper} maxWidth`}>
@@ -37,10 +37,10 @@ export default function Footer({ data: { socialsList, description, portrait }, l
         </p>
         <div className={styles.links}>
           <Link href={'/o-mnie'}>O mnie</Link>
-          <Link href={'/Oferta'}>Oferta</Link>
-          <Link href={'/Opinie'}>Opinie</Link>
-          <Link href={'/efekty-współpracy'}>Efekty współpracy</Link>
-          <Link href={'/Case-study'}>Case study</Link>
+          <Link href={'/oferta'}>Oferta</Link>
+          <Link href={'/ppinie'}>Opinie</Link>
+          <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+          <Link href={'/case-study'}>Case study</Link>
           <Link href={'/blog'}>Blog</Link>
           <Link href={'/faq'}>FAQ</Link>
           <Link href={'/regulamin'}>Regulamin</Link>

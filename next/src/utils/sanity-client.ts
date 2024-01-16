@@ -14,7 +14,7 @@ const createClient = createSanityClient as CreateClient;
 
 const projectId = process.env.SANITY_PROJECT_ID || '';
 const dataset = process.env.SANITY_DATASET || '';
-const apiVersion = process.env.SANITY_API_VERSION || 'v2022-03-07';
+const apiVersion = 'v2024-01-16';
 
 export const client: SanityClient = createClient({
   projectId,

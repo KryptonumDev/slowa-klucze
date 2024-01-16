@@ -5,17 +5,25 @@ import { sanityFetch } from '@/utils/sanity-client';
 import { type global } from '@/types/_pages/global';
 import Nav from '@/components/_global/nav/nav';
 
-const font = Kanit({ weight: '400', subsets: ['latin'] });
+const kanit = Kanit({ weight: '400', subsets: ['latin'] });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { footer, logo, navigation } = await getData();
+  const { footer, logo, navigation, socialsList } = await getData();
 
   return (
     <html lang='en'>
-      <body className={font.className}>
-        <Nav data={navigation} logo={logo} />
+      <body className={kanit.className}>
+        <Nav
+          data={navigation}
+          logo={logo}
+          socialsList={socialsList}
+        />
         <main>{children}</main>
-        <Footer data={footer} logo={logo} />
+        <Footer
+          data={footer}
+          logo={logo}
+          socialsList={socialsList}
+        />
       </body>
     </html>
   );
@@ -64,7 +72,22 @@ async function getData() {
       },
       footer {
         description,
-        socialsList[] {
+        portrait {
+          asset -> {
+            url,
+            altText,
+            metadata{
+              lqip,
+              dimensions{
+                aspectRatio,
+                width,
+                height
+              }
+            }
+          }
+        }
+       },
+       socialsList[] {
           href,
           icon {
           asset -> {
@@ -81,21 +104,6 @@ async function getData() {
             }
           }
         },
-        portrait {
-          asset -> {
-            url,
-            altText,
-            metadata{
-              lqip,
-              dimensions{
-                aspectRatio,
-                width,
-                height
-              }
-            }
-          }
-        }
-       }
       }
     }`,
   });
