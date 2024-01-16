@@ -1,0 +1,27 @@
+.heading {
+  padding: 5px 19px;
+  border: 2px solid var(--coffee-500);
+  border-radius: 16px;
+  width: fit-content;
+  position: relative;
+  font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(20rem/16));
+
+  >p {
+    color: var(--coffee-500);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: 16px;
+    width: 15%;
+    height: 2px;
+    background: var(--neutral-100);
+  }
+  &.background {
+    &:before {
+      background: var(--background);
+    }
+  }
+}

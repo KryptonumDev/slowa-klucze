@@ -1,6 +1,6 @@
 // Single Types
 import global, { global_Seo } from './singleTypes/global'
-import IndexPage from './singleTypes/IndexPage'
+import IndexPage from './singleTypes/indexPage'
 import NotFoundPage from './singleTypes/NotFoundPage'
 
 export const singleTypes = [
@@ -19,6 +19,7 @@ import cta from './components/cta'
 import seo from './components/seo'
 import { titleAndDescription, titleAndImage, imageAndLink, titleDescriptionAndImage } from './components/list'
 import footer, { social } from './components/footer'
+import navigation from './components/navigation'
 
 export const components = [
   footer,
@@ -30,6 +31,7 @@ export const components = [
   titleAndImage,
   imageAndLink,
   titleDescriptionAndImage,
+  navigation,
 ]
 
 export const schemaTypes = [

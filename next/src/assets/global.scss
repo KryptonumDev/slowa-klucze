@@ -99,9 +99,6 @@ main,
     padding-top: clamp(80px, calc(136vw/7.68), 136px);
   }
 }
-main {
-  height: 100vh;
-}
 
 svg {
   vertical-align: top;
@@ -129,6 +126,7 @@ select {
   font: inherit;
   color: inherit;
   appearance: none;
+  background-color: transparent;
 }
 
 h1,

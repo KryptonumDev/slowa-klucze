@@ -2,13 +2,15 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 import { type Button } from '@/types/_ui/Button';
 
-export default function Button({ data, children, theme = 'primary', href, className, ...props }: Button) {
+export default function Button({ data, children, theme = 'primary', href, className, svg = true,  ...props }: Button) {
   if (data) {
     theme = data.theme;
     href = data.href;
     children = data.text;
   }
-  const linkClassName = `${styles.button}  ${className || ''} `;
+  const linkClassName = `${styles.button} ${
+    theme === "secondary" ? styles.secondary : styles.primary
+  } ${className || ""} `;
 
   return (
     <>
@@ -19,7 +21,7 @@ export default function Button({ data, children, theme = 'primary', href, classN
           {...props}
         >
           <span>{children}</span>
-          {theme === 'secondary' ? externalLink() : null}
+          {svg ? externalLink() : null}
         </Link>
       ) : (
         <button
@@ -28,7 +30,7 @@ export default function Button({ data, children, theme = 'primary', href, classN
           {...props}
         >
           <span>{children}</span>
-          {theme === 'secondary' ? externalLink() : null}
+          {svg ? externalLink() : null}
         </button>
       )}
     </>

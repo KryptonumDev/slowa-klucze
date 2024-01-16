@@ -8,4 +8,5 @@ export interface Button {
   href?: string;
   children?: string;
   className?: string;
+  svg: boolean;
 }

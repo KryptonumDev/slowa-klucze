@@ -4,7 +4,31 @@
   display: flex;
   gap: 5px;
   text-align: start;
+
   >svg {
     align-self: center;
+  }
+
+  &.primary {
+    text-decoration: underline;
+  }
+
+  &.secondary {
+    text-decoration: none;
+    padding: 10px 96px;
+    text-wrap: nowrap;
+    color: var(--neutral-100);
+    background-color: var(--midnight-green-500);
+    width: fit-content;
+    border-radius: 16px;
+    font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+  }
+  @media(max-width: 499px) {
+    &.secondary {
+      padding: 10px 0px;
+      width:100%;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

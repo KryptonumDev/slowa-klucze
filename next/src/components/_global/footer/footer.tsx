@@ -45,7 +45,7 @@ export default function Footer({ data: { socialsList, description, portrait }, l
           <Link href={'/faq'}>FAQ</Link>
           <Link href={'/regulamin'}>Regulamin</Link>
           <Link href={'/polityka-prywatnosci'}>Polityka prywatności</Link>
-          <Button className={styles.button}>Zarządzam ciasteczkami</Button>
+          <Button className={styles.button} svg={false}>Zarządzam ciasteczkami</Button>
         </div>
       </div>
     </footer>

@@ -24,6 +24,11 @@ export default {
       type: 'footer',
       options: { collapsible: true, collapsed: true }
     },
+    {
+      name: 'navigation',
+      type: 'navigation',
+      options: { collapsible: true, collapsed: true }
+    }
   ],
 }
 

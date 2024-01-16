@@ -3,15 +3,17 @@ import '../assets/global.scss';
 import Footer from '@/components/_global/footer/footer';
 import { sanityFetch } from '@/utils/sanity-client';
 import { type global } from '@/types/_pages/global';
+import Nav from '@/components/_global/nav/nav';
 
 const font = Kanit({ weight: '400', subsets: ['latin'] });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { footer, logo } = await getData();
+  const { footer, logo, navigation } = await getData();
 
   return (
     <html lang='en'>
       <body className={font.className}>
+        <Nav data={navigation} logo={logo} />
         <main>{children}</main>
         <Footer data={footer} logo={logo} />
       </body>
@@ -51,6 +53,13 @@ async function getData() {
               height
             }
           }
+        }
+      },
+      navigation {
+        cta {
+          text,
+          theme,
+          href
         }
       },
       footer {
