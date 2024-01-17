@@ -1,11 +1,31 @@
-import { Kanit } from 'next/font/google';
 import '../assets/global.scss';
+import localFont from 'next/font/local';
 import Footer from '@/components/_global/footer/footer';
 import { sanityFetch } from '@/utils/sanity-client';
 import { type global } from '@/types/_pages/global';
 import Nav from '@/components/_global/nav/nav';
 
-const kanit = Kanit({ weight: '400', subsets: ['latin'] });
+const kanit = localFont({
+  src: [
+    {
+      path: '../resources/fonts/Kanit-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../resources/fonts/Kanit-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../resources/fonts/Kanit-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  fallback: ['sans-serif'],
+});
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { footer, logo, navigation, socialsList } = await getData();
