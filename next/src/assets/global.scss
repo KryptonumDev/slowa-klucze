@@ -68,6 +68,8 @@
   --green-900: #1A835D;
 
   --background: #EFEFEF;
+
+  --border: #E0E2E1;
 }
 
 body {
@@ -145,6 +147,17 @@ h6 {
 
 h1 {
   font-size: clamp(calc(32rem/16), calc(32vw/7.68), calc(48rem/16));
+}
+h2 {
+  font-size: clamp(calc(32rem/16), calc(32vw/7.68), calc(48rem/16));
+}
+h3 {
+  font-size: clamp(calc(24rem/16), calc(32vw/7.68), calc(32rem/16));
+
+}
+
+p {
+  font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
 }
 
 p strong,
