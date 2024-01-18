@@ -86,12 +86,20 @@ main,
   display: grid;
   --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
 
-  max-width: 1680px;
   width: calc(100% - var(--pageMargin)*2);
   margin: 0 auto;
   grid-template-columns: 1fr;
-  row-gap: 75px;
+
+
+}
+
+.maxWidth {
+  max-width: 1680px;
+}
+
+main {
   padding-top: 155px;
+  row-gap: 75px;
 
   @media (max-width: 1399px) {
     padding-top: clamp(80px, calc(136vw/7.68), 136px);
@@ -148,9 +156,11 @@ h6 {
 h1 {
   font-size: clamp(calc(32rem/16), calc(32vw/7.68), calc(48rem/16));
 }
+
 h2 {
   font-size: clamp(calc(32rem/16), calc(32vw/7.68), calc(48rem/16));
 }
+
 h3 {
   font-size: clamp(calc(24rem/16), calc(32vw/7.68), calc(32rem/16));
 

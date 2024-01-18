@@ -3,6 +3,8 @@ import { sanityFetch } from '@/utils/sanity-client';
 import Hero from '@/components/_homepage/hero/hero';
 import { type Tiles } from '@/types/_global/Tiles';
 import TilesComponent from '@/components/_global/tilesComponent/tilesComponent';
+import SliderComponent from '@/components/_global/sliderComponent/sliderComponent';
+import { type Slider } from '@/types/_global/Slider';
 
 export default async function IndexPage() {
   const { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading, content } = await getData();
@@ -12,7 +14,13 @@ export default async function IndexPage() {
       <TilesComponent
         data={component as Tiles}
         key={i}
-      ></TilesComponent>
+      />
+    ),
+    slider: (
+      <SliderComponent
+        data={component as Slider}
+        key={i}
+      />
     ),
   });
 

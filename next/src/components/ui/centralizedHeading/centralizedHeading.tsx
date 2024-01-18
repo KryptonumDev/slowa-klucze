@@ -4,10 +4,21 @@ import { type Props } from './centralizedHeading.types';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
 
-export default function CentralizedHeading({ data: { title, description, heading, cta } }: Props) {
+export default function CentralizedHeading({
+  data: { title, description, heading, cta },
+  backgroundColor,
+  className,
+}: Props) {
   return (
-    <div className={styles.centralizedHeading}>
-      {heading && <Heading type='h2'>{heading}</Heading>}
+    <div className={`${styles.centralizedHeading} ${className || ''}`}>
+      {heading && (
+        <Heading
+          type='h2'
+          backgroundColor={backgroundColor}
+        >
+          {heading}
+        </Heading>
+      )}
       <Markdown.h2 className={styles.title}>{title}</Markdown.h2>
       {description && <Markdown className={styles.description}>{description}</Markdown>}
       {cta.text && (

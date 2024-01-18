@@ -6,7 +6,7 @@ import CentralizedHeading from '@/components/ui/centralizedHeading/centralizedHe
 
 export default function TilesComponent({ data: { centralizedHeading, list } }: Props) {
   return (
-    <section className={styles.tilesComponent}>
+    <section className={`${styles.tilesComponent} maxWidth`}>
       <CentralizedHeading data={centralizedHeading} />
       <div className={styles.list}>
         {list.map((item, i) => (
