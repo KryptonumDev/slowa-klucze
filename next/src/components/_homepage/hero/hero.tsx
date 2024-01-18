@@ -7,8 +7,8 @@ import Img from '@/components/ui/Img';
 
 export default function Hero({ data: { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading } }: Props) {
   return (
-    <section className={styles.hero}>
-      <div className={`maxWidth`}>
+    <section className={styles.heroWrapper}>
+      <div className={`${styles.hero} maxWidth`}>
         <div className={styles.content}>
           <Heading
             type='h1'
