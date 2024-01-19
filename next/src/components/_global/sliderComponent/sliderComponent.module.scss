@@ -76,6 +76,10 @@
 
       .description {
         grid-area: description;
+        strong {
+          color: var(--dark-neutral-900);
+          font-weight: 500;
+        }
       }
     }
   }
@@ -93,7 +97,6 @@
       border: 1px solid var(--dark-neutral-900);
       margin: 0px 5px;
       transition: all 0.3s ease-in-out;
-      cursor: pointer;
 
       &.active {
         transform: scale(1.1);

@@ -5,9 +5,9 @@ import { type Image } from "./Image";
 export interface FAQ {
   _type?: string;
   faq: HeadingDescription[];
+  heading: string;
   description: string;
   centralizedHeading: CentralizedHeading;
-  _key: string;
   title: string;
   image: Image;
 }

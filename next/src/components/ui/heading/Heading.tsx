@@ -23,7 +23,7 @@ export default function Heading({
       style={{ '--background-color': backgroundColor } as CSSProperties}
       {...props}
     >
-      <Markdown>{children.toUpperCase()}</Markdown>
+      <Markdown>{children}</Markdown>
     </Heading>
   );
 }
