@@ -51,6 +51,8 @@
 
           .chart {
             grid-area: chart;
+            height: clamp(30px, calc(52vw/7.68), 52px);
+            width: clamp(30px, calc(52vw/7.68), 52px);
           }
 
           .heading {
@@ -61,8 +63,8 @@
             grid-area: icon;
             border-left: 1px solid var(--dark-neutral-100);
             padding-left: 10px;
-            height: 54px;
-            width: 54px;
+            height: clamp(35px, calc(45vw/7.68), 45px);
+            width: clamp(35px, calc(45vw/7.68), 45px);
             align-self: center;
 
             >svg {
@@ -102,6 +104,7 @@
     @media (max-width: 1349px) {
       .faqList {
         grid-template-columns: 1fr;
+
         .image {
           position: relative;
           aspect-ratio: 16/9;

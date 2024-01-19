@@ -36,7 +36,7 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
                 key={i}
               >
                 <ChartIcon className={styles.chart} />
-                <Markdown.h3 className={styles.heading}>{heading}</Markdown.h3>
+                <Markdown.h4 className={styles.heading}>{heading}</Markdown.h4>
                 <button
                   className={styles.icon}
                   onClick={() => setActiveIndex(i)}
