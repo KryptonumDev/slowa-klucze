@@ -1,0 +1,114 @@
+.faqWrapper {
+  background: var(--background);
+  margin: 0px calc(var(--pageMargin) *-1);
+  padding: 75px 0px 50px;
+
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    header {
+      max-width: 689px;
+      display: grid;
+      row-gap: 14px;
+
+      .description {
+        margin-top: 2px;
+      }
+    }
+
+    row-gap: 64px;
+
+    .faqList {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+      row-gap: 30px;
+      align-items: start;
+      margin-bottom: 11px;
+
+      .image {
+        height: auto;
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        position: sticky;
+        top: -16px;
+      }
+
+      .items {
+        display: grid;
+        row-gap: 30px;
+
+        .item {
+          display: grid;
+          grid-template-columns: auto 1fr auto;
+          grid-template-areas: "chart heading icon" "description description description";
+          background: var(--neutral-100);
+          gap: 10px;
+          padding: 15px 25px 20px;
+          border-radius: 20px;
+
+          .chart {
+            grid-area: chart;
+          }
+
+          .heading {
+            grid-area: heading;
+          }
+
+          .icon {
+            grid-area: icon;
+            border-left: 1px solid var(--dark-neutral-100);
+            padding-left: 10px;
+            height: 54px;
+            width: 54px;
+            align-self: center;
+
+            >svg {
+              transition: transform 0.3s ease-in-out;
+            }
+          }
+
+          &.active {
+            .icon {
+              >svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          .description {
+            grid-area: description;
+            display: grid;
+            gap: 10px;
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            transition: opacity 0.3s ease-in-out;
+          }
+
+          &.active {
+            .description {
+              visibility: visible;
+              max-height: 100%;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1349px) {
+      .faqList {
+        grid-template-columns: 1fr;
+        .image {
+          position: relative;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+}
