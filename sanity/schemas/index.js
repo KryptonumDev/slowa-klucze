@@ -27,6 +27,8 @@ import tiles from './components/tiles'
 import slider, {slides} from './components/slider'
 import faq from './components/faq'
 import headingDescription from './components/headingDescription'
+import newsletter, {card} from './components/newsletter'
+import formCta from './components/formCta'
 
 export const components = [
   footer,
@@ -46,6 +48,9 @@ export const components = [
   slides,
   faq,
   headingDescription,
+  card,
+  newsletter,
+  formCta
 ]
 
 export const schemaTypes = [

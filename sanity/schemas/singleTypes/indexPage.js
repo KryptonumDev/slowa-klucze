@@ -42,7 +42,7 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{type: 'tiles'}, {type: 'slider'}, {type: 'faq'}],
+      of: [{type: 'tiles'}, {type: 'slider'}, {type: 'faq'}, {type: 'newsletter'}],
     },
     {
       name: 'seo',
