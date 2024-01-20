@@ -5,7 +5,6 @@ export interface Newsletter {
   _type?: string;
   heading: string;
   formCta: Cta;
-  cta: Cta;
   subheading: string;
   description: string;
   image: Image;

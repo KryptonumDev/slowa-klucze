@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@sanity/client": "^6.11.1",
-    "next": "14.0.4",
+    "next": "14.1.0",
     "next-sanity": "^7.0.10",
     "plop": "^4.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.3",
     "react-markdown": "^9.0.1",
+    "resend": "^3.0.0",
     "sass": "^1.69.7",
     "swiper": "^11.0.5"
   },

@@ -70,6 +70,10 @@
   --background: #EFEFEF;
 
   --border: #E0E2E1;
+
+  --gradient: linear-gradient(268deg, #134E51, #5E8B8D);
+
+  --error-500: #BA3131;
 }
 
 body {
@@ -85,9 +89,6 @@ main,
 .maxWidth {
   display: grid;
   --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
-
-  width: calc(100% - var(--pageMargin)*2);
-  margin: 0 auto;
   grid-template-columns: 1fr;
 
 
@@ -95,6 +96,8 @@ main,
 
 .maxWidth {
   max-width: 1680px;
+  width: calc(100% - var(--pageMargin)*2);
+  margin: 0 auto;
 }
 
 main {
@@ -165,6 +168,7 @@ h3 {
   font-size: clamp(calc(24rem/16), calc(32vw/7.68), calc(32rem/16));
 
 }
+
 h4 {
   font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
 }
@@ -177,6 +181,6 @@ p {
 p strong,
 p.strong,
 li strong {
-  font-weight: 400;
-  color: var(--midnight-green-500);
+  color: var(--dark-neutral-900);
+  font-weight: 500;
 }

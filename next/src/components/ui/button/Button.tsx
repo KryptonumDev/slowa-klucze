@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 import { type Button } from '@/types/_ui/Button';
 
-export default function Button({ data, children, theme = 'primary', href, className, svg = true,  ...props }: Button) {
+export default function Button({ disabled = false, data, children, theme = 'primary', href, className, svg = true,  ...props }: Button) {
   if (data) {
     theme = data.theme;
     href = data.href;
@@ -27,6 +27,7 @@ export default function Button({ data, children, theme = 'primary', href, classN
         <button
           className={linkClassName}
           type='submit'
+          disabled={disabled}
           {...props}
         >
           <span>{children}</span>
