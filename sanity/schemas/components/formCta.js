@@ -21,14 +21,13 @@ export default {
       type: 'string',
       name: 'text',
       title: 'Text',
-      description: 'The text that will appear on the button',
+      description: 'Text pojawi się na przycisku',
     }
   ],
   preview: {
     select: {
       title: 'text',
-      theme: 'theme',
-      href: 'href'
+      theme: 'theme'
     },
     prepare({ title, theme }) {
       return {

@@ -7,7 +7,7 @@ import { type Props } from './nav.types';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Nav({ data: { cta }, logo, socialsList }: Props) {
+export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [toggleNav, setToggleNav] = useState(false);
@@ -101,10 +101,13 @@ export default function Nav({ data: { cta }, logo, socialsList }: Props) {
       ref={navRef}
     >
       <div className={`maxWidth ${styles.nav}`}>
-        <Img
-          className={styles.logo}
-          data={logo}
-        />
+        <Link href={'/'}>
+          <Img
+            className={styles.logo}
+            data={logo}
+            aria-label={'Logo'}
+          />
+        </Link>
         <div className={styles.linksWrapper}>
           <div className={styles.links}>
             <Link href={'/o-mnie'}>O mnie</Link>
@@ -134,7 +137,14 @@ export default function Nav({ data: { cta }, logo, socialsList }: Props) {
           svg={false}
           data={cta}
         />
-        <div className={styles.hamburger}>{Hamburger({ toggleNav, setToggleNav })}</div>
+        <div className={styles.hamburger}>
+          <button
+            onClick={() => setToggleNav(!toggleNav)}
+            className={styles.exit}
+          >
+            {Hamburger()}
+          </button>
+        </div>
       </div>
       {toggleNav && (
         <div
@@ -146,7 +156,7 @@ export default function Nav({ data: { cta }, logo, socialsList }: Props) {
             className={styles.logo}
             data={logo}
           />
-          {Exit({ toggleNav, setToggleNav })}
+          <button onClick={() => setToggleNav(!toggleNav)}>{Exit()}</button>
           <div className={styles.links}>
             <Link href={'/o-mnie'}>O mnie</Link>
             <Link href={'/oferta'}>Oferta</Link>
@@ -157,18 +167,20 @@ export default function Nav({ data: { cta }, logo, socialsList }: Props) {
             <Link href={'/blog'}>Blog</Link>
           </div>
           <div className={styles.socials}>
-            {socialsList.map(({ icon, href }, i) => (
-              <Link
-                href={href}
-                key={i}
-              >
-                <Img
-                  className={styles.social}
-                  data={icon}
-                  sizes='39px'
-                />
-              </Link>
-            ))}
+            {socialsList.map(({ href }, i) => {
+              const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
+              if (icon) {
+                return (
+                  <Link
+                    href={href}
+                    key={i}
+                    aria-label={icon.name}
+                  >
+                    {icon.icon}
+                  </Link>
+                );
+              }
+            })}
           </div>
           <Button
             className={styles.button}
@@ -181,58 +193,45 @@ export default function Nav({ data: { cta }, logo, socialsList }: Props) {
   );
 }
 
-export function Hamburger({
-  toggleNav,
-  setToggleNav,
-}: {
-  toggleNav: boolean;
-  setToggleNav: (toggleNav: boolean) => void;
-}) {
+function Hamburger() {
   return (
-    <button
-      onClick={() => setToggleNav(!toggleNav)}
-      className={styles.exit}
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='62'
+      height='61'
+      fill='none'
+      viewBox='0 0 62 61'
     >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='62'
-        height='61'
-        fill='none'
-        viewBox='0 0 62 61'
-      >
-        <path
-          stroke='#163C3E'
-          strokeLinecap='round'
-          strokeWidth='4'
-          d='M10.917 17.792h7.625m33.042 0H28.709M51.583 43.208h-7.625m-33.042 0h22.875M10.917 30.5h40.667'
-        ></path>
-      </svg>
-    </button>
+      <path
+        stroke='#163C3E'
+        strokeLinecap='round'
+        strokeWidth='4'
+        d='M10.917 17.792h7.625m33.042 0H28.709M51.583 43.208h-7.625m-33.042 0h22.875M10.917 30.5h40.667'
+      ></path>
+    </svg>
   );
 }
 
-export function Exit({ toggleNav, setToggleNav }: { toggleNav: boolean; setToggleNav: (toggleNav: boolean) => void }) {
+function Exit() {
   return (
-    <button onClick={() => setToggleNav(!toggleNav)}>
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='42'
-        height='42'
-        fill='none'
-        viewBox='0 0 42 42'
-      >
-        <path
-          stroke='#163C3E'
-          strokeLinecap='round'
-          strokeWidth='1.5'
-          d='M25.375 16.625l-8.75 8.75m0-8.75l8.75 8.75M38.5 21c0 8.25 0 12.374-2.563 14.937C33.374 38.5 29.25 38.5 21 38.5s-12.374 0-14.937-2.563C3.5 33.374 3.5 29.25 3.5 21s0-12.374 2.563-14.937C8.626 3.5 12.75 3.5 21 3.5s12.374 0 14.937 2.563c1.704 1.704 2.275 4.099 2.467 7.937'
-        ></path>
-      </svg>
-    </button>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='42'
+      height='42'
+      fill='none'
+      viewBox='0 0 42 42'
+    >
+      <path
+        stroke='#163C3E'
+        strokeLinecap='round'
+        strokeWidth='1.5'
+        d='M25.375 16.625l-8.75 8.75m0-8.75l8.75 8.75M38.5 21c0 8.25 0 12.374-2.563 14.937C33.374 38.5 29.25 38.5 21 38.5s-12.374 0-14.937-2.563C3.5 33.374 3.5 29.25 3.5 21s0-12.374 2.563-14.937C8.626 3.5 12.75 3.5 21 3.5s12.374 0 14.937 2.563c1.704 1.704 2.275 4.099 2.467 7.937'
+      ></path>
+    </svg>
   );
 }
 
-export function ChevronDown() {
+function ChevronDown() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

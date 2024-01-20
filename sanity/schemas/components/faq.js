@@ -4,27 +4,33 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Tytuł',
       name: 'title',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },
     {
+      title: 'Zdjęcie',
       name: 'image',
       type: 'image',
     },
     {
+      title: 'Pytania FAQ i odpowiedzi',
       name: 'faq',
       type: 'array',
       of: [{type: 'headingDescription'}],
     },
     {
+      title: 'Wyśrodkowany nagłówek',
       name: 'centralizedHeading',
       type: 'centralizedHeading',
     },

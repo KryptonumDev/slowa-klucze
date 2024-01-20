@@ -56,6 +56,7 @@
 
           .heading {
             grid-area: heading;
+            font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
           }
 
           .icon {

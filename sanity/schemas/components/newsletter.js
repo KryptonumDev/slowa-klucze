@@ -4,22 +4,27 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Podtytuł',
       name: 'subheading',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },
     {
+      title: 'Przycisk w formularzu',
       name: 'formCta',
       type: 'formCta',
     },
     {
+      title: 'Karta nad zdjęciem',
       name: 'card',
       type: 'card',
       options: {
@@ -28,6 +33,7 @@ export default {
       },
     },
     {
+      title: 'Zdjęcie',
       name: 'image',
       type: 'image',
     },
@@ -48,14 +54,17 @@ export const card = {
   type: 'object',
   fields: [
     {
+      title: 'Zdjęcie',
       name: 'image',
       type: 'image',
     },
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },

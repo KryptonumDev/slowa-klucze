@@ -5,7 +5,10 @@ export interface Props {
   data: footer;
   logo: Image;
   socialsList: {
-    icon: Image;
     href: string;
+  }[];
+  icons: {
+    icon: JSX.Element;
+    name: string;
   }[];
 }

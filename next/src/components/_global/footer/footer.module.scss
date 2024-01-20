@@ -53,6 +53,9 @@
 
       >span {
         white-space: nowrap;
+        >a {
+          color: inherit;
+        }
       }
     }
 

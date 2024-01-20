@@ -4,14 +4,17 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Zdjęcie',
       name: 'image',
       type: 'image',
     },
     {
+      title: 'Tytuł',
       name: 'title',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },

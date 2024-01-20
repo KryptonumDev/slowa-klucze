@@ -1,21 +1,25 @@
 export default {
   name: 'centralizedHeading',
-  title: 'CentralizedHeading',
+  title: 'Wyśrodkowany nagłówek',
   type: 'object',
   fields: [
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Tytuł',
       name: 'title',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },
     {
+      title: 'Przycisk',
       name: 'cta',
       type: 'cta',
     },

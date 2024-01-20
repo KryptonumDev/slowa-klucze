@@ -4,10 +4,12 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Wyśrodkowany nagłówek',
       name: 'centralizedHeading',
       type: 'centralizedHeading',
     },
     {
+      title: 'Karuzele',
       name: 'slides',
       type: 'array',
       of: [{type: 'slide'}],
@@ -15,7 +17,7 @@ export default {
     {
       name: 'centralizedHeading2',
       type: 'centralizedHeading',
-      title: '2nd Centralized Heading',
+      title: 'Drugi Wyśrodkowany nagłówek',
     },
   ],
   preview: {
@@ -24,7 +26,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[slides] ${title}`,
+        title: `[Karuzela] ${title}`,
       }
     },
   },
@@ -36,25 +38,30 @@ export const slides = {
   title: 'Slide',
   fields: [
     {
+      title: 'Ikona',
       name: 'icon',
       type: 'image',
     },
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Link url',
       name: 'url',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },
     {
+      title: 'Ocena (liczba gwiazdek od 1 do 5)',
       name: 'rating',
       type: 'number',
-      validation: (Rule) => Rule.min(0).max(5),
+      validation: (Rule) => Rule.min(1).max(5),
     },
   ],
   preview: {

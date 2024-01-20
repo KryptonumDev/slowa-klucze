@@ -16,7 +16,7 @@ export default function Checkbox({ disabled, text, name, register, errors, error
           <p>
             <strong>Akceptuję</strong>{' '}
             <Button
-              href='/pl/polityka-prywatnosci'
+              href='/polityka-prywatnosci'
               svg={true}
               disabled={disabled}
             >

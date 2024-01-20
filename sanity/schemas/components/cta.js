@@ -9,8 +9,8 @@ export default {
       title: 'Typ',
       options: {
         list: [
-          { title: 'Primary', value: 'primary' },
-          { title: 'Secondary', value: 'secondary' }
+          { title: 'Primary (bez obramowań)', value: 'primary' },
+          { title: 'Secondary (zielony)', value: 'secondary' }
         ],
         layout: 'radio',
         direction: "horizontal"
@@ -21,13 +21,13 @@ export default {
       type: 'string',
       name: 'text',
       title: 'Text',
-      description: 'The text that will appear on the button',
+      description: 'Text pojawi się na przycisku',
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link',
-      description: 'Relative or absolute link (https://)',
+      description: 'Relatywny albo absolutny link (https://)',
       validation: Rule => Rule.custom(value => {
         if (value && !value.startsWith('/') && !value.startsWith('https://') && !value.startsWith('#')) {
           return 'Incorrect URL.';
