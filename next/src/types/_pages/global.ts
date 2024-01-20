@@ -7,10 +7,7 @@ export interface global {
     footer: footer;
     logo: Image;
     navigation: navigation;
-    socialsList: {
-      icon: Image;
-      href: string;
-    }[];
+    socialsList: string[];
   };
 }
 

@@ -18,7 +18,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
         </Link>
         <Markdown className={styles.description}>{description}</Markdown>
         <div className={styles.socials}>
-          {socialsList.map(({ href }, i) => {
+          {socialsList.map(( href , i) => {
             const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
             if (icon) {
               return (
