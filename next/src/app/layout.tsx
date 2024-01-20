@@ -44,7 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       name: 'instagram',
     },
   ];
-  
+
   return (
     <html lang='en'>
       <body className={kanit.className}>
@@ -124,9 +124,7 @@ async function getData() {
           }
         }
        },
-       socialsList[] {
-          href
-        },
+       socialsList[]
       }
     }`,
   });

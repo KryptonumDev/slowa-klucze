@@ -167,7 +167,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
             <Link href={'/blog'}>Blog</Link>
           </div>
           <div className={styles.socials}>
-            {socialsList.map(({ href }, i) => {
+            {socialsList.map(( href , i) => {
               const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
               if (icon) {
                 return (

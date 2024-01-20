@@ -4,9 +4,7 @@ import { type navigation } from '@/types/_pages/global';
 export interface Props {
   data: navigation;
   logo: Image;
-  socialsList: {
-    href: string;
-  }[];
+  socialsList: string[];
   icons: {
     icon: JSX.Element;
     name: string;
