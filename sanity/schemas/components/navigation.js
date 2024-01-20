@@ -4,6 +4,7 @@ export default {
   type: "object",
   fields: [
     {
+      title: 'Przycisk',
       name: 'cta',
       type: 'cta',
     },

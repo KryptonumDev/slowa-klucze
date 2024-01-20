@@ -1,8 +1,6 @@
 .heroWrapper {
   background: var(--background);
-  margin: 0px calc(var(--pageMargin) *-1);
   display: grid;
-  justify-content: center;
 
   .hero {
     display: grid;
@@ -13,7 +11,7 @@
     .content {
       display: grid;
       grid-row-gap: 14px;
-      padding: 75px var(--pageMargin);
+      padding: 75px 0px;
 
       .subheading {
         margin-bottom: 20px;

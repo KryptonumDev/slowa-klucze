@@ -9,4 +9,5 @@ export interface Button {
   children?: string;
   className?: string;
   svg: boolean;
+  disabled?: boolean;
 }

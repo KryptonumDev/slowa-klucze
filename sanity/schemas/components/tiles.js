@@ -4,12 +4,13 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Wyśrodkowany nagłówek',
       name: 'centralizedHeading',
       type: 'centralizedHeading',
     },
     {
       name: 'list',
-      title: 'List (from top left to bottom right)',
+      title: 'Lista kafelków od lewego górnego rogu do prawego dolnego rogu',
       type: 'array',
       of: [{type: 'imageTitleDescription'}],
     },
@@ -21,7 +22,7 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: `[tiles] ${title}`,
+        title: `[Kafelki] ${title}`,
         subtitle: `${subtitle.length} items`,
       }
     },

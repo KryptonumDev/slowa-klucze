@@ -4,10 +4,12 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
     },
     {
+      title: 'Opis',
       name: 'description',
       type: 'markdown',
     },
