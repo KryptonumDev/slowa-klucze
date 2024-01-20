@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const path = require('path');
 
 const nextConfig = {
@@ -10,10 +9,12 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
+        protocol: 'https',
         hostname: 'cdn.sanity.io',
+        pathname: '**',
       },
     ],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

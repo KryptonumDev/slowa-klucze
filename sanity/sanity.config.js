@@ -28,8 +28,9 @@ const createListItem = (S, singleType) => {
 
 export default defineConfig({
   name: 'default',
-  title: 'slowa-klucze',
-  projectId: 'xg0fttfo',
+  // Set title and projectId
+  title: '',
+  projectId: '',
   dataset: 'production',
   plugins: [
     deskTool({

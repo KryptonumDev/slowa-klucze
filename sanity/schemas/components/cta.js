@@ -16,12 +16,14 @@ export default {
         direction: "horizontal"
       },
       initialValue: 'primary',
+      validation: Rule => Rule.required()
     },
     {
       type: 'string',
       name: 'text',
       title: 'Text',
       description: 'The text that will appear on the button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'href',
@@ -33,7 +35,7 @@ export default {
           return 'Incorrect URL.';
         }
         return true;
-      })
+      }).required(),
     }
   ],
   preview: {

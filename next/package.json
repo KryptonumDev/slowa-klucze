@@ -6,30 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix --dir src",
-    "plop": "plop"
+    "lint": "next lint --fix --dir src"
   },
   "dependencies": {
-    "@sanity/client": "^6.11.1",
+    "@studio-freight/lenis": "^1.0.29",
+    "framer-motion": "^10.16.16",
     "next": "14.0.4",
-    "next-sanity": "^7.0.10",
-    "plop": "^4.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-markdown": "^9.0.1",
-    "sass": "^1.69.7",
-    "swiper": "^11.0.5"
+    "sass": "^1.69.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.1.1",
-    "typescript": "^5"
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
   }
 }
