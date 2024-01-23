@@ -48,6 +48,7 @@
       align-self: flex-start;
       justify-self: flex-end;
       grid-area: button;
+      padding: 10px clamp(16px, calc(30vw/7.68), 96px);
     }
 
     .linksWrapper {
@@ -75,6 +76,7 @@
           grid-template-areas: "button" "link" "link";
 
           .button {
+            padding: unset;
             display: grid;
             grid-template-columns: 1fr auto;
             align-items: center;
@@ -107,7 +109,7 @@
     }
   }
 
-  @media (max-width: 1467px) {
+  @media (max-width: 1249px) {
     .nav {
       grid-template-areas: "logo hamburger";
       grid-template-columns: auto 1fr;

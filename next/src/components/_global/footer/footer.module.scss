@@ -55,6 +55,7 @@
       .copyright {
         grid-area: copyright;
         font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
+        color: var(--dark-neutral-900);
 
         >span {
           white-space: nowrap;
@@ -73,11 +74,13 @@
         grid-row-gap: 28px;
         grid-column-gap: 74px;
         font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+        font-weight: 300;
 
         .button {
           display: grid;
           justify-items: start;
           align-items: start;
+          color: var(--dark-neutral-900);
         }
       }
 
