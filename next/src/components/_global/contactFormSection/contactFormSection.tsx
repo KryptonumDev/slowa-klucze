@@ -9,7 +9,7 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
   return (
     <section className={`${styles.contactFormSection} maxWidth`}>
       <header>
-        <Heading type='h3'>{heading}</Heading>
+        <Heading type='h2'>{heading}</Heading>
         <Markdown.h2>{subheading}</Markdown.h2>
       </header>
       <Img

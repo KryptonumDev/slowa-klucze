@@ -12,11 +12,11 @@ export default function Label({
   type = 'text',
   rows,
   info,
-  className,
+  className = '',
   ...props
 }: Label) {
   return (
-    <label className={`${styles.label} ${className && className}`}>
+    <label className={`${styles.label} ${className}`}>
       <span className={styles.title}>{title}</span>
       <div className={styles.inputWrapper}>
         {rows ? (
