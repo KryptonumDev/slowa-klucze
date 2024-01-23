@@ -85,6 +85,7 @@
             gap: 10px;
             color: var(--midnight-green-500);
           }
+
           &.expanded {
             gap: 24px;
             padding: 0px 24px 24px;
@@ -96,6 +97,7 @@
             svg {
               transform: rotate(180deg);
             }
+
             .button {
               margin-bottom: 8px;
             }
@@ -139,7 +141,7 @@
       box-shadow: 0px 1px 2px 0px rgba(64, 64, 64, 0.10),
         2px 3px 4px 0px rgba(64, 64, 64, 0.09);
       border-radius: 0px 0px 12px 0px;
-      padding: 11px;
+      padding: 11px 11px 16px;
       max-width: 600px;
       width: 100%;
       row-gap: 48px;
@@ -149,6 +151,7 @@
       .logo {
         height: auto;
         width: 100%;
+        max-width: 300px;
         grid-area: logo;
       }
 
@@ -184,6 +187,7 @@
         grid-area: socials;
         display: flex;
         gap: 24px;
+
         .social {
           width: 39px;
           height: 39px;

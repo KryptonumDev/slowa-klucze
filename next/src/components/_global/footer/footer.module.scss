@@ -106,8 +106,14 @@
           object-position: bottom;
         }
       }
+      @media(max-width: 799px) {
+        grid-template-columns: 1.8fr 1fr;
+      }
+      @media(max-width: 678px) {
+        grid-template-columns: 1.3fr 1fr;
+      }
 
-      @media (max-width: 799px) {
+      @media (max-width: 599px) {
         grid-template-columns: 1fr;
         grid-template-areas: "logo"
           "description"

@@ -49,6 +49,10 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
             spaceBetween: 50,
             slidesPerView: 1.5,
           },
+          1600: {
+            spaceBetween: 50,
+            slidesPerView: 2.0,
+          },
         }}
       >
         {slides.map(({ description, heading, icon, rating, url }, i) => (
