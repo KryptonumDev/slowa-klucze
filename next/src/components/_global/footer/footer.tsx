@@ -41,7 +41,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
           <p className={styles.copyright}>
             Copyright © 2023 — <span>slowa-klucze.pl</span>{' '}
             <span>
-              Realizacja: <Link href={'https://kryptonum.eu/'}>Kryptonum</Link>
+              <Link href={'https://kryptonum.eu/'}>Realizacja: Kryptonum</Link>
             </span>
           </p>
           <div className={styles.links}>
