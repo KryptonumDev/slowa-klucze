@@ -9,4 +9,7 @@ export interface Label {
   error?: string;
   type: string;
   disabled?: boolean;
+  rows?: number;
+  info?: string;
+  className?: string;
 }

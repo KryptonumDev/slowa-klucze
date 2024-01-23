@@ -10,23 +10,43 @@ export default function Label({
   disabled,
   error = 'To pole jest wymagane',
   type = 'text',
+  rows,
+  info,
+  className,
   ...props
 }: Label) {
   return (
-    <label className={styles.label}>
+    <label className={`${styles.label} ${className && className}`}>
       <span className={styles.title}>{title}</span>
       <div className={styles.inputWrapper}>
-        <input
-          placeholder={placeholder}
-          className={errors[name] ? `${styles.errored} ${styles.input}` : `${styles.input}`}
-          type={type}
-          disabled={disabled}
-          {...register}
-          {...props}
-        ></input>
+        {rows ? (
+          <textarea
+            rows={rows}
+            placeholder={placeholder}
+            className={errors[name] ? `${styles.errored} ${styles.input}` : `${styles.input}`}
+            disabled={disabled}
+            {...register}
+            {...props}
+          ></textarea>
+        ) : (
+          <input
+            placeholder={placeholder}
+            className={errors[name] ? `${styles.errored} ${styles.input}` : `${styles.input}`}
+            type={type}
+            disabled={disabled}
+            {...register}
+            {...props}
+          ></input>
+        )}
         {errors[name] && <SmallError className={styles.smallError} />}
       </div>
-      <div>{errors[name] && <span className={styles.error}>{error}</span>}</div>
+      {errors[name] && (
+        <div>
+          {' '}
+          <span className={styles.error}>{error}</span>
+        </div>
+      )}
+      {info && <span className={styles.info}>{info}</span>}
     </label>
   );
 }

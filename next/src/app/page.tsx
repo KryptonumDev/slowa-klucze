@@ -9,6 +9,8 @@ import Faq from '@/components/_global/faq/faq';
 import { type FAQ } from '@/types/_global/FAQ';
 import { type Newsletter } from '@/types/_global/Newsletter';
 import NewsletterSection from '@/components/_global/newsletterSection/newsletterSection';
+import { type ContactForm } from '@/types/_global/ContactForm';
+import ContactFormSection from '@/components/_global/contactFormSection/contactFormSection';
 
 export default async function IndexPage() {
   const { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading, content } = await getData();
@@ -35,6 +37,12 @@ export default async function IndexPage() {
     newsletter: (
       <NewsletterSection
         data={component as Newsletter}
+        key={i}
+      />
+    ),
+    contactForm: (
+      <ContactFormSection
+        data={component as ContactForm}
         key={i}
       />
     ),
