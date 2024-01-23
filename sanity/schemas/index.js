@@ -29,6 +29,7 @@ import faq from './components/faq'
 import headingDescription from './components/headingDescription'
 import newsletter, {card} from './components/newsletter'
 import formCta from './components/formCta'
+import contactForm from './components/contactForm'
 
 export const components = [
   footer,
@@ -50,7 +51,8 @@ export const components = [
   headingDescription,
   card,
   newsletter,
-  formCta
+  formCta,
+  contactForm,
 ]
 
 export const schemaTypes = [

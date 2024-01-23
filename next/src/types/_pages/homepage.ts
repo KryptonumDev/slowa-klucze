@@ -1,3 +1,4 @@
+import { type ContactForm } from '../_global/ContactForm';
 import { type Cta } from '../_global/Cta';
 import { type FAQ } from '../_global/FAQ';
 import { type Image } from '../_global/Image';
@@ -16,4 +17,4 @@ export interface homepage {
   };
 }
 
-export type ContentItem = Tiles | Slider | FAQ | Newsletter;
+export type ContentItem = Tiles | Slider | FAQ | Newsletter | ContactForm;

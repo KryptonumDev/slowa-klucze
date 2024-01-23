@@ -2,6 +2,7 @@
   display: grid;
   row-gap: 10px;
   position: relative;
+  max-width: 500px;
 
   .title {
     font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
@@ -13,12 +14,11 @@
   .inputWrapper {
     display: grid;
     position: relative;
-    max-width: 500px;
 
     .input {
       border-radius: 20px;
       border: 1px solid #000;
-      height: 56px;
+      min-height: 56px;
       padding-left: 22px;
       font-size: clamp(calc(20rem/16), calc(26vw/7.68), calc(32rem/16));
       background-clip: padding-box;
@@ -52,6 +52,11 @@
       bottom: 0px;
       right: 13px;
     }
+
+    .info {
+      font-size: 16px;
+      padding-left: 8px;
+    }
   }
 
   .error {
@@ -62,10 +67,12 @@
       font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
     }
   }
+
   @media (max-width: 1199px) {
     .title {
       justify-self: center;
     }
+
     .inputWrapper {
       max-width: unset;
     }

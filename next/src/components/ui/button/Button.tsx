@@ -10,6 +10,7 @@ export default function Button({
   href,
   className,
   svg = true,
+  onClick,
   ...props
 }: Button) {
   if (data) {
@@ -33,6 +34,7 @@ export default function Button({
             href={href}
             target='_blank'
             rel='noreferrer'
+            onClick={onClick}
             {...props}
           >
             <span>{children}</span>
@@ -42,6 +44,7 @@ export default function Button({
           <Link
             className={linkClassName}
             href={href}
+            onClick={onClick}
             {...props}
           >
             <span>{children}</span>
@@ -52,6 +55,7 @@ export default function Button({
         <button
           className={linkClassName}
           type='submit'
+          onClick={onClick}
           disabled={disabled}
           {...props}
         >
