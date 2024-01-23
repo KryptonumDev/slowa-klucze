@@ -74,6 +74,33 @@
       width: 100%;
       object-fit: cover;
       margin-left: 20px;
+      border-radius: 20px;
+      display: block;
+      max-height: 600px;
+      object-position: 0% 20%;
+    }
+  }
+
+  .state {
+    display: grid;
+    grid-row-gap: 24px;
+
+    >h3 {
+      .success {
+        color: var(--green-800);
+      }
+
+      .failed {
+        color: var(--error-800);
+      }
+    }
+
+    >p {
+      font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
+    }
+
+    >button {
+      margin-top: 16px;
     }
   }
 
@@ -86,7 +113,6 @@
       .image {
         aspect-ratio: 20/9;
         margin-left: unset;
-        object-position: top;
         border-radius: 20px;
       }
 

@@ -30,11 +30,11 @@
       width: auto;
       top: -95px;
       position: absolute;
-      right: 0px;
+      right: calc((var(--pageMargin)*-1));
       display: block;
     }
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1099px) {
       grid-template-columns: 1fr;
 
       .img {
@@ -45,6 +45,7 @@
         top: unset;
         align-self: center;
         justify-self: center;
+        right: unset;
       }
     }
   }

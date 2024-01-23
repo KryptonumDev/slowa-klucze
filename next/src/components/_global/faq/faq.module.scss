@@ -44,7 +44,7 @@
           grid-template-columns: auto 1fr auto;
           grid-template-areas: "image heading icon" "description description description";
           background: var(--neutral-100);
-          gap: 10px;
+          column-gap: 10px;
           padding: 15px 25px;
           border-radius: 20px;
 
@@ -52,12 +52,15 @@
             grid-area: image;
             height: clamp(30px, calc(52vw/7.68), 52px);
             width: clamp(30px, calc(52vw/7.68), 52px);
-            align-self: center;
+            margin-top: -10px;
           }
 
           .heading {
             grid-area: heading;
-            font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+
+            >h3 {
+              font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+            }
           }
 
           .icon {
@@ -93,6 +96,7 @@
 
           &.active {
             .description {
+              margin-top: 10px;
               visibility: visible;
               max-height: 100%;
               opacity: 1;

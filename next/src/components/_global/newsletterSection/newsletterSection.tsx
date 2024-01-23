@@ -6,15 +6,21 @@ import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
 
 export default function NewsletterSection({ data: { description, formCta, heading, image, subheading, card } }: Props) {
+  const JsxDescription = <Markdown className={styles.description}>{description}</Markdown>;
+
   return (
     <section className={`${styles.newsletterSection} maxWidth`}>
       <div className={styles.content}>
         <header>
-          <Heading type='h2' className={styles.heading}>{heading}</Heading>
+          <Heading
+            type='h2'
+            className={styles.heading}
+          >
+            {heading}
+          </Heading>
           <Markdown.h2>{subheading}</Markdown.h2>
         </header>
-        <Markdown className={styles.description}>{description}</Markdown>
-        <Form data={{ formCta }} />
+        <Form data={{ formCta, JsxDescription }} />
       </div>
       <div className={styles.visuals}>
         <div className={styles.card}>

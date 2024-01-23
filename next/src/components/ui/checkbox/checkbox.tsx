@@ -2,7 +2,7 @@ import Button from '../button/Button';
 import styles from './checkbox.module.scss';
 import { type Props } from './checkbox.types';
 
-export default function Checkbox({ disabled, text, name, register, errors, error = 'to pole jest wymagane' }: Props) {
+export default function Checkbox({ disabled, text, name, register, errors, error = 'To pole jest wymagane' }: Props) {
   return (
     <label className={styles.checkbox}>
       <div className={styles.checkboxWrapper}>
