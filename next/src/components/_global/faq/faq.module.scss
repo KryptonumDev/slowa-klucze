@@ -42,16 +42,17 @@
         .item {
           display: grid;
           grid-template-columns: auto 1fr auto;
-          grid-template-areas: "chart heading icon" "description description description";
+          grid-template-areas: "image heading icon" "description description description";
           background: var(--neutral-100);
           gap: 10px;
-          padding: 15px 25px 20px;
+          padding: 15px 25px;
           border-radius: 20px;
 
-          .chart {
-            grid-area: chart;
+          .image {
+            grid-area: image;
             height: clamp(30px, calc(52vw/7.68), 52px);
             width: clamp(30px, calc(52vw/7.68), 52px);
+            align-self: center;
           }
 
           .heading {
@@ -110,6 +111,16 @@
           aspect-ratio: 16/9;
           object-fit: cover;
           border-radius: 16px;
+        }
+
+        .items {
+          .item {
+            .image {
+              align-self: center;
+              aspect-ratio: unset;
+              position: unset;
+            }
+          }
         }
       }
     }

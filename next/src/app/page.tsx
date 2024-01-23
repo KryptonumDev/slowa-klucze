@@ -77,6 +77,23 @@ async function getData() {
         hero_Heading,
         content[] {
         ...,
+        faq[] {
+            title,
+            description,
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                    dimensions {
+                      height,
+                      width
+                }
+                }
+              }
+            }
+          },
         card {
           ...,
           image {
@@ -138,7 +155,7 @@ async function getData() {
                 }
               }
             }
-        }
+        },
       }
     }`,
   });

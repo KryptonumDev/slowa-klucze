@@ -27,7 +27,7 @@ export default {
       title: 'Pytania FAQ i odpowiedzi',
       name: 'faq',
       type: 'array',
-      of: [{type: 'headingDescription'}],
+      of: [{type: 'imageTitleDescription'}],
     },
     {
       title: 'Wyśrodkowany nagłówek',
