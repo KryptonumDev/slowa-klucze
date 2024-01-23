@@ -23,8 +23,11 @@
 
       .description {
         padding-top: 9px;
-        font-size: calc(20vw/7.68);
         color: var(--midnight-green-900);
+
+        >p {
+          font-size: 20px;
+        }
       }
     }
   }

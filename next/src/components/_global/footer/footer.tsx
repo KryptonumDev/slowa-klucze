@@ -62,7 +62,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
             </Button>
           </div>
         </div>
-      </div>
+      </div>¤
     </footer>
   );
 }
