@@ -19,6 +19,9 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   const handleNext = () => swiperRef.current?.swiper?.slideNext();
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  const handleButtonClick = (i) => swiperRef.current?.swiper?.slideToLoop(i);
+
   return (
     <section className={styles.sliderComponent}>
       <QuotaDecoration />
@@ -84,9 +87,10 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
           }}
         />
         {Array.from({ length: slides.length }).map((_, i) => (
-          <div
+          <button
             key={i}
             className={i == activeIndex ? `${styles.dot} ${styles.active}` : styles.dot}
+            onClick={() => handleButtonClick(i) as void}
           />
         ))}
         <ButtonRight
