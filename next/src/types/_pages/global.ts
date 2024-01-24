@@ -1,9 +1,10 @@
 import { type Cta } from '../_global/Cta';
 import { type Image } from '../_global/Image';
+import { type Seo } from '../_global/Seo';
 
 export interface global {
   page: {
-    seo: seo;
+    seo: Seo;
     footer: footer;
     logo: Image;
     navigation: navigation;
@@ -18,8 +19,4 @@ export interface navigation {
 export interface footer {
   description: string;
   portrait: Image;
-}
-
-export interface seo {
-  og_Img: Image;
 }
