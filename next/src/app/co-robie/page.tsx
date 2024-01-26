@@ -104,9 +104,23 @@ async function getData() {
     query: /* groq */ `{
       "page": *[_id=="MyWorkPage"][0]{
         content[] {
-          ...,
+          _type,
+          heading,
+          description,
+          subheading,
+          centralizedHeading {
+            description,
+            title,
+            heading,
+            cta {
+              theme,
+              href,
+              text
+            }
+          },
           list[] {
-            ...,
+            description,
+            title,
             image {
               asset -> {
                 altText,
@@ -122,7 +136,10 @@ async function getData() {
             }
           },
           cards[] {
-            ...,
+            title,
+            pluses[],
+            plusesDescription,
+            description,  
             icon {
               asset -> {
                 altText,
@@ -151,7 +168,9 @@ async function getData() {
             }
           },
           faq[] {
-            ...,
+            description,
+            title,
+            heading,
             image {
               asset -> {
                 altText,
@@ -167,7 +186,8 @@ async function getData() {
             }
           },
           proceses[] {
-            ...,
+            description,
+            title,
             image {
               asset -> {
                 altText,
@@ -182,8 +202,13 @@ async function getData() {
               }
             }
           },
+          formCta {
+            theme,
+            text
+          },
           card {
-            ...,
+            heading,
+            description,  
             image {
               asset -> {
                 altText,
@@ -196,11 +221,12 @@ async function getData() {
                   }
                 }
               }
-              }
+            }
           }
         }
       }
     }`,
   });
+  console.log(page.content);
   return page;
 }

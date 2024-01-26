@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'headingDescription',
   title: 'Heading & Description',
@@ -20,7 +22,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: title,
+        title: removeMarkdown(title),
       }
     },
   },

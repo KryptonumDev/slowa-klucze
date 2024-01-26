@@ -1,13 +1,12 @@
 import { type global } from '@/types/_pages/global';
 import { sanityFetch } from '@/utils/sanity-client';
 
-export const domain = 'https://www.slowa-klucze.pl';
+export const domain = 'https://slowa-klucze.pl';
 export const locale = 'pl_PL';
 
 const SEO = async ({
   title,
   description,
-  ogImage,
   url,
   ...props
 }: {
@@ -21,10 +20,10 @@ const SEO = async ({
   } = await getData();
 
   const seo = {
-    title: title || 'Słowa Klucze', // Zapytaj się Anety po projekcie
+    title: title || 'Słowa Klucze',
     description: description || '',
     url: url || '',
-    ogImage: ogImage || og_Img.asset.url,
+    ogImage: og_Img.asset.url,
   };
 
   const metadata = {

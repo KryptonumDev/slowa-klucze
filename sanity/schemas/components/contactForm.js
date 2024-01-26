@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'contactForm',
   title: 'Formularz kontaktowy',
@@ -30,7 +32,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[Formularz kontaktowy]- ${title}`,
+        title: `[Formularz kontaktowy] - ${removeMarkdown(title)}`,
       }
     },
   },

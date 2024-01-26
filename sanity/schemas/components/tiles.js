@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'tiles',
   title: 'Tiles',
@@ -22,7 +24,7 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: `[Kafelki] ${title}`,
+        title: `[Kafelki] - ${removeMarkdown(title)}`,
         subtitle: `${subtitle.length} items`,
       }
     },

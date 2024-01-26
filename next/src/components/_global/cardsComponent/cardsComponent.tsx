@@ -27,15 +27,17 @@ export default function CardsComponent({ data: { centralizedHeading, cards } }: 
               </header>
               <Markdown className={styles.description}>{description}</Markdown>
               <Markdown className={styles.plusesDescription}>{plusesDescription}</Markdown>
-              {pluses.map((plus, i) => (
-                <div
-                  className={styles.plus}
-                  key={i}
-                >
-                  <PlusIcon className={styles.plusIcon} />
-                  <Markdown className={styles.plusDescription}>{plus}</Markdown>
-                </div>
-              ))}
+              <ul>
+                {pluses.map((plus, i) => (
+                  <li
+                    className={styles.plus}
+                    key={i}
+                  >
+                    <PlusIcon className={styles.plusIcon} />
+                    <Markdown className={styles.plusDescription}>{plus}</Markdown>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -44,7 +46,7 @@ export default function CardsComponent({ data: { centralizedHeading, cards } }: 
   );
 }
 
-export function PlusIcon({className}: {className?: string}) {
+export function PlusIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

@@ -1,3 +1,5 @@
+import removeMarkdown from '../../utils/RemoveMarkdown'
+
 export default {
   name: 'cards',
   title: 'Karty',
@@ -69,7 +71,7 @@ export const card_contents = {
     },
     prepare({title}) {
       return {
-        title: title,
+        title: removeMarkdown(title),
       }
     },
   },

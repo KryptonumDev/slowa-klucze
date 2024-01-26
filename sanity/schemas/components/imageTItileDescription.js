@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'imageTitleDescription',
   title: 'ImageTitleDescription',
@@ -26,8 +28,8 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: title,
-        subtitle: subtitle,
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
       }
     },
   },

@@ -12,6 +12,10 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
 
+      ul {
+        display: grid;
+        gap: 24px;
+      }
 
       .card {
         display: grid;

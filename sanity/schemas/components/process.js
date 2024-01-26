@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'process',
   title: 'Proces',
@@ -21,7 +23,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[proces] - ${title}`,
+        title: `[Proces] - ${removeMarkdown(title)}`,
       }
     },
   },

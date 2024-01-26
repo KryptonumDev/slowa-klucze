@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'faq',
   title: 'Faq',
@@ -41,7 +43,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[FAQ] - ${title}`,
+        title: `[FAQ] - ${removeMarkdown(title)}`,
       }
     },
   },
