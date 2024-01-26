@@ -41,45 +41,56 @@
 
         .item {
           display: grid;
-          grid-template-columns: auto 1fr auto;
-          grid-template-areas: "image heading icon" "description description description";
+          grid-template-columns: 1fr;
+          grid-template-areas: "button" "description";
           background: var(--neutral-100);
           column-gap: 10px;
           padding: 15px 25px;
           border-radius: 20px;
 
-          .image {
-            grid-area: image;
-            height: clamp(30px, calc(52vw/7.68), 52px);
-            width: clamp(30px, calc(52vw/7.68), 52px);
-            margin-top: -10px;
-          }
+          .button {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: flex-start;
+            text-align: start;
+            grid-template-areas: "image title icon";
 
-          .heading {
-            grid-area: heading;
+            &:hover {
+              cursor: pointer;
+            }
+
+            .image {
+              grid-area: image;
+              height: clamp(30px, calc(52vw/7.68), 52px);
+              width: clamp(30px, calc(52vw/7.68), 52px);
+              margin-top: -10px;
+            }
+
+
 
             >h3 {
               font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
             }
-          }
 
-          .icon {
-            grid-area: icon;
-            border-left: 1px solid var(--dark-neutral-100);
-            padding-left: 10px;
-            height: clamp(35px, calc(45vw/7.68), 45px);
-            width: clamp(35px, calc(45vw/7.68), 45px);
-            align-self: center;
+            .svgWrapper {
+              border-left: 1px solid var(--dark-neutral-100);
+              padding-left: 10px;
+              height: clamp(35px, calc(45vw/7.68), 45px);
+              width: clamp(35px, calc(45vw/7.68), 45px);
+              align-self: center;
 
-            >svg {
-              transition: transform 0.3s ease-in-out;
+              >svg {
+                transition: transform 0.3s ease-in-out;
+              }
             }
           }
 
-          &.active {
-            .icon {
-              >svg {
-                transform: rotate(180deg);
+          &[data-selected='true'] {
+            .button {
+              .svgWrapper {
+                >svg {
+                  transform: rotate(180deg);
+                }
               }
             }
           }
@@ -94,7 +105,7 @@
             transition: opacity 0.3s ease-in-out;
           }
 
-          &.active {
+          &[data-selected='true'] {
             .description {
               margin-top: 10px;
               visibility: visible;

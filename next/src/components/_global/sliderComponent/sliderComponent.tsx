@@ -15,8 +15,11 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
         className={`${styles.centralizedHeading} maxWidth`}
       />
       <SwiperComponent length={slides.length}>
-        {slides.map(({ description, heading, icon, rating, url }) => (
-          <>
+        {slides.map(({ description, heading, icon, rating, url }, i) => (
+          <div
+            className={styles.sliderWrapper}
+            key={i}
+          >
             <div className={styles.info}>
               <Img
                 className={styles.img}
@@ -31,7 +34,7 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
               ))}
             </div>
             <Markdown className={styles.description}>{description}</Markdown>
-          </>
+          </div>
         ))}
       </SwiperComponent>
 

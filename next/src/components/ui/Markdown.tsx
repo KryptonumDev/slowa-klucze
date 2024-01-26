@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { domain } from '@/global/Seo';
+
 const LinkRenderer = ({
   href,
   children,
@@ -28,13 +29,11 @@ const LinkRenderer = ({
 };
 const ListRenderer = ({
   children,
-  ordered,
 }: React.LiHTMLAttributes<HTMLLIElement> & {
   children?: React.ReactNode;
   ordered?: boolean;
 }) => (
   <li>
-    {!ordered && <BulletList />}
     <span>{children}</span>
   </li>
 );
@@ -100,4 +99,3 @@ Markdown.span = (props: JSX.IntrinsicAttributes & MarkdownProps) => (
   />
 );
 export default Markdown;
-const BulletList = () => <svg></svg>;

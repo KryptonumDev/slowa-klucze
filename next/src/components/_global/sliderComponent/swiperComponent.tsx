@@ -2,22 +2,20 @@
 
 import 'swiper/css';
 import { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, type SwiperRef } from 'swiper/react';
 import { A11y } from 'swiper/modules';
 import styles from './sliderComponent.module.scss';
 
 export default function SwiperComponent({ children, length }: { children: React.ReactNode[]; length: number }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperRef>(null);
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   const handlePrev = () => swiperRef.current?.swiper?.slidePrev();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
+
   const handleNext = () => swiperRef.current?.swiper?.slideNext();
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  const handleButtonClick = (i) => swiperRef.current?.swiper?.slideToLoop(i);
+  const handleButtonClick = (i: number) => swiperRef.current?.swiper?.slideToLoop(i);
   return (
     <>
       <Swiper
@@ -50,7 +48,8 @@ export default function SwiperComponent({ children, length }: { children: React.
       >
         {Array.from({ length: length }).map((_, i) => (
           <SwiperSlide
-            className={i == activeIndex ? `${styles.slide} ${styles.active}` : styles.slide}
+            className={styles.slide}
+            data-selected={i == activeIndex}
             key={i}
           >
             {children[i]}
@@ -66,8 +65,9 @@ export default function SwiperComponent({ children, length }: { children: React.
         {Array.from({ length: length }).map((_, i) => (
           <button
             key={i}
-            className={i == activeIndex ? `${styles.dot} ${styles.active}` : styles.dot}
-            onClick={() => handleButtonClick(i) as void}
+            className={styles.dot}
+            data-selected={i == activeIndex}
+            onClick={() => handleButtonClick(i)}
           />
         ))}
         <ButtonRight

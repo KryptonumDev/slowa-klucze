@@ -1,12 +1,41 @@
 import styles from './faq.module.scss';
 import { type Props } from './faq.types';
-import FaqItem from './faqItem';
+import FaqItems from './faqItems';
 import Img from '@/components/ui/Img';
 import Markdown from '@/components/ui/Markdown';
 import Heading from '@/components/ui/heading/Heading';
 import CentralizedHeading from '@/components/ui/centralizedHeading/centralizedHeading';
 
 export default function Faq({ data: { centralizedHeading, description, faq, image, title, heading } }: Props) {
+  const arrow = <Arrow />;
+  const images = [] as React.ReactNode[];
+  const headings = [] as React.ReactNode[];
+  const descriptions = [] as React.ReactNode[];
+  faq.forEach(({ title, description, image }) => {
+    images.push(
+      <Img
+        className={styles.image}
+        data={image}
+      />
+    );
+
+    headings.push(
+      <Markdown.h3
+        className={styles.heading}
+      >
+        {title}
+      </Markdown.h3>
+    );
+
+    descriptions.push(
+      <Markdown
+        className={styles.description}
+      >
+        {description}
+      </Markdown>
+    );
+  });
+
   return (
     <section className={styles.faqWrapper}>
       <div className={`${styles.faq} maxWidth`}>
@@ -26,26 +55,13 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
             data={image}
           />
           <div className={styles.items}>
-            {faq.map(({ title, description, image }, i) => {
-              const arrow = <Arrow />;
-              const Image = (
-                <Img
-                  className={styles.image}
-                  data={image}
-                />
-              );
-
-              const Heading = <Markdown.h3 className={styles.heading}>{title}</Markdown.h3>;
-
-              const Description = <Markdown className={styles.description}>{description}</Markdown>;
-
-              return (
-                <FaqItem
-                  data={{ Image, Heading, Description, arrow, key: i }}
-                  key={i}
-                />
-              );
-            })}
+            <FaqItems
+              images={images}
+              headings={headings}
+              descriptions={descriptions}
+              arrow={arrow}
+              length={faq.length}
+            ></FaqItems>
           </div>
         </div>
         <CentralizedHeading data={centralizedHeading} />
