@@ -84,7 +84,7 @@ export default function Calendar({
 
   const handleInteractionStart = (event, elementRef) => {
     handleDragStart(event.pageX || event.touches[0].pageX, elementRef);
-  };
+};
 
   const handleInteractionMove = (event, elementRef) => {
     handleDragMove(event.pageX || event.touches[0].pageX, elementRef);

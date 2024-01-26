@@ -1,23 +1,40 @@
-'use client';
-
-import { useState } from 'react';
 import styles from './faq.module.scss';
 import { type Props } from './faq.types';
+import FaqItems from './faqItems';
 import Img from '@/components/ui/Img';
 import Markdown from '@/components/ui/Markdown';
 import Heading from '@/components/ui/heading/Heading';
 import CentralizedHeading from '@/components/ui/centralizedHeading/centralizedHeading';
 
 export default function Faq({ data: { centralizedHeading, description, faq, image, title, heading } }: Props) {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const arrow = <Arrow />;
+  const images = [] as React.ReactNode[];
+  const headings = [] as React.ReactNode[];
+  const descriptions = [] as React.ReactNode[];
+  faq.forEach(({ title, description, image }) => {
+    images.push(
+      <Img
+        className={styles.image}
+        data={image}
+      />
+    );
 
-  const handleButtonClick = (i: number) => {
-    if (i == activeIndex) {
-      setActiveIndex(-1);
-    } else {
-      setActiveIndex(i);
-    }
-  };
+    headings.push(
+      <Markdown.h3
+        className={styles.heading}
+      >
+        {title}
+      </Markdown.h3>
+    );
+
+    descriptions.push(
+      <Markdown
+        className={styles.description}
+      >
+        {description}
+      </Markdown>
+    );
+  });
 
   return (
     <section className={styles.faqWrapper}>
@@ -38,25 +55,13 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
             data={image}
           />
           <div className={styles.items}>
-            {faq.map(({ title, description, image }, i) => (
-              <div
-                className={i == activeIndex ? `${styles.item} ${styles.active}` : styles.item}
-                key={i}
-              >
-                <Img
-                  className={styles.image}
-                  data={image}
-                />
-                <Markdown.h3 className={styles.heading}>{title}</Markdown.h3>
-                <button
-                  className={styles.icon}
-                  onClick={() => handleButtonClick(i)}
-                >
-                  <Arrow />
-                </button>
-                <Markdown className={styles.description}>{description}</Markdown>
-              </div>
-            ))}
+            <FaqItems
+              images={images}
+              headings={headings}
+              descriptions={descriptions}
+              arrow={arrow}
+              length={faq.length}
+            ></FaqItems>
           </div>
         </div>
         <CentralizedHeading data={centralizedHeading} />

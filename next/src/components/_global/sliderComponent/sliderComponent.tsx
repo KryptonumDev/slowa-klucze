@@ -1,27 +1,11 @@
-'use client';
-
-import 'swiper/css';
-import { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y } from 'swiper/modules';
 import styles from './sliderComponent.module.scss';
 import { type Props } from './sliderComponent.types';
+import SwiperComponent from './swiperComponent';
 import Img from '@/components/ui/Img';
 import CentralizedHeading from '@/components/ui/centralizedHeading';
 import Markdown from '@/components/ui/Markdown';
 
 export default function SliderComponent({ data: { centralizedHeading, centralizedHeading2, slides } }: Props) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef(null);
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-  const handlePrev = () => swiperRef.current?.swiper?.slidePrev();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-  const handleNext = () => swiperRef.current?.swiper?.slideNext();
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  const handleButtonClick = (i) => swiperRef.current?.swiper?.slideToLoop(i);
-
   return (
     <section className={styles.sliderComponent}>
       <QuotaDecoration />
@@ -30,37 +14,10 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
         backgroundColor={'var(--background)'}
         className={`${styles.centralizedHeading} maxWidth`}
       />
-      <Swiper
-        ref={swiperRef}
-        spaceBetween={50}
-        slidesPerView={1.5}
-        modules={[A11y]}
-        className={styles.slider}
-        loop={true}
-        centeredSlides={true}
-        onSlideChange={(slider) => setActiveIndex(slider.realIndex)}
-        breakpoints={{
-          0: {
-            spaceBetween: 16,
-            slidesPerView: 1.15,
-          },
-          599: {
-            spaceBetween: 16,
-            slidesPerView: 1.1,
-          },
-          1349: {
-            spaceBetween: 50,
-            slidesPerView: 1.5,
-          },
-          1600: {
-            spaceBetween: 50,
-            slidesPerView: 2.0,
-          },
-        }}
-      >
+      <SwiperComponent length={slides.length}>
         {slides.map(({ description, heading, icon, rating, url }, i) => (
-          <SwiperSlide
-            className={i == activeIndex ? `${styles.slide} ${styles.active}` : styles.slide}
+          <div
+            className={styles.sliderWrapper}
             key={i}
           >
             <div className={styles.info}>
@@ -77,28 +34,10 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
               ))}
             </div>
             <Markdown className={styles.description}>{description}</Markdown>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
-      <div className={styles.controls}>
-        <ButtonLeft
-          onClick={() => {
-            handlePrev();
-          }}
-        />
-        {Array.from({ length: slides.length }).map((_, i) => (
-          <button
-            key={i}
-            className={i == activeIndex ? `${styles.dot} ${styles.active}` : styles.dot}
-            onClick={() => handleButtonClick(i) as void}
-          />
-        ))}
-        <ButtonRight
-          onClick={() => {
-            handleNext();
-          }}
-        />
-      </div>
+      </SwiperComponent>
+
       <CentralizedHeading
         data={centralizedHeading2}
         className={`maxWidth`}
@@ -139,49 +78,5 @@ function QuotaDecoration() {
         d='M7.115 0A7.108 7.108 0 000 7.123V77.34a7.1 7.1 0 007.115 7.123h50.074a41.78 41.78 0 01-17.624 24.588c-6.061 3.791-7.9 11.789-4.108 17.86 3.79 6.073 11.781 7.909 17.838 4.114.137-.089.27-.178.403-.267 18.053-11.778 29.34-31.441 30.593-52.774 0-.226.059-.422.059-.644v-.189c.074-1.436.085-2.884.06-4.346 0-.378-.023-.763-.06-1.14V7.125A7.107 7.107 0 0077.24.003L7.114 0zm98.577 0a7.104 7.104 0 00-7.11 7.123V77.34a7.098 7.098 0 007.11 7.123h50.074a41.785 41.785 0 01-17.621 24.588c-6.065 3.791-7.902 11.789-4.108 17.86 3.786 6.073 11.777 7.909 17.831 4.114.141-.089.274-.178.404-.267 18.056-11.778 29.34-31.441 30.597-52.774 0-.226.064-.422.064-.644v-.189c.066-1.436.081-2.884.055-4.346 0-.378-.023-.763-.055-1.14V7.125a7.113 7.113 0 00-7.115-7.123L105.692 0z'
       ></path>
     </svg>
-  );
-}
-
-function ButtonLeft({ ...props }) {
-  return (
-    <button {...props}>
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='20'
-        height='19'
-        fill='none'
-        viewBox='0 0 20 19'
-      >
-        <path
-          stroke='#060606'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          d='M19 9.5H1m0 0l7.714 8M1 9.5l7.714-8'
-        ></path>
-      </svg>
-    </button>
-  );
-}
-
-function ButtonRight({ ...props }) {
-  return (
-    <button {...props}>
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='20'
-        height='19'
-        fill='none'
-        viewBox='0 0 20 19'
-      >
-        <path
-          stroke='#060606'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          d='M1 9.5h18m0 0l-7.714-8M19 9.5l-7.714 8'
-        ></path>
-      </svg>
-    </button>
   );
 }

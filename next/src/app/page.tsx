@@ -60,7 +60,7 @@ export default async function IndexPage() {
 
 async function getData() {
   const { page } = await sanityFetch<homepage>({
-    query: /* groq */ `{
+    query: /* groq */`{
       "page": *[_id=="IndexPage"][0]{
         hero_Cta {
           theme,
