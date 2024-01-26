@@ -1,8 +1,8 @@
-import removeMarkdown from "../../utils/RemoveMarkdown"
+import removeMarkdown from '../../utils/RemoveMarkdown'
 
 export default {
   name: 'imageTitleDescription',
-  title: 'ImageTitleDescription',
+  title: 'Zdjęcie, tytuł i opis',
   type: 'object',
   fields: [
     {
