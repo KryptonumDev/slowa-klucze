@@ -9,7 +9,7 @@ export default function NewsletterSection({ data: { description, formCta, headin
   const JsxDescription = <Markdown className={styles.description}>{description}</Markdown>;
 
   return (
-    <section className={`${styles.newsletterSection} maxWidth`}>
+    <section className={`${styles.newsletterSection}`}>
       <div className={styles.content}>
         <header>
           <Heading

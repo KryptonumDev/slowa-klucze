@@ -9,6 +9,14 @@
     display: grid;
     row-gap: 50px;
 
+    .centralizedHeading {
+      >h2 {
+        &:before {
+          background: var(--light-background);
+        }
+      }
+    }
+
     .process {
       display: grid;
       row-gap: 32px;

@@ -19,30 +19,18 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
       />
     );
 
-    headings.push(
-      <Markdown.h3
-        className={styles.heading}
-      >
-        {title}
-      </Markdown.h3>
-    );
+    headings.push(<Markdown.h3 className={styles.heading}>{title}</Markdown.h3>);
 
-    descriptions.push(
-      <Markdown
-        className={styles.description}
-      >
-        {description}
-      </Markdown>
-    );
+    descriptions.push(<Markdown className={styles.description}>{description}</Markdown>);
   });
 
   return (
-    <section className={styles.faqWrapper}>
-      <div className={`${styles.faq} maxWidth`}>
+    <section className={`${styles.faqWrapper} fullWidthBackground`}>
+      <div className={`${styles.faq}`}>
         <header>
           <Heading
             type='h2'
-            backgroundColor={'var(--background)'}
+            className={styles.heading}
           >
             {heading}
           </Heading>
@@ -77,21 +65,11 @@ function Arrow({ ...props }) {
       width='45'
       height='45'
       fill='none'
-      viewBox='0 0 45 45'
       {...props}
     >
       <path
         stroke='#163C3E'
-        strokeLinecap='round'
-        strokeWidth='2'
-        d='M39.991 18.706a17.813 17.813 0 01-.448 9.251c-3.014 9.413-13.088 14.6-22.5 11.586-9.413-3.014-14.6-13.088-11.586-22.5 3.014-9.413 13.088-14.6 22.5-11.586a17.813 17.813 0 017.792 5.01'
-      ></path>
-      <path
-        stroke='#163C3E'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        strokeWidth='2'
-        d='M22.5 14.316V30.42m0 0l7.158-6.902M22.5 30.422l-7.158-6.903'
+        d='M39.991 18.706a17.813 17.813 0 01-.448 9.251c-3.014 9.413-13.088 14.6-22.5 11.586-9.413-3.014-14.6-13.088-11.586-22.5 3.014-9.413 13.088-14.6 22.5-11.586a17.813 17.813 0 017.792 5.01M22.5 14.316V30.42m0 0l7.158-6.902M22.5 30.422l-7.158-6.903'
       ></path>
     </svg>
   );

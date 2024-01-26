@@ -6,7 +6,7 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function SmallTilesComponent({ data: { centralizedHeading, list } }: { data: Tiles }) {
   return (
-    <section className={`${styles.smallTilesComponent} maxWidth`}>
+    <section className={`${styles.smallTilesComponent}`}>
       <CentralizedHeading data={centralizedHeading} />
       <div className={styles.items}>
         {list.map(({ title, description, image }, i) => (

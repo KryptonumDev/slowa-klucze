@@ -86,6 +86,7 @@ body {
   font-size: 16px;
   font-family: 'Kanit', sans-serif;
   display: grid;
+  overflow-x: hidden;
 }
 
 main,
@@ -93,14 +94,26 @@ main,
   display: grid;
   --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
   grid-template-columns: 1fr;
-
-
-}
-
-.maxWidth {
   max-width: 1280px;
   width: calc(100% - var(--pageMargin)*2);
   margin: 0 auto;
+}
+
+
+.fullWidthBackground {
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100dvw;
+    height: 100%;
+    background-color: inherit;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -1;
+  }
 }
 
 main {

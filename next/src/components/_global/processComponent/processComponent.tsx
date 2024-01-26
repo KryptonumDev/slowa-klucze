@@ -7,10 +7,10 @@ import Markdown from '@/components/ui/Markdown';
 export default function ProcessComponent({ data: { centralizedHeading, proceses } }: { data: Process }) {
   return (
     <section className={styles.processComponent}>
-      <div className={` ${styles.componentWrapper} maxWidth`}>
+      <div className={` ${styles.componentWrapper}`}>
         <CentralizedHeading
           data={centralizedHeading}
-          backgroundColor='var(--light-background)'
+          className={styles.centralizedHeading}
         />
         <div className={styles.process}>
           {proceses.map(({ description, image, title }, i) => (

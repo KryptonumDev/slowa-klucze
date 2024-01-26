@@ -13,6 +13,12 @@
       grid-row-gap: 14px;
       padding: 75px 0px;
 
+      .heading {
+        &:before {
+          background: var(--background);
+        }
+      }
+
       .subheading {
         margin-bottom: 20px;
       }

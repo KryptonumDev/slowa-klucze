@@ -19,9 +19,4 @@
     height: 2px;
     background: var(--neutral-100);
   }
-  &.background {
-    &:before {
-      background: var(--background-color);
-    }
-  }
 }

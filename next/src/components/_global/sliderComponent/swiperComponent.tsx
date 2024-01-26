@@ -88,13 +88,9 @@ function ButtonLeft({ ...props }) {
         width='20'
         height='19'
         fill='none'
-        viewBox='0 0 20 19'
       >
         <path
           stroke='#060606'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
           d='M19 9.5H1m0 0l7.714 8M1 9.5l7.714-8'
         ></path>
       </svg>
@@ -110,13 +106,9 @@ function ButtonRight({ ...props }) {
         width='20'
         height='19'
         fill='none'
-        viewBox='0 0 20 19'
       >
         <path
           stroke='#060606'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
           d='M1 9.5h18m0 0l-7.714-8M19 9.5l-7.714 8'
         ></path>
       </svg>

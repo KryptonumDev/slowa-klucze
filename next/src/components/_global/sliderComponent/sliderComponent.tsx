@@ -7,41 +7,36 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function SliderComponent({ data: { centralizedHeading, centralizedHeading2, slides } }: Props) {
   return (
-    <section className={styles.sliderComponent}>
-      <QuotaDecoration />
-      <CentralizedHeading
-        data={centralizedHeading}
-        backgroundColor={'var(--background)'}
-        className={`${styles.centralizedHeading} maxWidth`}
-      />
-      <SwiperComponent length={slides.length}>
-        {slides.map(({ description, heading, icon, rating, url }, i) => (
-          <div
-            className={styles.sliderWrapper}
-            key={i}
-          >
-            <div className={styles.info}>
-              <Img
-                className={styles.img}
-                data={icon}
-              />
-              <Markdown className={styles.heading}>{heading}</Markdown>
-              <Markdown className={styles.url}>{url}</Markdown>
+    <section className={`${styles.sliderComponent}`}>
+        <QuotaDecoration />
+        <CentralizedHeading
+          data={centralizedHeading}
+          className={`${styles.centralizedHeading}`}
+        />
+        <SwiperComponent length={slides.length}>
+          {slides.map(({ description, heading, icon, rating, url }, i) => (
+            <div
+              className={styles.sliderWrapper}
+              key={i}
+            >
+              <div className={styles.info}>
+                <Img
+                  className={styles.img}
+                  data={icon}
+                />
+                <Markdown className={styles.heading}>{heading}</Markdown>
+                <Markdown className={styles.url}>{url}</Markdown>
+              </div>
+              <div className={styles.rating}>
+                {Array.from({ length: rating }).map((_, i) => (
+                  <Rating key={i} />
+                ))}
+              </div>
+              <Markdown className={styles.description}>{description}</Markdown>
             </div>
-            <div className={styles.rating}>
-              {Array.from({ length: rating }).map((_, i) => (
-                <Rating key={i} />
-              ))}
-            </div>
-            <Markdown className={styles.description}>{description}</Markdown>
-          </div>
-        ))}
-      </SwiperComponent>
-
-      <CentralizedHeading
-        data={centralizedHeading2}
-        className={`maxWidth`}
-      />
+          ))}
+        </SwiperComponent>
+        <CentralizedHeading data={centralizedHeading2} />
     </section>
   );
 }
@@ -53,7 +48,6 @@ function Rating() {
       width='28'
       height='28'
       fill='none'
-      viewBox='0 0 28 28'
     >
       <path
         fill='#2D7C80'
@@ -70,12 +64,11 @@ function QuotaDecoration() {
       width='183'
       height='133'
       fill='none'
-      viewBox='0 0 183 133'
       className={styles.quotaDecoration}
     >
       <path
         fill='#DCDCDC'
-        d='M7.115 0A7.108 7.108 0 000 7.123V77.34a7.1 7.1 0 007.115 7.123h50.074a41.78 41.78 0 01-17.624 24.588c-6.061 3.791-7.9 11.789-4.108 17.86 3.79 6.073 11.781 7.909 17.838 4.114.137-.089.27-.178.403-.267 18.053-11.778 29.34-31.441 30.593-52.774 0-.226.059-.422.059-.644v-.189c.074-1.436.085-2.884.06-4.346 0-.378-.023-.763-.06-1.14V7.125A7.107 7.107 0 0077.24.003L7.114 0zm98.577 0a7.104 7.104 0 00-7.11 7.123V77.34a7.098 7.098 0 007.11 7.123h50.074a41.785 41.785 0 01-17.621 24.588c-6.065 3.791-7.902 11.789-4.108 17.86 3.786 6.073 11.777 7.909 17.831 4.114.141-.089.274-.178.404-.267 18.056-11.778 29.34-31.441 30.597-52.774 0-.226.064-.422.064-.644v-.189c.066-1.436.081-2.884.055-4.346 0-.378-.023-.763-.055-1.14V7.125a7.113 7.113 0 00-7.115-7.123L105.692 0z'
+        d='M7.115 0A7.108 7.108 0 000 7.123V77.34a7.1 7.1 0 007.115 7.123h50.074a41.78 41.78 0 01-17.624 24.588c-6.061 3.791-7.9 11.789-4.108 17.86 3.79 6.073 11.781 7.909 17.838 4.114.137-.089.27-.178.403-.267 18.053-11.778 29.34-31.441 30.593-52.774 0-.226.059-.422.059-.644v-.189a63.4 63.4 0 00.06-4.346c0-.378-.023-.763-.06-1.14V7.125A7.107 7.107 0 0077.24.003L7.114 0zm98.577 0a7.104 7.104 0 00-7.11 7.123V77.34a7.098 7.098 0 007.11 7.123h50.074a41.785 41.785 0 01-17.621 24.588c-6.065 3.791-7.902 11.789-4.108 17.86 3.786 6.073 11.777 7.909 17.831 4.114.141-.089.274-.178.404-.267 18.056-11.778 29.34-31.441 30.597-52.774 0-.226.064-.422.064-.644v-.189c.066-1.436.081-2.884.055-4.346 0-.378-.023-.763-.055-1.14V7.125a7.113 7.113 0 00-7.115-7.123L105.692 0z'
       ></path>
     </svg>
   );

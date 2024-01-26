@@ -7,7 +7,7 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function ContactFormSection({ data: { formCta, heading, image, subheading } }: Props) {
   return (
-    <section className={`${styles.contactFormSection} maxWidth`}>
+    <section className={`${styles.contactFormSection}`}>
       <header>
         <Heading type='h2'>{heading}</Heading>
         <Markdown.h2>{subheading}</Markdown.h2>

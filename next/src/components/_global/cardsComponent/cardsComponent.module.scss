@@ -7,6 +7,14 @@
     display: grid;
     row-gap: 50px;
 
+    .centralizedHeading {
+      >h2 {
+        &:before {
+          background: var(--light-background);
+        }
+      }
+    }
+
     .cards {
       display: grid;
       grid-template-columns: 1fr 1fr;

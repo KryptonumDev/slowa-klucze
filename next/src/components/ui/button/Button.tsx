@@ -74,7 +74,6 @@ export const externalIcon = () => {
       width='22'
       height='22'
       fill='none'
-      viewBox='0 0 22 22'
     >
       <path
         stroke='#784B36'

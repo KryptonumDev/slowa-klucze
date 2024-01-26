@@ -227,6 +227,5 @@ async function getData() {
       }
     }`,
   });
-  console.log(page.content);
   return page;
 }
