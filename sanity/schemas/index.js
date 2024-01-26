@@ -2,8 +2,9 @@
 import global, {global_Seo} from './singleTypes/global'
 import IndexPage from './singleTypes/indexPage'
 import NotFoundPage from './singleTypes/NotFoundPage'
+import MyWorkPage from './singleTypes/myWorkPage'
 
-export const singleTypes = [IndexPage, NotFoundPage]
+export const singleTypes = [IndexPage, MyWorkPage, NotFoundPage]
 
 // Collection Types
 
@@ -30,6 +31,9 @@ import headingDescription from './components/headingDescription'
 import newsletter, {card} from './components/newsletter'
 import formCta from './components/formCta'
 import contactForm from './components/contactForm'
+import cards, { card_contents} from './components/cards'
+import tilesSmall from './components/tilesSmall'
+import process from './components/process'
 
 export const components = [
   footer,
@@ -53,6 +57,10 @@ export const components = [
   newsletter,
   formCta,
   contactForm,
+  cards,
+  card_contents,
+  process,
+  tilesSmall,
 ]
 
 export const schemaTypes = [

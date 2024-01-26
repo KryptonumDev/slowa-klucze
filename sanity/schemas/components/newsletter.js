@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'newsletter',
   title: 'Newsletter',
@@ -44,7 +46,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[Newsletter]- ${title}`,
+        title: `[Newsletter] - ${removeMarkdown(title)}`,
       }
     },
   },

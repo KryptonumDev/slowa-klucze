@@ -1,8 +1,8 @@
 import removeMarkdown from "../../utils/RemoveMarkdown"
 
 export default {
-  name: 'tiles',
-  title: 'Tiles',
+  name: 'tilesSmall',
+  title: '3 kafelki',
   type: 'object',
   fields: [
     {
@@ -12,7 +12,7 @@ export default {
     },
     {
       name: 'list',
-      title: 'Lista kafelków od lewego górnego rogu do prawego dolnego rogu',
+      title: 'Lista kafelków',
       type: 'array',
       of: [{type: 'imageTitleDescription'}],
     },
@@ -24,7 +24,7 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: `[Kafelki] - ${removeMarkdown(title)}`,
+        title: `[3 kafelki] - ${removeMarkdown(title)}`,
         subtitle: `${subtitle.length} items`,
       }
     },

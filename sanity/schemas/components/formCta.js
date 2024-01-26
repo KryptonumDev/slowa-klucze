@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: "formCta",
   title: "Form call to action ",
@@ -32,7 +34,7 @@ export default {
     prepare({ title, theme }) {
       return {
         title: title,
-        subtitle: `${theme}`,
+        subtitle: `${removeMarkdown(theme)}`,
       }
     }
   }

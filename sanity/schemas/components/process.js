@@ -1,8 +1,8 @@
 import removeMarkdown from "../../utils/RemoveMarkdown"
 
 export default {
-  name: 'tiles',
-  title: 'Tiles',
+  name: 'process',
+  title: 'Proces',
   type: 'object',
   fields: [
     {
@@ -11,8 +11,8 @@ export default {
       type: 'centralizedHeading',
     },
     {
-      name: 'list',
-      title: 'Lista kafelków od lewego górnego rogu do prawego dolnego rogu',
+      title: 'proces',
+      name: 'proceses',
       type: 'array',
       of: [{type: 'imageTitleDescription'}],
     },
@@ -20,12 +20,10 @@ export default {
   preview: {
     select: {
       title: 'centralizedHeading.title',
-      subtitle: 'list',
     },
-    prepare({title, subtitle}) {
+    prepare({title}) {
       return {
-        title: `[Kafelki] - ${removeMarkdown(title)}`,
-        subtitle: `${subtitle.length} items`,
+        title: `[Proces] - ${removeMarkdown(title)}`,
       }
     },
   },

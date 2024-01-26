@@ -1,0 +1,67 @@
+.smallTilesComponent {
+  display: grid;
+  gap: 50px;
+
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    padding-top: 75px;
+
+    .item {
+      display: grid;
+      background: var(--background);
+      border-radius: 16px;
+      padding: clamp(19px, calc(45vw/7.68), 45px) clamp(20px, calc(26vw/7.68), 33px);
+      gap: 7px;
+
+      .image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .description {
+        padding-top: 8px;
+      }
+
+      &:nth-child(2) {
+        transform: translateY(-75px);
+      }
+    }
+  }
+
+  @media(max-width:1199px) {
+    .items {
+      grid-template-columns: 1fr 1fr;
+      padding-top: unset;
+
+      .item {
+        &:nth-child(2) {
+          transform: unset;
+        }
+
+        &:nth-child(3) {
+          grid-column: span 2;
+          width: 50%;
+          justify-self: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width:499px) {
+    .items {
+      grid-template-columns: 1fr;
+
+      .item {
+        &:nth-child(3) {
+          grid-column: span 1;
+          width: 100%;
+          justify-self: center;
+        }
+      }
+    }
+  }
+}

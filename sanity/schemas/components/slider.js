@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'slider',
   title: 'Slider',
@@ -70,7 +72,7 @@ export const slides = {
     },
     prepare({title}) {
       return {
-        title: title,
+        title: removeMarkdown(title),
       }
     },
   },
