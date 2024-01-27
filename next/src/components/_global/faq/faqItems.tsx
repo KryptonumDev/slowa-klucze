@@ -18,7 +18,8 @@ export default function FaqItems({
 }) {
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  const handleButtonClick = (i: number) => {
+  const handleButtonClick = (event: React.MouseEvent<HTMLDetailsElement, MouseEvent>, i: number) => {
+    event.preventDefault();
     if (i == activeIndex) {
       setActiveIndex(-1);
     } else {
@@ -32,12 +33,10 @@ export default function FaqItems({
         <details
           key={i}
           className={styles.item}
-          data-selected={activeIndex == i}
+          open={activeIndex == i}
+          onClick={(event: React.MouseEvent<HTMLDetailsElement, MouseEvent>) => handleButtonClick(event, i)}
         >
-          <summary
-            className={styles.button}
-            onClick={() => handleButtonClick(i)}
-          >
+          <summary className={styles.button}>
             {images[i]}
 
             {headings[i]}
