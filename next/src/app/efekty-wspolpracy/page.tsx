@@ -4,6 +4,7 @@ import ContactFormSection from '@/components/_global/contactFormSection/contactF
 import Faq from '@/components/_global/faq/faq';
 import NewsletterSection from '@/components/_global/newsletterSection/newsletterSection';
 import SliderComponent from '@/components/_global/sliderComponent/sliderComponent';
+import SEO from '@/global/Seo';
 import { type AchievementsShowcase } from '@/types/_global/AchievementsSchowcase';
 import { type CaseStudies } from '@/types/_global/CaseStudies';
 import { type ContactForm } from '@/types/_global/ContactForm';
@@ -12,6 +13,15 @@ import { type Newsletter } from '@/types/_global/Newsletter';
 import { type Slider } from '@/types/_global/Slider';
 import type { CooperationEffectsPage, ContentItem } from '@/types/_pages/CooperationEffectsPage';
 import { sanityFetch } from '@/utils/sanity-client';
+
+export async function generateMetadata() {
+  const { seo } = await getMetadata();
+  return SEO({
+    title: seo?.title,
+    description: seo?.description,
+    url: '/efekty-wspolpracy',
+  });
+}
 
 export default async function cooperationEffectsPage() {
   const { content } = await getData();
@@ -62,6 +72,24 @@ export default async function cooperationEffectsPage() {
       })}
     </>
   );
+}
+
+async function getMetadata() {
+  const { page } = await sanityFetch<CooperationEffectsPage>({
+    query: /* groq */ `{
+      "page": *[_id=="CooperationEffectsPage"][0] {
+      seo {
+       ...,
+       og_Img {
+         asset -> {
+           url
+         }
+       }
+     }
+   }
+    }`,
+  });
+  return page;
 }
 
 async function getData() {
