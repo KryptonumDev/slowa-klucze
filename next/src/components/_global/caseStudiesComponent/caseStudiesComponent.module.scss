@@ -1,18 +1,18 @@
 .caseStudiesComponent {
   display: grid;
-  gap: clamp(50px, calc(30vw/7.68), 50px);
+  gap: clamp(30px, calc(30vw/7.68), 50px);
 
   header {
     display: grid;
     gap: 14px;
-    max-width: 689px;
+    max-width: calc(689rem/16);
 
     .description {
       padding-top: clamp(6px, calc(6vw/7.68), 20px);
     }
 
     .subheading {
-      max-width: 492px;
+      max-width: calc(492rem/16);
     }
   }
 
@@ -30,7 +30,7 @@
         grid-template-columns: 1fr 1fr;
 
         .heading {
-          max-width: 492px;
+          max-width: calc(492rem/16);
         }
 
         .items {
@@ -152,6 +152,8 @@
   }
 
   @media (max-width: 599px) {
+    gap: 50px;
+
     .items {
       .item {
         .content {

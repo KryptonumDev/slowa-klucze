@@ -28,7 +28,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[Przedstawienie zdonlości] - ${removeMarkdown(title)}`,
+        title: `[Przedstawienie zdolności] - ${removeMarkdown(title)}`,
       }
     },
   },
