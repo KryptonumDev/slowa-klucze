@@ -6,7 +6,7 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function CardsComponent({ data: { centralizedHeading, cards } }: { data: Cards }) {
   return (
-    <section className={styles.cardsComponent}>
+    <section className={`${styles.cardsComponent} fullWidthBackground`}>
       <div className={` ${styles.componentWrapper}`}>
         <CentralizedHeading
           data={centralizedHeading}

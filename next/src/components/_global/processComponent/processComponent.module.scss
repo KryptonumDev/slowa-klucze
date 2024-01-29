@@ -3,7 +3,6 @@
   background: var(--light-background);
   padding: 75px 0px;
   counter-reset: item;
-  overflow: hidden;
 
   .componentWrapper {
     display: grid;
@@ -51,7 +50,6 @@
         }
 
         .item {
-          grid-area: arrow;
           padding: 25px;
           display: grid;
           grid-template-columns: 1fr 2.3fr 1fr;
@@ -104,7 +102,15 @@
     }
   }
 
+  @media (max-width: 1199px) {
+    width: calc(100% + 2*var(--pageMargin));
+    margin: 0 calc(-1*var(--pageMargin));
+    overflow: hidden;
+  }
+
   @media(max-width: 821px) {
+    width: unset;
+    margin: unset;
     overflow: unset;
 
     .componentWrapper {

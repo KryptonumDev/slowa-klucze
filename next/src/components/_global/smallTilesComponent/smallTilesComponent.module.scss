@@ -8,22 +8,29 @@
     gap: 24px;
     padding-top: 75px;
 
-    .item {
+    .itemWrapper {
       display: grid;
       background: var(--background);
       border-radius: 16px;
       padding: clamp(19px, calc(45vw/7.68), 45px) clamp(20px, calc(26vw/7.68), 33px);
-      gap: 7px;
 
-      .image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 16px;
-      }
+      .item {
+        display: grid;
+        gap: 7px;
+        align-self: flex-start;
 
-      .description {
-        padding-top: 8px;
+        .image {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 16px;
+        }
+
+        .title {
+          padding-top: 8px;
+          display: grid;
+          align-self: flex-start;
+        }
       }
 
       &:nth-child(2) {
@@ -37,7 +44,7 @@
       grid-template-columns: 1fr 1fr;
       padding-top: unset;
 
-      .item {
+      .itemWrapper {
         &:nth-child(2) {
           transform: unset;
         }
@@ -55,7 +62,7 @@
     .items {
       grid-template-columns: 1fr;
 
-      .item {
+      .itemWrapper {
         &:nth-child(3) {
           grid-column: span 1;
           width: 100%;
