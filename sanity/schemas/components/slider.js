@@ -28,7 +28,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `[Karuzela] ${title}`,
+        title: `[Karuzela] - ${title}`,
       }
     },
   },

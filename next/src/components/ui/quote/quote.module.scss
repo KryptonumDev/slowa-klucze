@@ -1,0 +1,27 @@
+.quote {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  max-width: 786px;
+  gap: 30px;
+
+  .heading {
+    text-align: center;
+
+    >h2 {
+      font-size: clamp(calc(32rem/16), calc(32vw/7.68), calc(48rem/16));
+    }
+  }
+
+  .quote {
+    padding: clamp(30px, calc(35vw/7.68), 35px);
+    border-radius: 16px;
+    border: 1px solid var(--quoteBorder);
+    background: var(--background);
+
+    >p {
+      font-weight: 400;
+    }
+  }
+
+}

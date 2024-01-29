@@ -22,8 +22,8 @@ export default {
       type: 'markdown',
     },
     {
-      title: 'Opis projektu',
-      name: 'projectDescription',
+      title: 'Zawartość projektu',
+      name: 'projectContent',
       type: 'array',
       of: [{type: 'imageTitleDescription'}],
     },
