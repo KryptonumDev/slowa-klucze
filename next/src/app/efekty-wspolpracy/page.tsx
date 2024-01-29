@@ -1,8 +1,10 @@
+import AchievementShowcaseComponent from '@/components/_global/achievementShowcaseComponent';
 import CaseStudiesComponent from '@/components/_global/caseStudiesComponent/caseStudiesComponent';
 import ContactFormSection from '@/components/_global/contactFormSection/contactFormSection';
 import Faq from '@/components/_global/faq/faq';
 import NewsletterSection from '@/components/_global/newsletterSection/newsletterSection';
 import SliderComponent from '@/components/_global/sliderComponent/sliderComponent';
+import { type AchievementsShowcase } from '@/types/_global/AchievementsSchowcase';
 import { type CaseStudies } from '@/types/_global/CaseStudies';
 import { type ContactForm } from '@/types/_global/ContactForm';
 import { type FAQ } from '@/types/_global/FAQ';
@@ -42,6 +44,12 @@ export default async function cooperationEffectsPage() {
     caseStudies: (
       <CaseStudiesComponent
         data={component as CaseStudies}
+        key={i}
+      />
+    ),
+    achievementsShowcase: (
+      <AchievementShowcaseComponent
+        data={component as AchievementsShowcase}
         key={i}
       />
     ),
@@ -100,7 +108,7 @@ async function getData() {
                   }
                 }
               },
-              title,
+              number,
               description
             },
             slides[] {

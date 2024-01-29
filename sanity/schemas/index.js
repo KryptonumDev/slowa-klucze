@@ -40,8 +40,10 @@ import project from './components/project'
 import imageDescription from './components/imageDescription'
 import quote from './components/quote'
 import achievementsShowcase from './components/AchievementsShowcase'
+import imageNumberDescription from './components/imageNumberDescription'
 
 export const components = [
+  imageNumberDescription,
   achievementsShowcase,
   quote,
   imageDescription,

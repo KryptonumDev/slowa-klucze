@@ -14,7 +14,7 @@ export default {
       title: 'Kafelek',
       name: 'tiles',
       type: 'array',
-      of: [{type: 'imageTitleDescription'}],
+      of: [{type: 'imageNumberDescription'}],
     },
     {
       title: 'Drugi wyśrodkowany nagłówek',

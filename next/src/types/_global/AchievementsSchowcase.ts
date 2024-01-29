@@ -1,9 +1,9 @@
 import { type CentralizedHeading } from './CentralizedHeading';
-import { type ImageTitleDescription } from './ImageTitleDescription';
+import { type ImageNumberDescription } from './ImageNumberDescription';
 
 export interface AchievementsShowcase {
   _type?: string;
   centralizedHeading: CentralizedHeading;
-  tiles: ImageTitleDescription[];
+  tiles: ImageNumberDescription[];
   centralizedHeading2: CentralizedHeading;
 }
