@@ -4,6 +4,7 @@ import Faq from '@/components/_global/faq';
 import NewsletterSection from '@/components/_global/newsletterSection';
 import NumberedCardsSection from '@/components/_global/numberedCardsSection/numberedCardsSection';
 import TestimonialComponent from '@/components/_global/testimonialComponent/testimonialComponent';
+import SEO from '@/global/Seo';
 import { type ContactForm } from '@/types/_global/ContactForm';
 import { type FAQ } from '@/types/_global/FAQ';
 import { type Newsletter } from '@/types/_global/Newsletter';
@@ -11,6 +12,15 @@ import { type NumberedCards } from '@/types/_global/NumberedCards';
 import { type Testimonial } from '@/types/_global/Testimonial';
 import { type ContentItem, type AboutMePage } from '@/types/_pages/AboutMePage';
 import { sanityFetch } from '@/utils/sanity-client';
+
+export async function generateMetadata() {
+  const { seo } = await getMetadata();
+  return SEO({
+    title: seo?.title,
+    description: seo?.description,
+    url: '/o-mnie',
+  });
+}
 
 export default async function aboutMePage() {
   const {
@@ -73,6 +83,24 @@ export default async function aboutMePage() {
       })}
     </>
   );
+}
+
+async function getMetadata() {
+  const { page } = await sanityFetch<AboutMePage>({
+    query: /* groq */ `{
+      "page": *[_id=="AboutMePage"][0] {
+      seo {
+       ...,
+       og_Img {
+         asset -> {
+           url
+         }
+       }
+     }
+   }
+    }`,
+  });
+  return page;
 }
 
 async function getData() {
