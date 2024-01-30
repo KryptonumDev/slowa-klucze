@@ -8,6 +8,11 @@
 
   >p {
     color: var(--coffee-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 170%;
+    align-self: center;
+    justify-self: center;
   }
 
   &:before {

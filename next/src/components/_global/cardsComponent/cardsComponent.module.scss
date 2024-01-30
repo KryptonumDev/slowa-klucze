@@ -58,9 +58,11 @@
           gap: 8px;
 
           .plusIcon {
-            display: block;
-            height: clamp(24px, calc(24vw/7.68), 32px);
-            width: clamp(24px, calc(24vw/7.68), 32px);
+            >svg {
+              display: block;
+              height: clamp(24px, calc(24vw/7.68), 32px);
+              width: clamp(24px, calc(24vw/7.68), 32px);
+            }
           }
         }
       }

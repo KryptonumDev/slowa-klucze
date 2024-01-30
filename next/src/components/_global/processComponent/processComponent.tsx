@@ -6,7 +6,7 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function ProcessComponent({ data: { centralizedHeading, proceses } }: { data: Process }) {
   return (
-    <section className={styles.processComponent}>
+    <section className={`${styles.processComponent} fullWidthBackground`}>
       <div className={` ${styles.componentWrapper}`}>
         <CentralizedHeading
           data={centralizedHeading}

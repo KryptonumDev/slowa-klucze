@@ -11,15 +11,17 @@ export default function SmallTilesComponent({ data: { centralizedHeading, list }
       <div className={styles.items}>
         {list.map(({ title, description, image }, i) => (
           <div
-            className={styles.item}
+            className={styles.itemWrapper}
             key={i}
           >
-            <Img
-              data={image}
-              className={styles.image}
-            />
-            <Markdown.h3 className={styles.title}>{title}</Markdown.h3>
-            <Markdown className={styles.description}>{description}</Markdown>
+            <div className={styles.item}>
+              <Img
+                data={image}
+                className={styles.image}
+              />
+              <Markdown.h3 className={styles.title}>{title}</Markdown.h3>
+              <Markdown className={styles.description}>{description}</Markdown>
+            </div>
           </div>
         ))}
       </div>

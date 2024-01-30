@@ -74,10 +74,20 @@ export const externalIcon = () => {
       width='22'
       height='22'
       fill='none'
+      viewBox='0 0 22 22'
     >
       <path
         stroke='#784B36'
-        d='M12 10l9-9m0 0h-5.344M21 1v5.344M1 11c0-4.714 0-7.071 1.464-8.536C3.93 1 6.286 1 11 1m10 10c0 4.714 0 7.071-1.465 8.535C18.072 21 15.714 21 11 21s-7.071 0-8.536-1.465c-.973-.973-1.3-2.342-1.409-4.535'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
+        d='M12 10l9-9m0 0h-5.344M21 1v5.344'
+      ></path>
+      <path
+        stroke='#784B36'
+        strokeLinecap='round'
+        strokeWidth='2'
+        d='M1 11c0-4.714 0-7.071 1.464-8.536C3.93 1 6.286 1 11 1m10 10c0 4.714 0 7.071-1.465 8.535C18.072 21 15.714 21 11 21s-7.071 0-8.536-1.465c-.973-.973-1.3-2.342-1.409-4.535'
       ></path>
     </svg>
   );
