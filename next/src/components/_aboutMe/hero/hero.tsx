@@ -8,7 +8,7 @@ export default function Hero({
   data: {
     hero_Heading,
     hero_Subheading,
-    hero_ImageTitleDescription,
+    hero_ImageTitleSubtitleDescription,
     hero_ImageDescription,
     hero_centralizedIconTitleDescription,
     hero_Image,
@@ -19,27 +19,22 @@ export default function Hero({
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <div>
-          <header>
-            <Heading
-              type='h1'
-              className={styles.heading}
-            >
-              {hero_Heading}
-            </Heading>
-            <Markdown.h2 className={styles.subheading}>{hero_Subheading}</Markdown.h2>
-          </header>
-          <div className={styles.imageTitleDescription}>
-            <Img
-              className={styles.icon}
-              data={hero_ImageTitleDescription.image}
-            />
-            <div>
-              <Markdown.h3 className={styles.title}>{hero_ImageTitleDescription.title}</Markdown.h3>
-              <Markdown className={styles.description}>{hero_ImageTitleDescription.description}</Markdown>
-            </div>
-          </div>
-        </div>
+        <header>
+          <Heading
+            type='h1'
+            className={styles.heading}
+          >
+            {hero_Heading}
+          </Heading>
+          <Markdown.h2 className={styles.subheading}>{hero_Subheading}</Markdown.h2>
+        </header>
+        <Img
+          className={styles.icon}
+          data={hero_ImageTitleSubtitleDescription.image}
+        />
+        <Markdown.h3 className={styles.title}>{hero_ImageTitleSubtitleDescription.title}</Markdown.h3>
+        <Markdown className={styles.subtitle}>{hero_ImageTitleSubtitleDescription.subtitle}</Markdown>
+        <Markdown className={styles.description}>{hero_ImageTitleSubtitleDescription.description}</Markdown>
         <Img
           className={styles.image}
           data={hero_Image}

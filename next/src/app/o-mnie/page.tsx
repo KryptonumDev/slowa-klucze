@@ -26,7 +26,7 @@ export default async function aboutMePage() {
   const {
     hero_Heading,
     hero_Subheading,
-    hero_ImageTitleDescription,
+    hero_ImageTitleSubtitleDescription,
     hero_ImageDescription,
     hero_centralizedIconTitleDescription,
     hero_Image,
@@ -72,7 +72,7 @@ export default async function aboutMePage() {
         data={{
           hero_Heading,
           hero_Subheading,
-          hero_ImageTitleDescription,
+          hero_ImageTitleSubtitleDescription,
           hero_ImageDescription,
           hero_centralizedIconTitleDescription,
           hero_Image,
@@ -109,7 +109,7 @@ async function getData() {
       "page": *[_id == "AboutMePage"][0] {
         hero_Heading,
         hero_Subheading,
-        hero_ImageTitleDescription {
+        hero_ImageTitleSubtitleDescription {
           image {
             asset -> {
               altText,
@@ -124,7 +124,8 @@ async function getData() {
             }
           },
           description,
-          title
+          title,
+          subtitle
         },
         hero_ImageDescription {
           image {
