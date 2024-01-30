@@ -1,7 +1,5 @@
 import styles from './hero.module.scss';
-import { type ImageTitleDescription } from '@/types/_global/ImageTitleDescription';
-import { type ImageDescription } from '@/types/_global/ImageDescription';
-import { type Image } from '@/types/_global/Image';
+import { type Props } from './hero.types';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
@@ -16,14 +14,7 @@ export default function Hero({
     hero_Image,
   },
 }: {
-  data: {
-    hero_Heading: string;
-    hero_Subheading: string;
-    hero_ImageTitleDescription: ImageTitleDescription;
-    hero_ImageDescription: ImageDescription;
-    hero_centralizedIconTitleDescription: ImageTitleDescription;
-    hero_Image: Image;
-  };
+  data: Props;
 }) {
   return (
     <section className={styles.hero}>
