@@ -4,8 +4,15 @@ import IndexPage from './singleTypes/indexPage'
 import NotFoundPage from './singleTypes/NotFoundPage'
 import MyWorkPage from './singleTypes/myWorkPage'
 import CooperationEffectsPage from './singleTypes/cooperationEffectsPage'
+import AboutMePage from './singleTypes/aboutMePage'
 
-export const singleTypes = [IndexPage, MyWorkPage, NotFoundPage, CooperationEffectsPage]
+export const singleTypes = [
+  IndexPage,
+  MyWorkPage,
+  NotFoundPage,
+  CooperationEffectsPage,
+  AboutMePage,
+]
 
 // Collection Types
 
@@ -41,6 +48,8 @@ import imageDescription from './components/imageDescription'
 import quote from './components/quote'
 import achievementsShowcase from './components/AchievementsShowcase'
 import imageNumberDescription from './components/imageNumberDescription'
+import testimonial from './components/testimonial'
+import numberedCards from './components/numberedCards'
 
 export const components = [
   imageNumberDescription,
@@ -74,6 +83,8 @@ export const components = [
   card_contents,
   process,
   tilesSmall,
+  testimonial,
+  numberedCards,
 ]
 
 export const schemaTypes = [

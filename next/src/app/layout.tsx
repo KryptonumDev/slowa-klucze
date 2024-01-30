@@ -131,7 +131,7 @@ async function getData() {
   return page;
 }
 
-function facebookIcon() {
+export function facebookIcon() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -154,7 +154,7 @@ function facebookIcon() {
   );
 }
 
-function linkedinIcon() {
+export function linkedinIcon() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -188,7 +188,7 @@ function linkedinIcon() {
   );
 }
 
-function instagramIcon() {
+export function instagramIcon() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
