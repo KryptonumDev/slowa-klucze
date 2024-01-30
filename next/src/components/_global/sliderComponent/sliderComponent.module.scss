@@ -129,32 +129,31 @@
 
   .quotaDecoration {
     position: absolute;
-    right: 171px;
+    right: clamp(14px, calc(86vw/7.68), 171px);
     top: 232px;
   }
-}
 
-@media (max-width: 1349px) {
-  .quotaDecoration {
-    right: -126.5px;
-    bottom: -15px;
-  }
-}
-
-@media (max-width: 599px) {
-  .quotaDecoration {
-    right: 14px;
-    top: 220px;
+  @media (max-width: 1349px) {
+    .quotaDecoration {
+      bottom: -15px;
+    }
   }
 
-  .slider {
-    .slide {
-      .sliderWrapper {
-        grid-template-columns: 1fr;
-        grid-template-areas: "info" "rating" "description";
+  @media (max-width: 599px) {
+    .quotaDecoration {
+      right: 14px;
+      top: 220px;
+    }
 
-        .rating {
-          justify-self: flex-start;
+    .slider {
+      .slide {
+        .sliderWrapper {
+          grid-template-columns: 1fr;
+          grid-template-areas: "info" "rating" "description";
+
+          .rating {
+            justify-self: flex-start;
+          }
         }
       }
     }

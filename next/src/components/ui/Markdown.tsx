@@ -42,8 +42,9 @@ type MarkdownProps = {
   components?: Record<string, React.ReactNode>;
   children: string;
   className?: string;
+  style?: React.CSSProperties;
 };
-const Markdown = ({ Tag, components, children, className, ...props }: MarkdownProps) => {
+const Markdown = ({ Tag, components, children, className, style, ...props }: MarkdownProps) => {
   const markdown = (
     <MDXRemote
       source={children}
@@ -60,7 +61,16 @@ const Markdown = ({ Tag, components, children, className, ...props }: MarkdownPr
       {...props}
     />
   );
-  return className ? <div className={className}>{markdown}</div> : markdown;
+  return className ? (
+    <div
+      className={className}
+      style={style}
+    >
+      {markdown}
+    </div>
+  ) : (
+    markdown
+  );
 };
 Markdown.h1 = (props: JSX.IntrinsicAttributes & MarkdownProps) => (
   <Markdown

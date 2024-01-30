@@ -1,8 +1,8 @@
 import removeMarkdown from '../../utils/RemoveMarkdown'
 
 export default {
-  name: 'imageTitleDescription',
-  title: 'Zdjęcie, tytuł i opis',
+  name: 'imageNumberDescription',
+  title: 'Zdjęcie, numer i opis',
   type: 'object',
   fields: [
     {
@@ -11,9 +11,9 @@ export default {
       type: 'image',
     },
     {
-      title: 'Tytuł',
-      name: 'title',
-      type: 'markdown',
+      title: 'Numer',
+      name: 'number',
+      type: 'number',
     },
     {
       title: 'Opis',
@@ -23,12 +23,12 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'number',
       subtitle: 'description',
     },
     prepare({title, subtitle}) {
       return {
-        title: removeMarkdown(title),
+        title: title,
         subtitle: removeMarkdown(subtitle),
       }
     },

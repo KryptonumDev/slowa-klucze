@@ -73,9 +73,10 @@
             }
 
 
-
-            >h3 {
-              font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+            .heading {
+              >h3 {
+                font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+              }
             }
 
             .svgWrapper {
@@ -91,7 +92,7 @@
             }
           }
 
-          &[data-selected='true'] {
+          &[open] {
             .button {
               .svgWrapper {
                 >svg {
@@ -111,7 +112,7 @@
             transition: opacity 0.3s ease-in-out;
           }
 
-          &[data-selected='true'] {
+          &[open] {
             .description {
               margin-top: 10px;
               visibility: visible;

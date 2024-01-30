@@ -1,0 +1,172 @@
+.caseStudiesComponent {
+  display: grid;
+  gap: clamp(30px, calc(30vw/7.68), 50px);
+
+  header {
+    display: grid;
+    gap: 14px;
+    max-width: calc(689rem/16);
+
+    .description {
+      padding-top: clamp(6px, calc(6vw/7.68), 20px);
+    }
+
+    .subheading {
+      max-width: calc(492rem/16);
+    }
+  }
+
+  .items {
+    display: grid;
+    gap: 50px;
+
+    .item {
+      display: grid;
+      margin-top: -10px;
+      gap: 60px;
+
+      .projectAssumptions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .heading {
+          max-width: calc(492rem/16);
+        }
+
+        .items {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 50px;
+
+          .item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 15px;
+            margin-top: unset;
+
+            .icon {
+              width: clamp(31px, calc(43vw/7.68), 52px);
+              height: auto;
+              display: block;
+            }
+
+            .description {
+              >p {
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+
+      .nameWrapper {
+        display: grid;
+
+        height: 120px;
+        width: 100%;
+        border-radius: 16px;
+        background-image: linear-gradient(rgba(211, 211, 211, 0.5), rgba(211, 211, 211, 0.5) 50%), url("../../../../public/background-image.webp"), var(--gradient);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        .name {
+          padding: 10px;
+          align-self: center;
+          justify-self: center;
+          color: var(--neutral-100);
+
+          >p {
+            font-size: clamp(32px, calc(40vw/7.68), 48px);
+          }
+        }
+      }
+
+      .content {
+        display: grid;
+        gap: 40px;
+
+        .item {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "heading image" "description image";
+          align-items: flex-start;
+          column-gap: 24px;
+          row-gap: clamp(calc(25rem/16), calc(25vw/7.68), calc(50rem/16));
+          margin-top: unset;
+
+          .heading {
+            grid-area: heading;
+          }
+
+          .description {
+            grid-area: description;
+            display: grid;
+            gap: clamp(15px, calc(15vw/7.68), 40px);
+          }
+
+          .image {
+            grid-area: image;
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+          }
+
+          &:nth-child(2n) {
+            grid-template-areas: "heading heading" "image description";
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1099px) {
+    header {
+      max-width: unset;
+
+      .subheading {
+        max-width: unset;
+      }
+    }
+
+    .items {
+      .item {
+        .projectAssumptions {
+          grid-template-columns: 1fr;
+          row-gap: 30px;
+        }
+
+        .content {
+          .item {
+            grid-template-areas: "heading heading" "description image";
+          }
+
+          &:nth-child(2n) {
+            grid-template-areas: "heading heading" "image description";
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    gap: 50px;
+
+    .items {
+      .item {
+        .content {
+          .item {
+            grid-template-columns: 1fr;
+            grid-template-areas: "heading" "image" "description";
+          }
+
+          .item:nth-child(2n) {
+            grid-template-areas: "heading" "image" "description";
+          }
+        }
+      }
+    }
+  }
+}

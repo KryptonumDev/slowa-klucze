@@ -3,8 +3,9 @@ import global, {global_Seo} from './singleTypes/global'
 import IndexPage from './singleTypes/indexPage'
 import NotFoundPage from './singleTypes/NotFoundPage'
 import MyWorkPage from './singleTypes/myWorkPage'
+import CooperationEffectsPage from './singleTypes/cooperationEffectsPage'
 
-export const singleTypes = [IndexPage, MyWorkPage, NotFoundPage]
+export const singleTypes = [IndexPage, MyWorkPage, NotFoundPage, CooperationEffectsPage]
 
 // Collection Types
 
@@ -31,11 +32,23 @@ import headingDescription from './components/headingDescription'
 import newsletter, {card} from './components/newsletter'
 import formCta from './components/formCta'
 import contactForm from './components/contactForm'
-import cards, { card_contents} from './components/cards'
+import cards, {card_contents} from './components/cards'
 import tilesSmall from './components/tilesSmall'
 import process from './components/process'
+import caseStudies from './components/caseStudies'
+import project from './components/project'
+import imageDescription from './components/imageDescription'
+import quote from './components/quote'
+import achievementsShowcase from './components/AchievementsShowcase'
+import imageNumberDescription from './components/imageNumberDescription'
 
 export const components = [
+  imageNumberDescription,
+  achievementsShowcase,
+  quote,
+  imageDescription,
+  project,
+  caseStudies,
   footer,
   social,
   global_Seo,

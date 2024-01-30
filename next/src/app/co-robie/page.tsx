@@ -84,7 +84,7 @@ export default async function MyWorkPage() {
 async function getMetadata() {
   const { page } = await sanityFetch<MyWorkPage>({
     query: /* groq */ `{
-      "page": *[_id=="MyWorkPage"] {
+      "page": *[_id=="MyWorkPage"][0] {
       seo {
        ...,
        og_Img {

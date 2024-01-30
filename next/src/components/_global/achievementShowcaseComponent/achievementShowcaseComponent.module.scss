@@ -1,0 +1,45 @@
+.achievementShowcaseComponent {
+  display: grid;
+  gap: 50px;
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, calc(16vw/7.68), 24px);
+
+    .item {
+      padding: 25px 0px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      border: 2px solid var(--neutral-900);
+      border-radius: 16px;
+      text-align: center;
+
+      .image {
+        height: clamp(50px, calc(50vw/7.68), 86px);
+        width: clamp(50px, calc(50vw/7.68), 86px);
+        display: block;
+        object-fit: contain;
+        margin-bottom: clamp(15px, calc(15vw/7.68), 40px);
+      }
+
+      .counter {
+        font-size: clamp(calc(24rem/16), calc(32vw/7.68), calc(48rem/16));
+        color: var(--midnight-green-500);
+      }
+
+      .description {
+        font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
+        color: var(--midnight-green-500);
+      }
+    }
+  }
+
+  @media(max-width: 599px) {
+    .items {
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
