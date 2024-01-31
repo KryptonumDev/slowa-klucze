@@ -12,7 +12,7 @@ export interface AboutMePage {
   page: {
     hero_Heading: string;
     hero_Subheading: string;
-    hero_ImageTitleDescription: ImageTitleDescription;
+    hero_ImageTitleSubtitleDescription: ImageTitleDescription;
     hero_ImageDescription: ImageDescription;
     hero_centralizedIconTitleDescription: ImageTitleDescription;
     hero_Image: Image;
