@@ -19,10 +19,13 @@ export default {
   preview: {
     select: {
       title: 'heading',
+      subtitle: 'quote',
     },
-    prepare({title}) {
+    prepare({title, subtitle}) {
       return {
-        title: `${removeMarkdown(title)}`,
+        title: title
+          ? `[Cytat] - ${removeMarkdown(title)}`
+          : `[Cytat] - ${removeMarkdown(subtitle)}`,
       }
     },
   },
