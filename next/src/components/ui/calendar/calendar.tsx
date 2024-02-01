@@ -37,7 +37,8 @@ export default function Calendar({
   const lastDayOfMonth = (selectedDate.endOf('month').day() + 6) % 7;
   const placeholdersBefore = Array.from(
     { length: firstDayOfMonth },
-    (_, i) => selectedDate.subtract(1, 'month').endOf('month').date() - i
+    (_, i) => selectedDate.subtract(1, 'month').endOf('month')
+.date() - i
   );
   const placeholdersAfter = Array.from({ length: 6 - lastDayOfMonth }, (_, i) => i + 1);
   const times = Array.from({ length: 17 }, (_, i) =>
@@ -114,7 +115,8 @@ export default function Calendar({
               className={styles.item}
               data-selected={item.month() == selectedDate.month()}
             >
-              {item.format('MMMM').charAt(0).toUpperCase() + item.format('MMMM').slice(1)}
+              {item.format('MMMM').charAt(0)
+.toUpperCase() + item.format('MMMM').slice(1)}
             </button>
           ))}
         </div>

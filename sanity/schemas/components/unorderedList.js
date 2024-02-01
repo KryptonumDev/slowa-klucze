@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       title: 'Ikona',
-      name: 'icon',
+      name: 'image',
       type: 'image',
     },
     {

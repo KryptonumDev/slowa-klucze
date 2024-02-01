@@ -1,0 +1,9 @@
+.imageSource{
+  >img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 15px;
+  }
+}
