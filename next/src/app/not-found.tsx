@@ -1,5 +1,5 @@
 import { sanityFetch } from '@/utils/sanity-client';
-import { type NotFound } from '@/types/_pages/NotFound';
+import { type NotFoundPage } from '@/types/_pages/NotFound';
 import Hero from '@/components/_notFound/hero/hero';
 
 export default async function NotFound() {
@@ -19,9 +19,9 @@ export default async function NotFound() {
 }
 
 async function getData() {
-  const { page } = await sanityFetch<NotFound>({
+  const { page } = await sanityFetch<NotFoundPage>({
     query: /* groq */ `{
-    "page": *[_type=="notFoundPage"][0] {
+    "page": *[_id=="notFoundPage"][0] {
       hero_Heading,
       hero_Description,
       hero_Image {
