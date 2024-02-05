@@ -16,7 +16,7 @@ export const singleTypes = [
 
 // Collection Types
 
-export const collectionTypes = []
+export const collectionTypes = [landingPage]
 
 // Componenets
 import cta from './components/cta'
@@ -50,6 +50,11 @@ import achievementsShowcase from './components/AchievementsShowcase'
 import imageNumberDescription from './components/imageNumberDescription'
 import testimonial from './components/testimonial'
 import numberedCards from './components/numberedCards'
+import landingPage from './collectionTypes/landingPage'
+import cardsList from './components/cardsList'
+import partners, {carousel} from './components/partners'
+import prosAndCons, {prosAndConsCard} from './components/prosAndCons'
+import offers, {offer} from './components/offers'
 
 export const components = [
   imageNumberDescription,
@@ -85,6 +90,13 @@ export const components = [
   tilesSmall,
   testimonial,
   numberedCards,
+  cardsList,
+  partners,
+  carousel,
+  prosAndCons,
+  offer,
+  offers,
+  prosAndConsCard,
 ]
 
 export const schemaTypes = [
