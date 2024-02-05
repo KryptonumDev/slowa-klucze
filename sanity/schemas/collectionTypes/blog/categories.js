@@ -9,5 +9,13 @@ export default {
       type: 'string',
       title: 'Nazwa kategorii',
     },
+    {
+      name: 'slug',
+      type: 'slug',
+      title: 'link do kategorii',
+      options: {
+        source: 'name',
+      },
+    }
   ],
 }

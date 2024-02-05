@@ -30,7 +30,7 @@
     color: var(--dark-neutral-900);
     background-color: var(--neutral-100);
     padding: 10px 96px;
-    text-decoration: none;
+    text-decoration: none !important;
     border-radius: 16px;
     width: fit-content;
     font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));

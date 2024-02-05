@@ -64,6 +64,8 @@ import orderedListArray from './components/orderedListArray'
 import unorderedListArray from './components/unorderedListArray'
 
 export const components = [
+  category,
+  hero_Form,
   imageTitleSubtitleDescription,
   imageNumberDescription,
   achievementsShowcase,
@@ -114,6 +116,7 @@ export const components = [
 import blog_categories from './collectionTypes/blog/categories'
 import blog_entries from './collectionTypes/blog/entries'
 import imageSource from './components/imageSource'
+import blogPage, {category, hero_Form} from './singleTypes/blogPage'
 
 export const schemaTypes = [
   global,
@@ -123,4 +126,5 @@ export const schemaTypes = [
   ...components,
   blog_categories,
   blog_entries,
+  blogPage,
 ]

@@ -12,7 +12,6 @@ export default function CtaWithBackgroundImage({ data: { cta, title, subtitle } 
         <Button
           data={cta}
           svg={false}
-          theme='secondary'
           className={styles.button}
         />
       )}

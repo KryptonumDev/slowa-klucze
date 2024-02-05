@@ -9,7 +9,7 @@ export default function ContentSection({ children }) {
   useEffect(() => {
     const handleResize = () => {
       const viewportWidth = window.innerWidth;
-      if (viewportWidth >= 1099) {
+      if (viewportWidth >= 850) {
         const navElement = document.querySelector('nav.nav:not(.fixed)');
         const section = ref.current as HTMLElement;
         if (navElement) {

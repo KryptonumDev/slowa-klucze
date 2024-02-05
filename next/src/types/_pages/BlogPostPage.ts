@@ -5,18 +5,25 @@ import { type Node } from '../_global/Node';
 import { type Seo } from '../_global/Seo';
 
 export interface BlogPostPage {
-  page: {
-    hero_Image: Image;
-    hero_Title: string;
-    hero_Description: string;
-    categories: Categories[];
-    author: Author;
-    content: Node[];
-    seo: Seo;
-  };
+  _type?: string;
+  page: Page;
   blogPosts: {
     slug: {
       current: string;
     };
   }[];
+}
+
+export type Page = {
+  _type?: string;
+  hero_Image: Image;
+  hero_Title: string;
+  hero_Description: string;
+  categories: Categories[];
+  author?: Author;
+  content: Node[];
+  slug?: {
+    current: string;
+  }
+  seo?: Seo;
 }

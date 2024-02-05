@@ -62,6 +62,7 @@ async function getMetadata(slug: string) {
     }`,
     params: { slug },
   });
+  !page && notFound();
   return page;
 }
 

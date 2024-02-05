@@ -6,6 +6,7 @@ import {singleTypes} from './schemas'
 import {collectionTypes} from './schemas'
 import {media} from 'sanity-plugin-media'
 import {createClient} from '@sanity/client'
+import blogPage from './schemas/singleTypes/blogPage'
 
 import {markdownSchema} from 'sanity-plugin-markdown'
 import {CustomMarkdownInput} from './components/Markdown'
@@ -44,6 +45,7 @@ export default defineConfig({
             S.divider(),
             S.documentTypeListItem('blog_categories'),
             S.documentTypeListItem('blog_entries'),
+            createListItem(S, blogPage),
           ]),
     }),
     visionTool(),
