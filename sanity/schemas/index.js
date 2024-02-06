@@ -16,7 +16,9 @@ export const singleTypes = [
 
 // Collection Types
 
-export const collectionTypes = []
+import Authors from './collectionTypes/authors'
+
+export const collectionTypes = [Authors]
 
 // Componenets
 import cta from './components/cta'
@@ -50,8 +52,21 @@ import achievementsShowcase from './components/AchievementsShowcase'
 import imageNumberDescription from './components/imageNumberDescription'
 import testimonial from './components/testimonial'
 import numberedCards from './components/numberedCards'
+import imageTitleSubtitleDescription from './components/imageTitleSubtitleDescription'
+import PortableText from '../components/PortableText'
+import orderedList from './components/orderedList'
+import unorderedList from './components/unorderedList'
+import titleDescription from './components/titleDescription'
+import grid2Images from './components/grid2Images'
+import grid2Buttons from './components/grid2Buttons'
+import ctaWithBackgroundImage, {ctaInBackgroundImage} from './components/ctaWithBackgroundImage'
+import orderedListArray from './components/orderedListArray'
+import unorderedListArray from './components/unorderedListArray'
 
 export const components = [
+  category,
+  hero_Form,
+  imageTitleSubtitleDescription,
   imageNumberDescription,
   achievementsShowcase,
   quote,
@@ -85,7 +100,23 @@ export const components = [
   tilesSmall,
   testimonial,
   numberedCards,
+  PortableText,
+  imageSource,
+  orderedList,
+  unorderedList,
+  titleDescription,
+  grid2Images,
+  grid2Buttons,
+  ctaWithBackgroundImage,
+  orderedListArray,
+  unorderedListArray,
+  ctaInBackgroundImage,
 ]
+
+import blog_categories from './collectionTypes/blog/categories'
+import blog_entries from './collectionTypes/blog/entries'
+import imageSource from './components/imageSource'
+import blogPage, {category, hero_Form} from './singleTypes/blogPage'
 
 export const schemaTypes = [
   global,
@@ -93,4 +124,7 @@ export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
   ...components,
+  blog_categories,
+  blog_entries,
+  blogPage,
 ]

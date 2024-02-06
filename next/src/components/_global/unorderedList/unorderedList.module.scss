@@ -1,0 +1,17 @@
+.unorderedList {
+  ul {
+    display: grid;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+
+    li {
+      gap: 15px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      >div {
+        margin-top: 0.6em;
+      }
+    }
+  }
+}

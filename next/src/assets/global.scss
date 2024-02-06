@@ -79,6 +79,8 @@
   --error-800: #922727;
 
   --quoteBorder: #B9B9B9;
+
+  --background-color: #AFD8DA;
 }
 
 body {
@@ -201,4 +203,10 @@ p.strong,
 li strong {
   color: var(--dark-neutral-900);
   font-weight: 400;
+}
+
+li a {
+  color: var(--coffee-500);
+  text-decoration: underline;
+  font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
 }

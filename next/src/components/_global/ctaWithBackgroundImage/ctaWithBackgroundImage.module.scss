@@ -1,0 +1,46 @@
+.ctaWithBackgroundImage {
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  width: 100%;
+  text-align: center;
+  gap: clamp(20px, calc(30vw/7.68), 30px);
+  border-radius: 16px;
+  background-image: url("../../../../public/background-image.webp"), var(--gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 37px 0px;
+
+  .title {
+    >h2 {
+      color: var(--neutral-100);
+      font-size: clamp(calc(24rem/16), calc(48vw/7.68), calc(48rem/16));
+    }
+  }
+
+  .subtitle {
+    >p {
+      color: var(--neutral-100);
+      font-size: clamp(calc(16rem/16), calc(32vw/7.68), calc(32rem/16));
+    }
+  }
+
+  .button {
+    color: var(--dark-neutral-900);
+    background-color: var(--neutral-100);
+    padding: 10px 96px;
+    text-decoration: none !important;
+    border-radius: 16px;
+    width: fit-content;
+    font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+  }
+
+  @media (max-width: 499px) {
+    .button {
+      padding: 10px 14px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 0px;
+  align-items: center;
+  gap: 24px;
+  background: var(--background);
+
+  header {
+    display: grid;
+    gap: 14px;
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(10px, calc(16vw/7.68), 24px);
+
+      .heading {
+        &:before {
+          background: var(--background);
+        }
+      }
+    }
+
+    .description {
+      padding-top: clamp(0px, calc(0vw/7.68), 20px);
+    }
+  }
+
+  .image {
+    height: auto;
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+  }
+
+  @media(max-width:629px) {
+    grid-template-columns: 1fr;
+  }
+}

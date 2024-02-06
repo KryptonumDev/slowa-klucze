@@ -11,8 +11,8 @@ export default {
       title: 'Typ',
       options: {
         list: [
-          { title: 'Primary', value: 'primary' },
-          { title: 'Secondary', value: 'secondary' }
+          { title: 'Primary (bez tła)', value: 'primary' },
+          { title: 'Secondary (zielone tło)', value: 'secondary' }
         ],
         layout: 'radio',
         direction: "horizontal"

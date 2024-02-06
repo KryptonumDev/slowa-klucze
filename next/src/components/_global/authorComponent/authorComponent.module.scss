@@ -1,0 +1,38 @@
+.authorComponent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-top: 2px solid var(--neutral-900);
+  padding-top: 60px;
+  gap: 50px;
+  row-gap: 20px;
+
+  .image {
+    height: auto;
+    width: clamp(140px, calc(186vw/7.68), 186px);
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--neutral-900);
+    background-color: var(--background);
+  }
+
+  .content {
+    display: grid;
+    gap: 14px;
+    max-width: 675px;
+
+    .description {
+      >p {
+        font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
+      }
+    }
+
+    .socials {
+      display: flex;
+      gap: 24px;
+    }
+  }
+  @media(max-width: 549px) {
+    grid-template-columns: 1fr;
+  }
+}

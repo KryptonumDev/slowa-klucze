@@ -1,0 +1,56 @@
+.hero {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: flex-start;
+  gap: clamp(27px, calc(40vw/7.68), 70px);
+
+  header {
+    display: grid;
+    row-gap: 14px;
+    align-items: flex-start;
+
+    .description {
+      padding-top: 20px;
+    }
+  }
+
+  .title {
+    max-width: 404px;
+  }
+
+  .form {
+    display: grid;
+    gap: 20px;
+
+    >label {
+      padding: unset;
+    }
+  }
+
+  .state {
+    display: grid;
+    grid-row-gap: 24px;
+
+    >h3 {
+      .success {
+        color: var(--green-800);
+      }
+
+      .failed {
+        color: var(--error-800);
+      }
+    }
+
+    >p {
+      font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
+    }
+
+    >button {
+      margin-top: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}

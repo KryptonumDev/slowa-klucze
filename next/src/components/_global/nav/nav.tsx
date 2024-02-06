@@ -97,7 +97,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
 
   return (
     <nav
-      className={styles.navWrapper}
+      className={`${styles.navWrapper} nav`}
       ref={navRef}
     >
       <div className={`maxWidth ${styles.nav}`}>

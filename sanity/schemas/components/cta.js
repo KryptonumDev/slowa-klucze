@@ -1,6 +1,6 @@
 export default {
   name: "cta",
-  title: "Call to action",
+  title: "Przycisk",
   type: "object",
   fields: [
     {
@@ -9,8 +9,8 @@ export default {
       title: 'Typ',
       options: {
         list: [
-          { title: 'Primary (bez obramowań)', value: 'primary' },
-          { title: 'Secondary (zielony)', value: 'secondary' }
+          { title: 'Primary (bez tła)', value: 'primary' },
+          { title: 'Secondary (zielone tło)', value: 'secondary' }
         ],
         layout: 'radio',
         direction: "horizontal"
@@ -45,7 +45,7 @@ export default {
     prepare({ title, theme, href }) {
       return {
         title: title,
-        subtitle: `${theme} button linked to ${href}`,
+        subtitle: `${theme} przycisk przypisany do ${href}`,
       }
     }
   }
