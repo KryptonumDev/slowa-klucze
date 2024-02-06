@@ -20,7 +20,7 @@ export default {
     },
     prepare({ title }) {
       return {
-        title: `[Lista numerowana] - ${title.length} elementy`,
+        title: `[Lista numerowana] - ${title.length} elementów`,
       };
     }
   }

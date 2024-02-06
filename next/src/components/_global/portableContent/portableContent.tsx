@@ -131,7 +131,7 @@ const components = {
         <a
           href={href}
           target='_blank'
-          rel='noreferrer'
+          rel='noopener'
           className={styles.link}
         >
           {children}

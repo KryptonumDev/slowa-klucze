@@ -68,12 +68,8 @@ async function getMetadata() {
     query: /* groq */ `{
       "page": *[_id=="blogPage"][0] {
         seo {
-          ...,
-          og_Img {
-            asset -> {
-              url
-            }
-          }
+          description,
+          title,
         }
       }
     }`,

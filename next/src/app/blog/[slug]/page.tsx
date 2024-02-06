@@ -18,7 +18,7 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
   return SEO({
     title: seo?.title,
     description: seo?.description,
-    url: '/co-robie',
+    url: `/blog/${slug}`,
   });
 }
 
@@ -51,12 +51,8 @@ async function getMetadata(slug: string) {
     query: /* groq */ `{
       "page": *[_type=="blog_entries" && slug.current==$slug][0] {
       seo {
-       ...,
-       og_Img {
-         asset -> {
-           url
-         }
-       }
+       description,
+       title,
      }
    }
     }`,
@@ -85,7 +81,40 @@ async function getBlogData(slug: string) {
         },
         hero_Title,
         content[] {
-          ...
+          _type,
+          _type == 'imageSource' => {
+            source,
+            image,
+          },
+          _type == 'block' => {
+            style,
+            children[],
+            markDefs[],
+          },
+          _type == 'unorderedList' => {
+            array[],
+          },
+          _type == 'grid2Buttons' => {
+            buttons[],
+          },
+          _type == 'orderedList' => {
+            array[],
+          },
+          _type == 'grid2Images' => {
+            source,
+            images[],
+          },
+          _type == 'quote' => {
+            quote
+          },
+          _type == 'ctaWithBackgroundImage' => {
+            title,
+            subtitle,
+            cta {
+              href,
+              text,
+            }
+          }
         },
         seo {
           title,

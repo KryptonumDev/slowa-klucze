@@ -32,7 +32,7 @@ export default defineConfig({
     deskTool({
       structure: (S) =>
         S.list()
-          .title('Pages')
+          .title('Podstrony')
           .items([
             createListItem(
               S,

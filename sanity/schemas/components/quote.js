@@ -23,9 +23,7 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: title
-          ? `[Cytat] - ${removeMarkdown(title)}`
-          : `[Cytat] - ${removeMarkdown(subtitle)}`,
+        title: `[Cytat] - ${removeMarkdown(title || subtitle)}`,
       }
     },
   },

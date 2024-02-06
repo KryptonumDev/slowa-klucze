@@ -56,7 +56,7 @@ export const ctaInBackgroundImage = {
             !value.startsWith('https://') &&
             !value.startsWith('#')
           ) {
-            return 'Incorrect URL.'
+            return 'Niepoprawny adres URL, musi zaczynać się od /, https:// lub #'
           }
           return true
         }),
