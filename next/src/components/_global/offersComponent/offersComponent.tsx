@@ -25,7 +25,7 @@ export default function OffersComponent({ data: { offers } }: { data: Offers }) 
             </div>
             <Markdown className={styles.list}>{description}</Markdown>
             <div className={styles.additionWrapper}>
-              {RoundedPlusIcon()}
+              <RoundedPlusIcon />
               <Markdown>{addition}</Markdown>
             </div>
             <Button
