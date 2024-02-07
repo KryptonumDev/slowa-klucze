@@ -11,6 +11,8 @@ import { type Newsletter } from '@/types/_global/Newsletter';
 import NewsletterSection from '@/components/_global/newsletterSection/newsletterSection';
 import { type ContactForm } from '@/types/_global/ContactForm';
 import ContactFormSection from '@/components/_global/contactFormSection/contactFormSection';
+import { type BlogReference } from '@/types/_global/BlogReference';
+import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 
 export default async function IndexPage() {
   const { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading, content } = await getData();
@@ -46,6 +48,12 @@ export default async function IndexPage() {
         key={i}
       />
     ),
+    blogReference: (
+      <BlogReferenceComponent
+        data={component as BlogReference}
+        key={i}
+      />
+    ),
   });
 
   return (
@@ -60,7 +68,7 @@ export default async function IndexPage() {
 
 async function getData() {
   const { page } = await sanityFetch<homepage>({
-    query: /* groq */`{
+    query: /* groq */ `{
       "page": *[_id=="IndexPage"][0]{
         hero_Cta {
           theme,
@@ -84,71 +92,96 @@ async function getData() {
         hero_Subheading,
         hero_Heading,
         content[] {
-        ...,
-        faq[] {
-            title,
+        _type,
+        _type == "blogReference" => {
+        cta {
+          href,
+          theme,
+          text
+        },
+          heading,
+          description,
+          title,
+          blogReference[]-> {
+            content[],
+            hero_Image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+            categories[] -> {
+              name
+            },
+            slug {
+              current
+            },
+            hero_Description,
+            hero_Title,
+          }
+        },
+        _type == "tiles" => {
+          centralizedHeading {
             description,
+            title,
+            heading,
+            cta {
+              theme,
+              href,
+              text
+            }
+          },
+          list[] {
+            description,
+            title,
             image {
               asset -> {
                 altText,
                 url,
                 metadata {
                   lqip,
-                    dimensions {
-                      height,
-                      width
-                }
+                  dimensions {
+                    height,
+                    width
+                  }
                 }
               }
             }
+          }
+        },
+        _type == "slider" => {
+          centralizedHeading {
+            heading,
+            description,
+            title,
+            cta {
+              theme,
+              href,
+              text
+            },
           },
-        card {
-          ...,
-          image {
-            asset -> {
-            altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                }
-              }
-            }
-          }
-        },
-        image {
-          asset -> {
-            altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                }
-              }
-          } 
-        },
-        list[] {
-          ...,
-          image {
-            asset -> {
-              altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                }
-              }
-            }
-          }
+          centralizedHeading2 {
+            heading,
+            description,
+            title,
+            cta {
+              theme,
+              href,
+              text
+            },
           },
           slides[] {
-            ...,
+            description,
+            url,
+            heading,
+            rating,
             icon {
               asset -> {
                 altText,
@@ -158,11 +191,118 @@ async function getData() {
                   dimensions {
                     height,
                     width
-                    }
                   }
                 }
               }
             }
+          }
+        },
+        _type == "contactForm" => {
+          subheading,
+          heading,
+          formCta {
+            theme,
+            text
+          },
+          image {
+            asset -> {
+              altText,
+              url,
+              metadata {
+                lqip,
+                dimensions {
+                  height,
+                  width
+                }
+              }
+            }
+          }
+        },
+        _type == "faq" => {
+          description,
+          title,
+          heading,
+          image {
+            asset -> {
+              altText,
+              url,
+              metadata {
+                lqip,
+                dimensions {
+                  height,
+                  width
+                }
+              }
+            }
+          },
+          centralizedHeading {
+            cta {
+              theme,
+              text,
+              href
+            },
+            title,
+            description,
+            heading
+          },
+          faq[] {
+            description,
+            title,
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            }
+          }
+        },
+        _type == "newsletter" => {
+          description,
+          subheading,
+          heading,
+          formCta {
+            theme,
+            text,
+            href
+          },
+          image {
+            asset -> {
+              altText,
+              url,
+              metadata {
+                lqip,
+                dimensions {
+                  height,
+                  width
+                }
+              }
+            }
+          },
+          card {
+            heading,
+            description,
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            }
+          }
+        }
         },
       }
     }`,

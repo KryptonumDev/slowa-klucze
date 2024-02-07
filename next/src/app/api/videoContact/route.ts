@@ -12,12 +12,15 @@ dayjs.locale('pl');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const apiToken = process.env.CALENDLY_API_KEY;
+
 const emailData = {
   from: 'Kamila Wrzask <kontakt@slowa-klucze.pl>',
   to: 'Kamila Wrzask <kontakt@slowa-klucze.pl>',
 };
 
 const headers = {
+  Authorization: `Bearer ${apiToken}`,
   'Access-Control-Allow-Origin': domain,
   'Content-Type': 'application/json',
   'Access-Control-Allow-Methods': 'POST',
@@ -37,7 +40,7 @@ export async function POST(request: Request): Promise<Response> {
     return NextResponse.json({ success: false }, { status: 422, headers });
   }
 
-  const dayjsDate = dayjs(date);
+  const dayjsDate = dayjs(date).toISOString();
 
   const body = `
   <p> E-mail: <b>${email}</b></p>

@@ -66,6 +66,7 @@ import grid2Buttons from './components/grid2Buttons'
 import ctaWithBackgroundImage, {ctaInBackgroundImage} from './components/ctaWithBackgroundImage'
 import orderedListArray from './components/orderedListArray'
 import unorderedListArray from './components/unorderedListArray'
+import blogReference from './components/blogReference'
 
 export const components = [
   category,
@@ -122,6 +123,7 @@ export const components = [
   orderedListArray,
   unorderedListArray,
   ctaInBackgroundImage,
+  blogReference,
 ]
 
 import blog_categories from './collectionTypes/blog/categories'
