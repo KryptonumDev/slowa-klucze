@@ -30,11 +30,11 @@ export default {
   ],
   preview: {
     select: {
-      title: 'slug',
+      title: 'hero_Title',
     },
     prepare({title}) {
       return {
-        title: title.current,
+        title: title,
       }
     },
   },
