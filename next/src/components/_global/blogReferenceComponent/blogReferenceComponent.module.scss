@@ -143,14 +143,14 @@
         width: calc(100% + var(--pageMargin) * 2);
       }
     }
-  }
 
-  header {
-    grid-template-columns: 1fr;
+    header {
+      grid-template-columns: 1fr;
 
-    .button {
-      justify-content: flex-start;
-      padding-top: 50px;
+      .button {
+        justify-content: flex-start;
+        padding-top: 50px;
+      }
     }
   }
 }
