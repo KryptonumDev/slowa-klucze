@@ -1,0 +1,20 @@
+.portableContent {
+  display: grid;
+  gap: clamp(20px, calc(45vw/7.68), 45px);
+
+  color: var(--dark-neutral-900);
+
+  .link {
+    color: var(--coffee-500);
+  }
+
+  .quote {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    max-width: unset;
+
+    div {
+      max-width: unset;
+    }
+  }
+}

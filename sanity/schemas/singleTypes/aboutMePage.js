@@ -26,9 +26,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'hero_ImageTitleDescription',
-      type: 'imageTitleDescription',
-      title: 'Ikona z nagłówkiem i opisem',
+      name: 'hero_ImageTitleSubtitleDescription',
+      type: 'imageTitleSubtitleDescription',
+      title: 'Ikona z tytułem, podtytułem i opisem',
       fieldset: 'hero',
       options: { collapsible: true, collapsed: true },
       validation: (Rule) => Rule.required(),

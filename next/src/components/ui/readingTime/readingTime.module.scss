@@ -1,0 +1,28 @@
+.readingTime {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 15px;
+  padding-top: 10px;
+
+  >span {
+    font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+    color: var(--midnight-green-500);
+  }
+
+  &[data-card='true'] {
+    >span {
+      color: var(--neutral-100);
+    }
+
+    >svg {
+      color: var(--neutral-100);
+    }
+
+    position: absolute;
+    bottom:0px;
+    background: rgba(150, 150, 150, 0.35);
+    padding: 17px 14px 15px 22px;
+    border-top-right-radius: 16px;
+  }
+}
