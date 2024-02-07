@@ -109,5 +109,10 @@ export default {
       type: 'ctaWithBackgroundImage',
       title: 'Przycisk z tłem',
     },
+    {
+      name: 'information',
+      type: 'headingDescription',
+      title: 'Informacja',
+    }
   ],
 }

@@ -82,6 +82,10 @@ async function getBlogData(slug: string) {
         hero_Title,
         content[] {
           _type,
+          _type == 'information' => {
+            heading,
+            description
+          },
           _type == 'imageSource' => {
             source,
             image,

@@ -1,6 +1,7 @@
 import imageUrlBuilder from '@sanity/image-url';
 import { PortableText, toPlainText, type PortableTextReactComponents } from '@portabletext/react';
 import { getImageDimensions } from '@sanity/asset-utils';
+import InformationComponent from '../informationComponent';
 import styles from './portableContent.module.scss';
 import ImageSource from '@/components/_global/imageSource';
 import UnorderedList from '@/components/_global/unorderedList';
@@ -101,6 +102,9 @@ const components = {
         data={{ quote, heading }}
         className={styles.quote}
       />
+    ),
+    information: ({ value: { heading, description } }: { value: { heading: string; description: string } }) => (
+      <InformationComponent data={{ heading, description }} />
     ),
     ctaWithBackgroundImage: ({
       value: { cta, title, subtitle },

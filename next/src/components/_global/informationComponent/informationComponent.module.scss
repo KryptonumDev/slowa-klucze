@@ -1,0 +1,14 @@
+.informationComponent {
+  display: grid;
+  gap: 30px;
+  background: var(--background);
+  padding: 30px;
+  border-radius: 16px;
+
+  .markdownWrapper {
+    .markdown {
+      display: grid;
+      gap: clamp(calc(15rem/16), calc(15vw/7.68), calc(30rem/16));
+    }
+  }
+}
