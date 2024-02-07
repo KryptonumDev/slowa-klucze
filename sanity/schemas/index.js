@@ -15,10 +15,10 @@ export const singleTypes = [
 ]
 
 // Collection Types
-
 import Authors from './collectionTypes/authors'
+import landingPage from './collectionTypes/landingPage'
 
-export const collectionTypes = [Authors]
+export const collectionTypes = [landingPage, Authors]
 
 // Componenets
 import cta from './components/cta'
@@ -52,6 +52,10 @@ import achievementsShowcase from './components/AchievementsShowcase'
 import imageNumberDescription from './components/imageNumberDescription'
 import testimonial from './components/testimonial'
 import numberedCards from './components/numberedCards'
+import cardsList from './components/cardsList'
+import partners, {carousel} from './components/partners'
+import prosAndCons, {prosAndConsCard} from './components/prosAndCons'
+import offers, {offer} from './components/offers'
 import imageTitleSubtitleDescription from './components/imageTitleSubtitleDescription'
 import PortableText from '../components/PortableText'
 import orderedList from './components/orderedList'
@@ -100,6 +104,13 @@ export const components = [
   tilesSmall,
   testimonial,
   numberedCards,
+  cardsList,
+  partners,
+  carousel,
+  prosAndCons,
+  offer,
+  offers,
+  prosAndConsCard,
   PortableText,
   imageSource,
   orderedList,

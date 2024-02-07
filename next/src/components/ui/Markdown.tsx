@@ -29,11 +29,13 @@ const LinkRenderer = ({
 };
 const ListRenderer = ({
   children,
+  ordered,
 }: React.LiHTMLAttributes<HTMLLIElement> & {
   children?: React.ReactNode;
   ordered?: boolean;
 }) => (
   <li>
+    {!ordered && <ListBullet />}
     <span>{children}</span>
   </li>
 );
@@ -116,4 +118,28 @@ Markdown.span = (props: JSX.IntrinsicAttributes & MarkdownProps) => (
     {...props}
   />
 );
+
+const ListBullet = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='44'
+    height='44'
+    fill='none'
+  >
+    <path
+      stroke='#25666A'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='3'
+      d='M15.001 23l4 4 10-10'
+    ></path>
+    <path
+      stroke='#25666A'
+      strokeLinecap='round'
+      strokeWidth='3'
+      d='M12 4.676A19.908 19.908 0 0122 2c11.046 0 20 8.954 20 20s-8.954 20-20 20S2 33.046 2 22c0-3.643.974-7.058 2.676-10'
+    ></path>
+  </svg>
+);
+
 export default Markdown;
