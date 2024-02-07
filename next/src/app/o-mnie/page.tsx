@@ -1,10 +1,12 @@
 import Hero from '@/components/_aboutMe/hero/hero';
+import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 import ContactFormSection from '@/components/_global/contactFormSection';
 import Faq from '@/components/_global/faq';
 import NewsletterSection from '@/components/_global/newsletterSection';
 import NumberedCardsSection from '@/components/_global/numberedCardsSection/numberedCardsSection';
 import TestimonialComponent from '@/components/_global/testimonialComponent/testimonialComponent';
 import SEO from '@/global/Seo';
+import { type BlogReference } from '@/types/_global/BlogReference';
 import { type ContactForm } from '@/types/_global/ContactForm';
 import { type FAQ } from '@/types/_global/FAQ';
 import { type Newsletter } from '@/types/_global/Newsletter';
@@ -61,6 +63,12 @@ export default async function aboutMePage() {
     testimonial: (
       <TestimonialComponent
         data={component as Testimonial}
+        key={i}
+      />
+    ),
+    blogReference: (
+      <BlogReferenceComponent
+        data={component as BlogReference}
         key={i}
       />
     ),
@@ -175,73 +183,179 @@ async function getData() {
         },
         content[] {
           _type,
-          centralizedHeading {
+          _type == "numberedCards" => {
+            centralizedHeading {
+              description,
+              title,
+              heading,
+              cta {
+                theme,
+                text,
+                href
+              }
+            },
+            cards[]
+          },
+          _type == "testimonial" => {
+            title,
+            subheading,
+            heading,
+            description,
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+          socials[],
+          },
+          _type == "contactForm" => {
+            subheading,
+            heading,
+            formCta {
+              theme,
+              text
+            },
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            }
+          },
+          _type == "faq" => {
             description,
             title,
             heading,
-            cta {
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+            centralizedHeading {
+              cta {
+                theme,
+                text,
+                href
+              },
+              title,
+              description,
+              heading
+            },
+            faq[] {
+              description,
+              title,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
+          _type == "newsletter" => {
+            description,
+            subheading,
+            heading,
+            formCta {
               theme,
               text,
               href
-            }
-          },
-          cards[],
-          description,
-          socials[],
-          title,
-          subheading,
-          heading,
-          image {
-            asset -> {
-              altText,
-              url,
-              metadata {
-                lqip,
-                dimensions {
-                  height,
-                  width
+            },
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+            card {
+              heading,
+              description,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
                 }
               }
             }
           },
-          formCta {
+          _type == "blogReference" => {
+          cta {
+            href,
             theme,
             text
           },
-          faq[] {
-            title,
+            heading,
             description,
-            image {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
+            title,
+            blogReference[]-> {
+              content[],
+              hero_Image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
                   }
                 }
-              }
+              },
+              categories[] -> {
+                name
+              },
+              slug {
+                current
+              },
+              hero_Description,
+              hero_Title,
             }
           },
-          card {
-            description,
-            heading,
-            image {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }`,

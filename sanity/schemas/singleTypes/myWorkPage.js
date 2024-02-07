@@ -15,6 +15,7 @@ export default {
         {type: 'cards'},
         {type: 'tilesSmall'},
         {type: 'process'},
+        {type: 'blogReference'},
       ],
     },
     {

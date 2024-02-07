@@ -58,6 +58,7 @@ export default {
         {type: 'faq'},
         {type: 'newsletter'},
         {type: 'contactForm'},
+        {type: 'blogReference'},
       ],
     },
     {

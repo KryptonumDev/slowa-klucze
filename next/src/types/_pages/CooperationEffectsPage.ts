@@ -5,6 +5,7 @@ import { type Newsletter } from '../_global/Newsletter';
 import { type Seo } from '../_global/Seo';
 import { type Slider } from '../_global/Slider';
 import { type AchievementsShowcase } from '../_global/AchievementsSchowcase';
+import { type BlogReference } from '../_global/BlogReference';
 
 export interface CooperationEffectsPage {
   page: {
@@ -13,4 +14,4 @@ export interface CooperationEffectsPage {
   };
 }
 
-export type ContentItem = FAQ | Newsletter | ContactForm | Slider | CaseStudies | AchievementsShowcase;
+export type ContentItem = FAQ | Newsletter | ContactForm | Slider | CaseStudies | AchievementsShowcase | BlogReference;

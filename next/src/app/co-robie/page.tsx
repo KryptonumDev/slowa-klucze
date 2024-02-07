@@ -14,6 +14,8 @@ import ProcessComponent from '@/components/_global/processComponent/processCompo
 import { type Process } from '@/types/_global/Process';
 import SmallTilesComponent from '@/components/_global/smallTilesComponent/smallTilesComponent';
 import SEO from '@/global/Seo';
+import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
+import { type BlogReference } from '@/types/_global/BlogReference';
 
 export async function generateMetadata() {
   const { seo } = await getMetadata();
@@ -70,6 +72,12 @@ export default async function MyWorkPage() {
         key={i}
       />
     ),
+    blogReference: (
+      <BlogReferenceComponent
+        data={component as BlogReference}
+        key={i}
+      />
+    ),
   });
 
   return (
@@ -105,110 +113,161 @@ async function getData() {
       "page": *[_id=="MyWorkPage"][0]{
         content[] {
           _type,
-          heading,
-          description,
-          subheading,
-          centralizedHeading {
-            description,
-            title,
-            heading,
-            cta {
-              theme,
-              href,
-              text
-            }
-          },
-          list[] {
-            description,
-            title,
-            image {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                  }
-                }
-              }
-            }
-          },
-          cards[] {
-            title,
-            pluses[],
-            plusesDescription,
-            description,  
-            icon {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                  }
-                }
-              }
-            }
-          },
-          image {
-            asset -> {
-              altText,
-              url,
-              metadata {
-                lqip,
-                dimensions {
-                  height,
-                  width
-                }
-              }
-            }
-          },
-          faq[] {
-            description,
-            title,
-            heading,
-            image {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                  }
-                }
-              }
-            }
-          },
-          proceses[] {
-            description,
-            title,
-            image {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    height,
-                    width
-                  }
-                }
-              }
-            }
-          },
-          formCta {
+          _type == "blogReference" => {
+          cta {
+            href,
             theme,
             text
           },
-          card {
             heading,
-            description,  
+            description,
+            title,
+            blogReference[]-> {
+              content[],
+              hero_Image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              },
+              categories[] -> {
+                name
+              },
+              slug {
+                current
+              },
+              hero_Description,
+              hero_Title,
+            }
+          },
+          _type == "tiles" => {
+            centralizedHeading {
+              description,
+              title,
+              heading,
+              cta {
+                theme,
+                href,
+                text
+              }
+            },
+            list[] {
+              description,
+              title,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
+          _type == "faq" => {
+            description,
+            title,
+            heading,
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+            centralizedHeading {
+              cta {
+                theme,
+                text,
+                href
+              },
+              title,
+              description,
+              heading
+            },
+            faq[] {
+              description,
+              title,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
+          _type == "newsletter" => {
+            description,
+            subheading,
+            heading,
+            formCta {
+              theme,
+              text,
+              href
+            },
+            image {
+              asset -> {
+                altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+              }
+            },
+            card {
+              heading,
+              description,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
+          _type == "contactForm" => {
+            subheading,
+            heading,
+            formCta {
+              theme,
+              text
+            },
             image {
               asset -> {
                 altText,
@@ -222,7 +281,96 @@ async function getData() {
                 }
               }
             }
-          }
+          },
+          _type == "cards" => {
+            centralizedHeading {
+              description,
+              title,
+              heading,
+              cta {
+                text,
+                theme,
+                href
+              }
+            },
+            cards[] {
+              icon {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              },
+              description,
+              title,
+              pluses[],
+              plusesDescription
+            }
+          },
+          _type == "process" => {
+            centralizedHeading {
+              description,
+              title,
+              heading,
+              cta {
+                text,
+                theme,
+                href
+              }
+            },
+            proceses[] {
+              title,
+              description,
+              image {
+                asset -> {
+                  altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
+          _type == "tilesSmall" => {
+            centralizedHeading {
+              heading,
+              description,
+              title,
+              cta {
+                theme,
+                href,
+                text
+              },
+            },
+            list[] {
+              title,
+              description,
+              image {
+                asset -> {
+                altText,
+                  url,
+                  metadata {
+                    lqip,
+                    dimensions {
+                      height,
+                      width
+                    }
+                  }
+                }
+              }
+            }
+          },
         }
       }
     }`,

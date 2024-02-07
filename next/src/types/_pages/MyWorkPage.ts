@@ -1,3 +1,4 @@
+import { type BlogReference } from '../_global/BlogReference';
 import { type Cards } from '../_global/Cards';
 import { type ContactForm } from '../_global/ContactForm';
 import { type FAQ } from '../_global/FAQ';
@@ -13,4 +14,4 @@ export interface MyWorkPage {
   };
 }
 
-export type ContentItem = Tiles | FAQ | Newsletter | ContactForm | Cards | Process;
+export type ContentItem = Tiles | FAQ | Newsletter | ContactForm | Cards | Process | BlogReference;

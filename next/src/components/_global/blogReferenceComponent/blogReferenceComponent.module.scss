@@ -10,7 +10,8 @@
 
     .button {
       align-items: center;
-      justify-content: flex-end;
+      justify-self: flex-end;
+      width: fit-content;
     }
 
     .contentWrapper {
@@ -148,7 +149,7 @@
       grid-template-columns: 1fr;
 
       .button {
-        justify-content: flex-start;
+        justify-self: flex-start;
         padding-top: 50px;
       }
     }
