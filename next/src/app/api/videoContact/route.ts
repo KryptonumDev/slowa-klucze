@@ -40,7 +40,7 @@ export async function POST(request: Request): Promise<Response> {
     return NextResponse.json({ success: false }, { status: 422, headers });
   }
 
-  const dayjsDate = dayjs(date).toISOString();
+  const dayjsDate = dayjs(date);
 
   const body = `
   <p> E-mail: <b>${email}</b></p>
