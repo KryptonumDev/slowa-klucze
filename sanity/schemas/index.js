@@ -5,6 +5,7 @@ import NotFoundPage from './singleTypes/NotFoundPage'
 import MyWorkPage from './singleTypes/myWorkPage'
 import CooperationEffectsPage from './singleTypes/cooperationEffectsPage'
 import AboutMePage from './singleTypes/aboutMePage'
+import PrivacyPolicyPage from './singleTypes/privacyPolicyPage'
 
 export const singleTypes = [
   IndexPage,
@@ -12,6 +13,7 @@ export const singleTypes = [
   NotFoundPage,
   CooperationEffectsPage,
   AboutMePage,
+  PrivacyPolicyPage,
 ]
 
 // Collection Types
