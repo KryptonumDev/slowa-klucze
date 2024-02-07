@@ -148,6 +148,10 @@
       column-gap: 100px;
       align-items: center;
 
+      &[data-show="false"] {
+        display: none;
+      }
+
       .logo {
         height: auto;
         width: 100%;

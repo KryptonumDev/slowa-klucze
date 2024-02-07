@@ -47,12 +47,10 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
           <div className={styles.links}>
             <Link href={'/o-mnie'}>O mnie</Link>
             <Link href={'/oferta'}>Oferta</Link>
-            <Link href={'/ppinie'}>Opinie</Link>
             <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
             <Link href={'/case-study'}>Case study</Link>
             <Link href={'/blog'}>Blog</Link>
             <Link href={'/faq'}>FAQ</Link>
-            <Link href={'/regulamin'}>Regulamin</Link>
             <Link href={'/polityka-prywatnosci'}>Polityka prywatności</Link>
             <Button
               className={styles.button}

@@ -129,7 +129,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
                 </>
               )}
             </div>
-            <Link href={'/Blog'}>Blog</Link>
+            <Link href={'/blog'}>Blog</Link>
           </div>
         </div>
         <Button
@@ -142,53 +142,52 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
             onClick={() => setToggleNav(!toggleNav)}
             className={styles.exit}
           >
-            {Hamburger()}
+            <Hamburger />
           </button>
         </div>
       </div>
-      {toggleNav && (
-        <div
-          className={styles.toggled}
-          onMouseLeave={() => setToggleNav(!toggleNav)}
-          ref={toggledNavRef}
-        >
-          <Img
-            className={styles.logo}
-            data={logo}
-          />
-          <button onClick={() => setToggleNav(!toggleNav)}>{Exit()}</button>
-          <div className={styles.links}>
-            <Link href={'/o-mnie'}>O mnie</Link>
-            <Link href={'/oferta'}>Oferta</Link>
-            <div className={styles.sublinks}>
-              <Link href={'/co-robie'}>Co robię</Link>
-              <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-            </div>
-            <Link href={'/blog'}>Blog</Link>
+      <div
+        className={styles.toggled}
+        onMouseLeave={() => setToggleNav(false)}
+        data-show={toggleNav}
+        ref={toggledNavRef}
+      >
+        <Img
+          className={styles.logo}
+          data={logo}
+        />
+        <button onClick={() => setToggleNav(!toggleNav)}>{Exit()}</button>
+        <div className={styles.links}>
+          <Link href={'/o-mnie'}>O mnie</Link>
+          <Link href={'/oferta'}>Oferta</Link>
+          <div className={styles.sublinks}>
+            <Link href={'/co-robie'}>Co robię</Link>
+            <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
           </div>
-          <div className={styles.socials}>
-            {socialsList.map((href, i) => {
-              const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-              if (icon) {
-                return (
-                  <Link
-                    href={href}
-                    key={i}
-                    aria-label={icon.name}
-                  >
-                    {icon.icon}
-                  </Link>
-                );
-              }
-            })}
-          </div>
-          <Button
-            className={styles.button}
-            svg={false}
-            data={cta}
-          />
+          <Link href={'/blog'}>Blog</Link>
         </div>
-      )}
+        <div className={styles.socials}>
+          {socialsList.map((href, i) => {
+            const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
+            if (icon) {
+              return (
+                <Link
+                  href={href}
+                  key={i}
+                  aria-label={icon.name}
+                >
+                  {icon.icon}
+                </Link>
+              );
+            }
+          })}
+        </div>
+        <Button
+          className={styles.button}
+          svg={false}
+          data={cta}
+        />
+      </div>
     </nav>
   );
 }
