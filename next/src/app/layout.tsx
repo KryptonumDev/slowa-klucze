@@ -28,7 +28,7 @@ const kanit = localFont({
 });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { footer, logo, navigation, socialsList } = await getData();
+  const { footer, logo, navigation, socials } = await getData();
 
   const icons = [
     {
@@ -51,14 +51,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Nav
           data={navigation}
           logo={logo}
-          socialsList={socialsList}
+          socials={socials}
           icons={icons}
         />
         <main>{children}</main>
         <Footer
           data={footer}
           logo={logo}
-          socialsList={socialsList}
+          socials={socials}
           icons={icons}
         />
       </body>
@@ -124,7 +124,11 @@ async function getData() {
           }
         }
        },
-       socialsList[]
+       socials {
+         facebook,
+          linkedin,
+          instagram
+       }
       }
     }`,
   });
