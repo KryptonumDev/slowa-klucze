@@ -120,7 +120,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
                 className={styles.button}
               >
                 <span>Oferta</span>
-                {ChevronDown()}
+                <ChevronDown />
               </button>
               {isExpanded && (
                 <>
@@ -156,7 +156,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
           className={styles.logo}
           data={logo}
         />
-        <button onClick={() => setToggleNav(!toggleNav)}>{Exit()}</button>
+        <button onClick={() => setToggleNav(!toggleNav)}>{<Exit />}</button>
         <div className={styles.links}>
           <Link href={'/o-mnie'}>O mnie</Link>
           <Link href={'/oferta'}>Oferta</Link>
@@ -202,6 +202,8 @@ function Hamburger() {
     >
       <path
         stroke='#163C3E'
+        strokeLinecap='round'
+        strokeWidth='4'
         d='M10.917 17.792h7.625m33.042 0H28.709m22.874 25.416h-7.625m-33.042 0h22.875M10.917 30.5h40.667'
       ></path>
     </svg>
@@ -218,6 +220,8 @@ function Exit() {
     >
       <path
         stroke='#163C3E'
+        strokeLinecap='round'
+        strokeWidth='1.5'
         d='M25.375 16.625l-8.75 8.75m0-8.75l8.75 8.75M38.5 21c0 8.25 0 12.374-2.563 14.937C33.374 38.5 29.25 38.5 21 38.5s-12.374 0-14.937-2.563C3.5 33.374 3.5 29.25 3.5 21s0-12.374 2.563-14.937C8.626 3.5 12.75 3.5 21 3.5s12.374 0 14.937 2.563c1.704 1.704 2.275 4.099 2.467 7.937'
       ></path>
     </svg>
@@ -233,7 +237,8 @@ function ChevronDown() {
       fill='none'
     >
       <path
-        stroke='currentColor'
+        stroke='#163C3E'
+        strokeWidth='3'
         d='M1.5 1.5l7.5 9 7.5-9'
       ></path>
     </svg>

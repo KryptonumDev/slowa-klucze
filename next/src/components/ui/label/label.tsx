@@ -62,6 +62,8 @@ function SmallError({ ...props }) {
     >
       <path
         stroke='#BA3131'
+        strokeLinecap='round'
+        strokeWidth='1.5'
         d='M24 14v12'
       ></path>
       <circle
@@ -72,6 +74,8 @@ function SmallError({ ...props }) {
       ></circle>
       <path
         stroke='#BA3131'
+        strokeLinecap='round'
+        strokeWidth='1.5'
         d='M14 6.676A19.908 19.908 0 0124 4c11.046 0 20 8.954 20 20s-8.954 20-20 20S4 35.046 4 24c0-3.643.974-7.058 2.676-10'
       ></path>
     </svg>
