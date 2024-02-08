@@ -6,7 +6,7 @@
   text-align: center;
   gap: clamp(20px, calc(30vw/7.68), 30px);
   border-radius: 16px;
-  background-image: url("../../../../public/background-image.webp"), var(--gradient);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../public/background-image.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
