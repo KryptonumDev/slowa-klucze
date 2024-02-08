@@ -53,6 +53,7 @@ export function PlusIcon({ className }: { className?: string }) {
       width='32'
       height='32'
       fill='none'
+      className={className}
     >
       <path
         stroke='#25666A'

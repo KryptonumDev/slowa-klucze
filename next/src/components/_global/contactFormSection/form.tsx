@@ -12,7 +12,6 @@ import Checkbox from '@/components/ui/checkbox/checkbox';
 import Button from '@/components/ui/button/Button';
 import Calendar from '@/components/ui/calendar/calendar';
 import { Failed, Success } from '@/types/_ui/Icons';
-import { redirect } from 'next/navigation';
 
 export default function Form({ formCta }: { formCta: Cta }) {
   const {
