@@ -1,4 +1,4 @@
-import { BlogReference } from '../_global/BlogReference';
+import { type BlogReference } from '../_global/BlogReference';
 import { type ContactForm } from '../_global/ContactForm';
 import { type FAQ } from '../_global/FAQ';
 import { type Image } from '../_global/Image';
