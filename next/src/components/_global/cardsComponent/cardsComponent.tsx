@@ -53,15 +53,19 @@ export function PlusIcon({ className }: { className?: string }) {
       width='32'
       height='32'
       fill='none'
-      className={className}
     >
       <path
         stroke='#25666A'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
         d='M11.333 16.667L14 19.333l6.666-6.666'
       ></path>
       <path
         stroke='#25666A'
-        d='M9.334 4.45A13.272 13.272 0 0116 2.667c7.364 0 13.334 5.97 13.334 13.333 0 7.364-5.97 13.333-13.334 13.333-7.363 0-13.333-5.97-13.333-13.333 0-2.429.65-4.706 1.784-6.667'
+        strokeLinecap='round'
+        strokeWidth='2'
+        d='M9.334 4.45A13.272 13.272 0 0116 2.667c7.364 0 13.334 5.97 13.334 13.333 0 7.364-5.97 13.333-13.334 13.333-7.363 0-13.333-5.97-13.333-13.333 0-2.429.65-4.705 1.784-6.667'
       ></path>
     </svg>
   );

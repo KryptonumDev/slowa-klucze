@@ -69,6 +69,7 @@ import ctaWithBackgroundImage, {ctaInBackgroundImage} from './components/ctaWith
 import orderedListArray from './components/orderedListArray'
 import unorderedListArray from './components/unorderedListArray'
 import blogReference from './components/blogReference'
+import links from './components/links'
 
 export const components = [
   category,
@@ -126,6 +127,7 @@ export const components = [
   unorderedListArray,
   ctaInBackgroundImage,
   blogReference,
+  links,
 ]
 
 import blog_categories from './collectionTypes/blog/categories'

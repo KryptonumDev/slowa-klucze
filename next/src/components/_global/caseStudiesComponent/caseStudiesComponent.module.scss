@@ -36,7 +36,8 @@
         .items {
           display: flex;
           flex-wrap: wrap;
-          gap: 50px;
+          column-gap: 50px;
+          row-gap: clamp(10px, calc(15vw/7.68), 30px);
 
           .item {
             display: grid;

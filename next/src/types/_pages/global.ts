@@ -8,7 +8,11 @@ export interface global {
     footer: footer;
     logo: Image;
     navigation: navigation;
-    socialsList: string[];
+    socials: {
+      facebook: string;
+      linkedin: string;
+      instagram: string;
+    };
   };
 }
 

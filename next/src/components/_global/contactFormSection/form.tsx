@@ -12,6 +12,7 @@ import Checkbox from '@/components/ui/checkbox/checkbox';
 import Button from '@/components/ui/button/Button';
 import Calendar from '@/components/ui/calendar/calendar';
 import { Failed, Success } from '@/types/_ui/Icons';
+import { redirect } from 'next/navigation';
 
 export default function Form({ formCta }: { formCta: Cta }) {
   const {
@@ -76,6 +77,10 @@ export default function Form({ formCta }: { formCta: Cta }) {
 
   const handleTabClick = (e: MouseEvent<HTMLButtonElement>, tab: string) => {
     e.preventDefault();
+    if (tab == 'videoCall') {
+      window.open('https://calendly.com/kontakt-wky/30min', '_blank');
+      return;
+    }
     setSelectedTab(tab);
   };
 

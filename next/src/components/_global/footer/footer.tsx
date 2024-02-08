@@ -5,15 +5,17 @@ import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Footer({ data: { description, portrait }, logo, socialsList, icons }: Props) {
-  
+export default function Footer({ data: { description, portrait }, logo, socials, icons }: Props) {
   const date = new Date().getFullYear();
 
   return (
     <footer className={` ${styles.footer}`}>
       <div className={styles.background}>
         <div className={`${styles.footerWrapper} maxWidth`}>
-          <Link href={'/'} className={styles.logoLink}>
+          <Link
+            href={'/'}
+            className={styles.logoLink}
+          >
             <Img
               className={styles.logo}
               data={logo}
@@ -22,9 +24,9 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
           </Link>
           <Markdown className={styles.description}>{description}</Markdown>
           <div className={styles.socials}>
-            {socialsList.map((href, i) => {
-              const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-              if (icon) {
+            {Object.entries(socials).map(([name, href], i) => {
+              const icon = icons.find((icon) => icon.name.toLowerCase() === name.toLowerCase());
+              if (icon && href) {
                 return (
                   <Link
                     href={href}
@@ -51,9 +53,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
             <Link href={'/o-mnie'}>O mnie</Link>
             <Link href={'/oferta'}>Oferta</Link>
             <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-            <Link href={'/case-study'}>Case study</Link>
             <Link href={'/blog'}>Blog</Link>
-            <Link href={'/faq'}>FAQ</Link>
             <Link href={'/polityka-prywatnosci'}>Polityka prywatności</Link>
             <Button
               className={styles.button}

@@ -40,9 +40,9 @@ export default function Calendar({
     (_, i) => selectedDate.subtract(1, 'month').endOf('month').date() - i
   );
   const placeholdersAfter = Array.from({ length: 6 - lastDayOfMonth }, (_, i) => i + 1);
-  const times = Array.from({ length: 17 }, (_, i) =>
+  const times = Array.from({ length: 4 }, (_, i) =>
     dayjs()
-      .hour(8)
+      .hour(10)
       .minute(0)
       .add(30 * i, 'minute')
   );
@@ -133,11 +133,12 @@ export default function Calendar({
                 const isPlaceholder = index < firstDayOfMonth || index >= firstDayOfMonth + daysInMonth.length;
                 const thisDay = selectedDate.date(day);
                 const isBeforeToday = thisDay.isBefore(dayjs(), 'day');
+                const isWeekend = thisDay.day() === 0 || thisDay.day() === 6;
                 return (
                   <button
                     key={index}
                     className={styles.day}
-                    disabled={isBeforeToday || isPlaceholder}
+                    disabled={isBeforeToday || isPlaceholder || isWeekend}
                     onClick={(event) => handleDayChange(event, day)}
                   >
                     <span data-selected={day == selectedDate.date() && !isPlaceholder && !isBeforeToday}>{day}</span>

@@ -131,6 +131,12 @@
   }
 
   @media (max-width: 499px) {
+    header {
+      .subheading {
+        text-align: center;
+      }
+    }
+
     .form {
       .label {
         align-items: flex-start;

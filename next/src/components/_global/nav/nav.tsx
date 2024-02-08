@@ -7,7 +7,7 @@ import { type Props } from './nav.types';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) {
+export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [toggleNav, setToggleNav] = useState(false);
@@ -158,18 +158,38 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
         />
         <button onClick={() => setToggleNav(!toggleNav)}>{<Exit />}</button>
         <div className={styles.links}>
-          <Link href={'/o-mnie'}>O mnie</Link>
-          <Link href={'/oferta'}>Oferta</Link>
-          <div className={styles.sublinks}>
-            <Link href={'/co-robie'}>Co robię</Link>
-            <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+          <Link
+            href={'/o-mnie'}
+            onClick={() => setToggleNav(!toggleNav)}
+          >
+            O mnie
+          </Link>
+          <span className={styles.span}>Oferta</span>
+          <div>
+            <Link
+              href={'/co-robie'}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              Co robię
+            </Link>
+            <Link
+              href={'/efekty-wspolpracy'}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              Efekty współpracy
+            </Link>
           </div>
-          <Link href={'/blog'}>Blog</Link>
+          <Link
+            href={'/blog'}
+            onClick={() => setToggleNav(!toggleNav)}
+          >
+            Blog
+          </Link>
         </div>
         <div className={styles.socials}>
-          {socialsList.map((href, i) => {
-            const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-            if (icon) {
+          {Object.entries(socials).map(([name, href], i) => {
+            const icon = icons.find((icon) => icon.name.toLowerCase() === name.toLowerCase());
+            if (icon && href) {
               return (
                 <Link
                   href={href}

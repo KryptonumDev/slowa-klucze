@@ -7,10 +7,13 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function ContactFormSection({ data: { formCta, heading, image, subheading } }: Props) {
   return (
-    <section className={`${styles.contactFormSection}`}>
+    <section
+      className={`${styles.contactFormSection}`}
+      id='contactForm'
+    >
       <header>
         <Heading type='h2'>{heading}</Heading>
-        <Markdown.h2>{subheading}</Markdown.h2>
+        <Markdown.h2 className={styles.subheading}>{subheading}</Markdown.h2>
       </header>
       <Img
         className={styles.image}

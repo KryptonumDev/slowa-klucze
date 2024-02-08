@@ -26,6 +26,10 @@
           border-radius: 20px;
           padding: 8px 40px;
 
+          &:hover {
+            background: var(--background);
+          }
+
           &:focus-visible {
             offset: 1px solid var(--midnight-green-500);
             outline-offset: -5px;
