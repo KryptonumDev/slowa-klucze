@@ -19,6 +19,7 @@ export default function Checkbox({ disabled, text, name, register, errors, error
               href='/polityka-prywatnosci'
               svg={true}
               disabled={disabled}
+              theme='borderless'
             >
               Politykę Prywatności
             </Button>

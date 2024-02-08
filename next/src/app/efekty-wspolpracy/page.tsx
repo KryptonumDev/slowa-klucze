@@ -152,6 +152,7 @@ async function getData() {
         description,
         projects[] {
           projectName,
+          heading,
           assumptions[]{
             description,
             image {

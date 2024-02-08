@@ -53,6 +53,10 @@
           padding: 15px 25px;
           border-radius: 20px;
 
+          &:has(summary:focus-visible) {
+            outline: 1px solid var(--coffee-500);
+          }
+
           .button {
             display: grid;
             column-gap: 10px;
@@ -60,6 +64,10 @@
             align-items: flex-start;
             text-align: start;
             grid-template-areas: "image title icon";
+
+            &:focus-visible {
+              outline: none;
+            }
 
             &:hover {
               cursor: pointer;

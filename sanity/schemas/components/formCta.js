@@ -1,9 +1,9 @@
-import removeMarkdown from "../../utils/RemoveMarkdown"
+import removeMarkdown from '../../utils/RemoveMarkdown'
 
 export default {
-  name: "formCta",
-  title: "Form call to action ",
-  type: "object",
+  name: 'formCta',
+  title: 'Form call to action ',
+  type: 'object',
   fields: [
     {
       name: 'theme',
@@ -11,11 +11,12 @@ export default {
       title: 'Typ',
       options: {
         list: [
-          { title: 'Primary (bez tła)', value: 'primary' },
-          { title: 'Secondary (zielone tło)', value: 'secondary' }
+          {title: 'Primary (bez tła)', value: 'primary'},
+          {title: 'Secondary (zielone tło)', value: 'secondary'},
+          {title: 'Borderless (bez ramki)', value: 'borderless'},
         ],
         layout: 'radio',
-        direction: "horizontal"
+        direction: 'horizontal',
       },
       initialValue: 'primary',
     },
@@ -24,18 +25,18 @@ export default {
       name: 'text',
       title: 'Text',
       description: 'Text pojawi się na przycisku',
-    }
+    },
   ],
   preview: {
     select: {
       title: 'text',
-      theme: 'theme'
+      theme: 'theme',
     },
-    prepare({ title, theme }) {
+    prepare({title, theme}) {
       return {
         title: title,
         subtitle: `${removeMarkdown(theme)}`,
       }
-    }
-  }
+    },
+  },
 }

@@ -34,6 +34,19 @@
     border-radius: 16px;
     width: fit-content;
     font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+    border: unset;
+
+    &:hover {
+      background: linear-gradient(89deg, #FAFAFA -0.92%, #CCC 99.84%);
+
+      >span {
+        background: unset;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: unset;
+      }
+    }
+
   }
 
   @media (max-width: 499px) {

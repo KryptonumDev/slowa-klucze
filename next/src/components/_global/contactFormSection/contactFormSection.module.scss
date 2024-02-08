@@ -43,16 +43,35 @@
         border-top-left-radius: 16px;
         border-bottom-left-radius: 16px;
         background: var(--neutral-400);
+
+        &:focus-visible {
+          outline-offset: -1px;
+          outline: 1px solid var(--midnight-green-500);
+          border-radius: 16px 0px 0px 16px;
+        }
       }
 
       .videoCall {
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
         background: var(--neutral-400);
+
+        &:focus-visible {
+          outline-offset: -1px;
+          outline: 1px solid var(--midnight-green-500);
+          border-radius: 0px 16px 16px 0px;
+        }
       }
 
       .contactSmall {
         display: none;
+      }
+
+
+      :not(.active) {
+        &:hover {
+          background: var(--Szary-gradient, linear-gradient(90deg, #FFF 0.3%, #D2D2D2 102.41%));
+        }
       }
 
       .active {
@@ -74,6 +93,7 @@
         .success {
           color: var(--green-800);
         }
+
         .failed {
           color: var(--error-800);
         }
@@ -89,7 +109,7 @@
     }
   }
 
-  @media (max-width:1199px) {
+  @media (max-width:999px) {
     grid-template-areas: "heading" "form" "img";
     grid-template-columns: 1fr;
 

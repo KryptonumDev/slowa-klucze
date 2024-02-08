@@ -47,7 +47,7 @@ export default function BlogReferenceSection({
         <ReadingTime text={JSON.stringify(content, null, 2)}/>
         <Button
           href={`/blog/${current}`}
-          theme='primary'
+          theme='borderless'
           svg={false}
           className={styles.button}
         >

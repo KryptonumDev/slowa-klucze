@@ -21,9 +21,13 @@ export default function Button({
 
   const isExternal = href && href.startsWith('https://');
 
-  const linkClassName = `${styles.button} ${theme === 'secondary' ? styles.secondary : styles.primary} ${
-    className || ''
-  } `;
+  const themeStyles = {
+    secondary: styles.secondary,
+    primary: styles.primary,
+    borderless: styles.borderless,
+  };
+
+  const linkClassName = `${styles.button} ${themeStyles[theme] || styles.primary} ${className || ''} `;
 
   return (
     <>

@@ -7,6 +7,7 @@
   header {
     display: grid;
     grid-template-columns: 7fr 5fr;
+    align-items: center;
 
     .button {
       align-items: center;
@@ -51,6 +52,7 @@
         .blogEntry {
           display: grid;
           gap: 25px;
+          padding-bottom: 10px;
 
           .blogLink {
             position: relative;
@@ -110,7 +112,7 @@
     }
 
     .controls {
-      padding-top: 50px;
+      padding-top: 40px;
       display: flex;
       justify-content: center;
       gap: 15px;
@@ -150,7 +152,7 @@
 
       .button {
         justify-self: flex-start;
-        padding-top: 50px;
+        margin-top: 50px;
       }
     }
   }

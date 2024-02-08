@@ -6,11 +6,14 @@ import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
 export default function Footer({ data: { description, portrait }, logo, socialsList, icons }: Props) {
+  
+  const date = new Date().getFullYear();
+
   return (
     <footer className={` ${styles.footer}`}>
       <div className={styles.background}>
         <div className={`${styles.footerWrapper} maxWidth`}>
-          <Link href={'/'}>
+          <Link href={'/'} className={styles.logoLink}>
             <Img
               className={styles.logo}
               data={logo}
@@ -39,7 +42,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
             data={portrait}
           />
           <p className={styles.copyright}>
-            Copyright © 2023 — <span>slowa-klucze.pl</span>{' '}
+            Copyright © {date} — <span>slowa-klucze.pl</span>{' '}
             <span>
               <Link href={'https://kryptonum.eu/'}>Realizacja: Kryptonum</Link>
             </span>
@@ -55,6 +58,7 @@ export default function Footer({ data: { description, portrait }, logo, socialsL
             <Button
               className={styles.button}
               svg={false}
+              theme='borderless'
             >
               Zarządzam ciasteczkami
             </Button>

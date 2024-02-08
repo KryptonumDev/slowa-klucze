@@ -51,12 +51,14 @@ export default function BlogReferenceComponent({
               <div className={styles.overlay}>
                 <Markdown className={styles.description}>{hero_Description}</Markdown>
               </div>
-              <Link
+              <Button
+                theme='borderless'
+                svg={false}
                 href={`/blog/${current}`}
                 className={styles.link}
               >
                 Sprawdź więcej
-              </Link>
+              </Button>
             </div>
           ))}
         </SwiperComponent>

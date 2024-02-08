@@ -72,10 +72,10 @@ export default function Form({ data: { formCta, JsxDescription } }: { data: { fo
             disabled={submitProcessing}
           />
           <Button
-            theme='secondary'
             data={formCta}
             svg={false}
             disabled={submitProcessing}
+            theme='borderless'
           />
         </>
       )}

@@ -16,7 +16,7 @@ export default function FaqItems({
   arrow: React.ReactNode;
   length: number;
 }) {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleButtonClick = (event: React.MouseEvent<HTMLDetailsElement, MouseEvent>, i: number) => {
     event.preventDefault();

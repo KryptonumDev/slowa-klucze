@@ -5,6 +5,7 @@ import Img from '@/components/ui/Img';
 import ReadingTime from '@/components/ui/readingTime/readingTime';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
+import Button from '@/components/ui/button/Button';
 
 export default function BlogEntries({ blogEntries }: { blogEntries: Page[] }) {
   return (
@@ -45,12 +46,14 @@ export default function BlogEntries({ blogEntries }: { blogEntries: Page[] }) {
           <div className={styles.overlay}>
             <Markdown className={styles.description}>{entry.hero_Description}</Markdown>
           </div>
-          <Link
+          <Button
             href={`/blog/${entry.slug.current}`}
             className={styles.link}
+            theme='borderless'
+            svg={false}
           >
             Sprawdź więcej
-          </Link>
+          </Button>
         </div>
       ))}
     </div>

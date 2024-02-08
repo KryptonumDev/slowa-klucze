@@ -372,6 +372,7 @@ async function getData(slug: string) {
             description,
             projects[] {
               projectName,
+              heading,
               assumptions[]{
                 description,
                 image {
