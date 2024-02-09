@@ -7,6 +7,7 @@ import {collectionTypes} from './schemas'
 import {media} from 'sanity-plugin-media'
 import {createClient} from '@sanity/client'
 import blogPage from './schemas/singleTypes/blogPage'
+import {ExternalLinks} from './components/ExternalLinks'
 
 import {markdownSchema} from 'sanity-plugin-markdown'
 import {CustomMarkdownInput} from './components/Markdown'
@@ -62,6 +63,8 @@ export default defineConfig({
         ? input.filter(({action}) => action && singletonActions.has(action))
         : input,
   },
+
+  tools: [ExternalLinks()],
 })
 
 export const client = createClient({
