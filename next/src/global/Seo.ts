@@ -20,7 +20,7 @@ const SEO = async ({
   } = await getData();
 
   const seo = {
-    title: title || 'Słowa Klucze',
+    title: title || 'Słowa Klucze - profesjonalny copywriting dla biznesu',
     description: description || '',
     url: url || '',
     ogImage: og_Img.asset.url,

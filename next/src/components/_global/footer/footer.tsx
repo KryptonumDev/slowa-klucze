@@ -3,7 +3,6 @@ import styles from './footer.module.scss';
 import { type Props } from './footer.types';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
-import Button from '@/components/ui/button/Button';
 
 export default function Footer({ data: { description, portrait }, logo, socials, icons }: Props) {
   const date = new Date().getFullYear();
