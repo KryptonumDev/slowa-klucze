@@ -51,6 +51,7 @@ export default {
     },
     {
       name: 'content',
+      title: 'Zawartość',
       type: 'array',
       of: [
         {type: 'numberedCards'},

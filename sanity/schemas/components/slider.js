@@ -2,7 +2,7 @@ import removeMarkdown from "../../utils/RemoveMarkdown"
 
 export default {
   name: 'slider',
-  title: 'Slider',
+  title: 'Karuzela',
   type: 'object',
   fields: [
     {

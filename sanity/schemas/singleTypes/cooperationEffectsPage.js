@@ -6,6 +6,7 @@ export default {
   fields: [
     {
       name: 'content',
+      title: 'Zawartość',
       type: 'array',
       of: [
         {type: 'faq'},
