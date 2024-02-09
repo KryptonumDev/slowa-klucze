@@ -157,7 +157,12 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
           className={styles.logo}
           data={logo}
         />
-        <button onClick={() => setToggleNav(!toggleNav)} aria-label='zamknji nawigację'>{<Exit />}</button>
+        <button
+          onClick={() => setToggleNav(!toggleNav)}
+          aria-label='zamknji nawigację'
+        >
+          {<Exit />}
+        </button>
         <div className={styles.links}>
           <Link
             href={'/o-mnie'}
@@ -166,7 +171,7 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
             O mnie
           </Link>
           <span className={styles.span}>Oferta</span>
-          <div>
+          <div className={styles.sublinks}>
             <Link
               href={'/co-robie'}
               onClick={() => setToggleNav(!toggleNav)}

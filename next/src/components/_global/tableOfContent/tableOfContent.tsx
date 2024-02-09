@@ -10,13 +10,16 @@ export default function TableOfContent({ content }: { content: Node[] }) {
     <nav className={styles.tableOfContent}>
       <ul className={styles.unorderedList}>
         {content.map(({ text, slug, subheadings }, index) => (
-          <li key={index} className={styles.list}>
+          <li
+            key={index}
+            className={styles.list}
+          >
             <Link
               href={`#${slug}`}
               onClick={(e) => smoothScroll(e, slug)}
               className={styles.link}
             >
-              {ReferenceLink()}
+              <ReferenceLink />
               <span>{text}</span>
             </Link>
             {subheadings?.length > 0 && (
@@ -28,7 +31,7 @@ export default function TableOfContent({ content }: { content: Node[] }) {
                       onClick={(e) => smoothScroll(e, slug)}
                       className={styles.link}
                     >
-                      {ReferenceLink()}
+                      <ReferenceLink />
                       <span>{text}</span>
                     </Link>
                   </li>

@@ -6,7 +6,7 @@
   max-height: calc(80vh - 75px);
   max-height: calc(80dvh - 75px);
   border-radius: 16px;
-  padding: clamp(32px, calc(50vw/7.68), 71px) clamp(30px, calc(41vw/7.68), 52px);
+  padding: clamp(20px, calc(30vw/7.68), 40px);
 
   .list {
     display: grid;
@@ -19,6 +19,10 @@
       grid-template-columns: auto 1fr;
       gap: 15px;
       width: fit-content;
+
+      >span {
+        margin-top: -4px;
+      }
     }
 
     .subList {
