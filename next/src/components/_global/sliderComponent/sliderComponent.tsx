@@ -37,7 +37,7 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
             </div>
           ))}
         </SwiperComponent>
-        <CentralizedHeading data={centralizedHeading2} />
+        <CentralizedHeading data={centralizedHeading2} className={styles.secondCentralizedHeading} />
     </section>
   );
 }
