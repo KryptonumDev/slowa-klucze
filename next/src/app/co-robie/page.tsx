@@ -94,12 +94,10 @@ async function getMetadata() {
     query: /* groq */ `{
       "page": *[_id=="MyWorkPage"][0] {
       seo {
-       ...,
-       og_Img {
-         asset -> {
-           url
-         }
-       }
+        seo {
+       title,
+       description
+     }
      }
    }
     }`,

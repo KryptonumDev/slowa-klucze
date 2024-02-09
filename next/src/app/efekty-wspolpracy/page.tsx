@@ -87,12 +87,8 @@ async function getMetadata() {
     query: /* groq */ `{
       "page": *[_id=="CooperationEffectsPage"][0] {
       seo {
-       ...,
-       og_Img {
-         asset -> {
-           url
-         }
-       }
+       title,
+       description
      }
    }
     }`,

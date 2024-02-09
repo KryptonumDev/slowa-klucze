@@ -1,7 +1,17 @@
 import ContentComponent from '@/components/_global/contentComponent/contentComponent';
 import Hero from '@/components/_privacyPolicy/hero';
+import SEO from '@/global/Seo';
 import { type PrivacyPolicyPage } from '@/types/_pages/PrivacyPolicyPage';
 import { sanityFetch } from '@/utils/sanity-client';
+
+export async function generateMetadata() {
+  const { seo } = await getMetadata();
+  return SEO({
+    title: seo?.title,
+    description: seo?.description,
+    url: '/polityka-prywatnosci',
+  });
+}
 
 export default async function privacyPolicyPage() {
   const { content, hero_Title } = await getData();
@@ -12,6 +22,20 @@ export default async function privacyPolicyPage() {
       <ContentComponent data={content} />
     </>
   );
+}
+
+async function getMetadata() {
+  const { page } = await sanityFetch<PrivacyPolicyPage>({
+    query: /* groq */ `{
+      "page": *[_id=="privacyPolicyPage"][0] {
+      seo {
+       title,
+       description
+     }
+   }
+    }`,
+  });
+  return page;
 }
 
 async function getData() {
