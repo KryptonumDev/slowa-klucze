@@ -33,6 +33,8 @@ export async function sanityFetch<QueryResponse>({
   params?: QueryParams;
 }): Promise<QueryResponse> {
   return await client.fetch<QueryResponse>(query, params, {
+    token: process.env.SANITY_API_TOKEN,
+    perspective: 'previewDrafts',
     next: {
       revalidate: 30,
     },
