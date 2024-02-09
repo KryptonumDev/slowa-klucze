@@ -22,6 +22,7 @@ export default function BlogEntries({ blogEntries }: { blogEntries: Page[] }) {
             <Img
               data={entry.hero_Image}
               className={styles.image}
+              sizes='(max-width: 599px) 100vw, (max-width: 899px) 50vw, 33vw'
             />
             <ReadingTime
               text={JSON.stringify(entry.content, null, 2)}

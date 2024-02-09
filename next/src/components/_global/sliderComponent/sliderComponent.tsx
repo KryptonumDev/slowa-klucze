@@ -23,6 +23,7 @@ export default function SliderComponent({ data: { centralizedHeading, centralize
                 <Img
                   className={styles.img}
                   data={icon}
+                  sizes='49px'
                 />
                 <Markdown className={styles.heading}>{heading}</Markdown>
                 <Markdown className={styles.url}>{url}</Markdown>

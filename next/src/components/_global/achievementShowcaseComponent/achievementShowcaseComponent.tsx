@@ -26,6 +26,7 @@ export default function AchievementShowcaseComponent({
               <Img
                 className={styles.image}
                 data={image}
+                sizes='86px'
               />
               <Counter number={number} maxNumber={highestNumber}/>
               <Markdown className={styles.description}>{description}</Markdown>

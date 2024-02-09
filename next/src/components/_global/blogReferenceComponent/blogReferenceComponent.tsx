@@ -45,6 +45,7 @@ export default function BlogReferenceComponent({
                 <Img
                   data={hero_Image}
                   className={styles.image}
+                  sizes='(max-width: 599px) 100vw, (max-width: 999px) 75vw, 33vw'
                 />
               </Link>
               <Markdown.h3 className={styles.title}>{hero_Title}</Markdown.h3>

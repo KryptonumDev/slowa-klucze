@@ -18,6 +18,7 @@ export default function SmallTilesComponent({ data: { centralizedHeading, list }
               <Img
                 data={image}
                 className={styles.image}
+                sizes='(max-width: 499px) 100vw, (max-width: 1199px) 50vw, 33vw'
               />
               <Markdown.h3 className={styles.title}>{title}</Markdown.h3>
               <Markdown className={styles.description}>{description}</Markdown>

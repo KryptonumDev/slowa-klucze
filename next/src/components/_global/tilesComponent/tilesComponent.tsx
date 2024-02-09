@@ -17,6 +17,7 @@ export default function TilesComponent({ data: { centralizedHeading, list } }: P
             <Img
               data={item.image}
               className={styles.image}
+              sizes='(max-width: 499px) 100vw, (max-width: 1199px) 50vw, 33vw'
             />
             <Markdown className={styles.description}>{item.description}</Markdown>
             <Markdown.h3>{item.title}</Markdown.h3>

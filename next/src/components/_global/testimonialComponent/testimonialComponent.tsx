@@ -15,6 +15,7 @@ export default function TestimonialComponent({
       <Img
         className={styles.image}
         data={image}
+        sizes='(max-width: 599px) 100vw, (max-width: 1099px) 50vw, 33vw'
       />
       <div className={styles.wrapper}>
         <Heading

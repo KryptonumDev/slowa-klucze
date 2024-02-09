@@ -10,6 +10,7 @@ export default function AuthorComponent({ data: { description, fullName, photo, 
       <Img
         className={styles.image}
         data={photo}
+        sizes='186px'
       />
       <div className={styles.content}>
         <Markdown.h2 className={styles.heading}>{fullName}</Markdown.h2>

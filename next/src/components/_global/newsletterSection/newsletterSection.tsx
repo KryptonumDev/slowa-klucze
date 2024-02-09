@@ -27,6 +27,7 @@ export default function NewsletterSection({ data: { description, formCta, headin
           <Img
             className={styles.image}
             data={card.image}
+            sizes='78px'
           />
           <Markdown.h3 className={styles.heading}>{card.heading}</Markdown.h3>
           <Markdown className={styles.description}>{card.description}</Markdown>
@@ -34,6 +35,7 @@ export default function NewsletterSection({ data: { description, formCta, headin
         <Img
           data={image}
           className={styles.image}
+          sizes='(max-width: 999px) 100vw, 50vw'
         />
       </div>
     </section>

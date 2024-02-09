@@ -16,6 +16,7 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
       <Img
         className={styles.image}
         data={image}
+        sizes='52px'
       />
     );
 
@@ -41,6 +42,7 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
           <Img
             className={styles.image}
             data={image}
+            sizes='(max-width: 1349px) 100vw, 50vw' 
           />
           <div className={styles.items}>
             <FaqItems

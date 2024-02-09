@@ -22,6 +22,7 @@ export default function CardsComponent({ data: { centralizedHeading, cards } }: 
                 <Img
                   className={styles.icon}
                   data={icon}
+                  sizes='78px'
                 />
                 <Markdown.h2 className={styles.title}>{title}</Markdown.h2>
               </header>

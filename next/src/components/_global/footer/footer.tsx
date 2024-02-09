@@ -42,6 +42,7 @@ export default function Footer({ data: { description, portrait }, logo, socials,
           <Img
             className={styles.photo}
             data={portrait}
+            sizes='(max-width: 599px) 0vw, (max-width: 799px) 50vw, 33vw'
           />
           <p className={styles.copyright}>
             Copyright © {date} — <span>slowa-klucze.pl</span>{' '}
@@ -55,13 +56,6 @@ export default function Footer({ data: { description, portrait }, logo, socials,
             <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
             <Link href={'/blog'}>Blog</Link>
             <Link href={'/polityka-prywatnosci'}>Polityka prywatności</Link>
-            <Button
-              className={styles.button}
-              svg={false}
-              theme='borderless'
-            >
-              Zarządzam ciasteczkami
-            </Button>
           </div>
         </div>
       </div>

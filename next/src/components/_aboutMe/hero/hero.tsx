@@ -31,6 +31,7 @@ export default function Hero({
         <Img
           className={styles.icon}
           data={hero_ImageTitleSubtitleDescription.image}
+          sizes='55px'
         />
         <Markdown.h3 className={styles.title}>{hero_ImageTitleSubtitleDescription.title}</Markdown.h3>
         <Markdown className={styles.subtitle}>{hero_ImageTitleSubtitleDescription.subtitle}</Markdown>
@@ -38,12 +39,14 @@ export default function Hero({
         <Img
           className={styles.image}
           data={hero_Image}
+          sizes='(max-width: 549px) 100vw, 40vw'
         />
       </div>
       <div className={styles.imageDescription}>
         <Img
           className={styles.image}
           data={hero_ImageDescription.image}
+          sizes='(max-width: 549px) 100vw, 40vw'
         />
         <Markdown className={styles.description}>{hero_ImageDescription.description}</Markdown>
       </div>
@@ -52,6 +55,7 @@ export default function Hero({
           <Img
             className={styles.icon}
             data={hero_centralizedIconTitleDescription.image}
+            sizes='55px'
           />
           <Markdown.h3 className={styles.title}>{hero_centralizedIconTitleDescription.title}</Markdown.h3>
         </div>

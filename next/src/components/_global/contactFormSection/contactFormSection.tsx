@@ -18,6 +18,7 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
       <Img
         className={styles.image}
         data={image}
+        sizes='(max-width: 999px) 100vw, 50vw'
       />
       <Form formCta={formCta} />
     </section>

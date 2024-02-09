@@ -22,6 +22,7 @@ export default function ProcessComponent({ data: { centralizedHeading, proceses 
                 <Img
                   className={styles.image}
                   data={image}
+                  sizes='(max-width: 549px) 100vw, 33vw'
                 />
                 <Markdown.h2 className={styles.title}>{title}</Markdown.h2>
                 <Markdown className={styles.description}>{description}</Markdown>

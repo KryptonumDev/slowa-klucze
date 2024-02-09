@@ -27,6 +27,7 @@ export default function BlogReferenceSection({
         <Img
           data={hero_Image}
           className={styles.image}
+          sizes='(max-width: 699px) 100vw, 50vw'
         />
       </div>
       <div className={styles.contentWrapper}>

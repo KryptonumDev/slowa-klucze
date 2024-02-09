@@ -60,7 +60,12 @@ export const ImageRenderer = ({
 const components = {
   types: {
     imageSource: ({ value }: { value: { image: ReferencedImage; source: string } }) => {
-      const image = <ImageRenderer value={value.image} />;
+      const image = (
+        <ImageRenderer
+          value={value.image}
+          sizes='(max-width: 549px) 100vw, 40vw'
+        />
+      );
 
       return (
         <ImageSource
@@ -87,6 +92,7 @@ const components = {
           <ImageRenderer
             value={obj}
             key={i}
+            sizes='(max-width: 499px) 100vw, (max-width: 849px) 50vw, 45vw'
           />
         );
       });

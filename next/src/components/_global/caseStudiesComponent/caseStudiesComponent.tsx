@@ -34,6 +34,7 @@ export default function CaseStudiesComponent({
                     <Img
                       className={styles.icon}
                       data={image}
+                      sizes='48px'
                     />
                     <Markdown className={styles.description}>{description}</Markdown>
                   </div>
@@ -54,6 +55,7 @@ export default function CaseStudiesComponent({
                   <Img
                     className={styles.image}
                     data={image}
+                    sizes='(max-width: 599px) 100vw, 50vw'
                   />
                 </div>
               ))}

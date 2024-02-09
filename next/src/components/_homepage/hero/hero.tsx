@@ -27,6 +27,8 @@ export default function Hero({ data: { hero_Cta, hero_Image, hero_Paragraph, her
         <Img
           className={styles.img}
           data={hero_Image}
+          priority={true}
+          sizes='(max-width: 949px) 500px, 50vw'
         />
       </div>
     </section>

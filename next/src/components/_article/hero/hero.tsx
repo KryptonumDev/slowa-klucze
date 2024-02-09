@@ -25,6 +25,7 @@ export default function Hero({ data: { hero_Description, hero_Image, hero_Title,
       <Img
         className={styles.image}
         data={hero_Image}
+        sizes='(max-width: 629px) 100vw, 50vw'
       />
     </section>
   );
