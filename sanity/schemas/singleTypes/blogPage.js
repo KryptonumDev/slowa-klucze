@@ -44,12 +44,24 @@ export default {
         {type: 'category'},
       ],
     },
+    {
+      name: 'seo',
+      type: 'seo',
+      title: 'SEO',
+      group: 'seo',
+    },
   ],
   fieldsets: [
     {
       name: 'hero',
       title: 'Hero',
       options: {collapsible: true},
+    },
+  ],
+  groups: [
+    {
+      title: 'SEO',
+      name: 'seo',
     },
   ],
 }
