@@ -68,7 +68,7 @@ export default function SwiperComponent({ children, length }: { children: React.
             className={styles.dot}
             data-selected={i == activeIndex}
             onClick={() => handleButtonClick(i)}
-            aria-label={`przycisk nawigujący do slajdu numer ${i + 1}`}
+            aria-label={`przejdź do karty numer ${i + 1}`}
           />
         ))}
         <ButtonRight
@@ -85,7 +85,7 @@ function ButtonLeft({ ...props }) {
   return (
     <button
       {...props}
-      aria-label='przycisk nawigujący w lewo'
+      aria-label='poprzednia karta'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -109,7 +109,7 @@ function ButtonRight({ ...props }) {
   return (
     <button
       {...props}
-      aria-label='przycisk nawigujący w prawo'
+      aria-label='następna karta'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

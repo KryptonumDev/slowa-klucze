@@ -13,6 +13,16 @@ import { type ContactForm } from '@/types/_global/ContactForm';
 import ContactFormSection from '@/components/_global/contactFormSection/contactFormSection';
 import { type BlogReference } from '@/types/_global/BlogReference';
 import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
+import SEO from '@/global/Seo';
+
+export async function generateMetadata() {
+  const { seo } = await getMetadata();
+  return SEO({
+    title: seo?.title,
+    description: seo?.description,
+    url: '/',
+  });
+}
 
 export default async function IndexPage() {
   const { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading, content } = await getData();
@@ -64,6 +74,20 @@ export default async function IndexPage() {
       })}
     </>
   );
+}
+
+async function getMetadata() {
+  const { page } = await sanityFetch<homepage>({
+    query: /* groq */ `{
+      "page": *[_id=="IndexPage"][0] {
+      seo {
+       title,
+       description
+     }
+   }
+    }`,
+  });
+  return page;
 }
 
 async function getData() {

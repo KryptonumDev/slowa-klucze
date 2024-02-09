@@ -104,7 +104,7 @@
     }
   }
 
-  @media (max-width: 1199px) {
+  @media (max-width: 999px) {
     grid-template-columns: 1fr;
     grid-template-areas: "visuals" "content";
     row-gap: 48px;
@@ -123,7 +123,7 @@
 
     .content {
       header {
-        max-width: 220px;
+        max-width: 250px;
       }
     }
   }
