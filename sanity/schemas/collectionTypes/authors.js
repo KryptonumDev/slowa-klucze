@@ -25,7 +25,7 @@ export default {
     {
       name: 'socials',
       type: 'array',
-      of: [{type: 'url'}],
+      of: [{type: 'social'}],
       title: 'Social media',
       validation: (Rule) => Rule.required(),
     },

@@ -29,12 +29,7 @@ export default {
       title: 'Linki do social media',
       name: 'socials',
       type: 'array',
-      of: [
-        {
-          type: 'markdown',
-          type: 'string',
-        },
-      ],
+      of: [{type: 'social'}],
     },
     {
       title: 'Zdjęcie',

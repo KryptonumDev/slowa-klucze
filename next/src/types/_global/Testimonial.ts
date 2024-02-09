@@ -6,6 +6,9 @@ export interface Testimonial {
   subheading: string;
   title: string;
   description: string;
-  socials: string[];
+  socials: {
+    href: string;
+    icon: Image;
+  }[];
   image: Image;
 }

@@ -9,7 +9,7 @@ export default {
       type: 'image',
     },
     {
-      title: 'Źródło',
+      title: 'Źródło (przykład źródła: [Wikipedia](https://pl.wikipedia.org/))',
       name: 'source',
       type: 'markdown',
     },

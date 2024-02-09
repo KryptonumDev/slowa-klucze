@@ -214,7 +214,22 @@ async function getData() {
                 }
               }
             },
-          socials[],
+            socials[] {
+            href,
+              icon {
+                asset -> {
+                  altText,
+                url,
+                metadata {
+                  lqip,
+                  dimensions {
+                    height,
+                    width
+                  }
+                }
+                }
+              }
+            },
           },
           _type == "contactForm" => {
             subheading,

@@ -30,8 +30,19 @@
     .socials {
       display: flex;
       gap: 24px;
+
+      .link {
+        display: block;
+
+        .icon {
+          display: block;
+          height: 40px;
+          width: 40px;
+        }
+      }
     }
   }
+
   @media(max-width: 549px) {
     grid-template-columns: 1fr;
   }

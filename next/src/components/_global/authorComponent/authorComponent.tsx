@@ -3,22 +3,6 @@ import styles from './authorComponent.module.scss';
 import Img from '@/components/ui/Img';
 import { type Author } from '@/types/_global/Author';
 import Markdown from '@/components/ui/Markdown';
-import { facebookIcon, instagramIcon, linkedinIcon } from '@/app/layout';
-
-const icons = [
-  {
-    icon: facebookIcon(),
-    name: 'facebook',
-  },
-  {
-    icon: linkedinIcon(),
-    name: 'linkedin',
-  },
-  {
-    icon: instagramIcon(),
-    name: 'instagram',
-  },
-];
 
 export default function AuthorComponent({ data: { description, fullName, photo, socials } }: { data: Author }) {
   return (
@@ -31,20 +15,19 @@ export default function AuthorComponent({ data: { description, fullName, photo, 
         <Markdown.h2 className={styles.heading}>{fullName}</Markdown.h2>
         <Markdown className={styles.description}>{description}</Markdown>
         <div className={styles.socials}>
-          {socials.map((href, index) => {
-            const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-            if (icon) {
-              return (
-                <Link
-                  href={href}
-                  key={index}
-                  aria-label={icon.name}
-                >
-                  {icon.icon}
-                </Link>
-              );
-            }
-          })}
+          {socials.map(({ href, icon }, index) => (
+            <Link
+              href={href}
+              key={index}
+              className={styles.link}
+            >
+              <Img
+                data={icon}
+                className={styles.icon}
+                sizes='40px'
+              />
+            </Link>
+          ))}
         </div>
       </div>
     </section>

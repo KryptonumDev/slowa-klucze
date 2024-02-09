@@ -141,6 +141,7 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
           <button
             onClick={() => setToggleNav(!toggleNav)}
             className={styles.exit}
+            aria-label='menu'
           >
             <Hamburger />
           </button>
@@ -156,7 +157,7 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
           className={styles.logo}
           data={logo}
         />
-        <button onClick={() => setToggleNav(!toggleNav)}>{<Exit />}</button>
+        <button onClick={() => setToggleNav(!toggleNav)} aria-label='exit'>{<Exit />}</button>
         <div className={styles.links}>
           <Link
             href={'/o-mnie'}

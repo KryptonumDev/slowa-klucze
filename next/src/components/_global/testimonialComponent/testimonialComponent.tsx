@@ -4,22 +4,6 @@ import Img from '@/components/ui/Img';
 import { type Testimonial } from '@/types/_global/Testimonial';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
-import { facebookIcon, instagramIcon, linkedinIcon } from '@/app/layout';
-
-const icons = [
-  {
-    icon: facebookIcon(),
-    name: 'facebook',
-  },
-  {
-    icon: linkedinIcon(),
-    name: 'linkedin',
-  },
-  {
-    icon: instagramIcon(),
-    name: 'instagram',
-  },
-];
 
 export default function TestimonialComponent({
   data: { description, heading, image, socials, subheading, title },
@@ -44,20 +28,19 @@ export default function TestimonialComponent({
         <Markdown className={styles.description}>{description}</Markdown>
       </div>
       <div className={styles.socials}>
-        {socials.map((href, i) => {
-          const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-          if (icon) {
-            return (
-              <Link
-                href={href}
-                key={i}
-                aria-label={icon.name}
-              >
-                {icon.icon}
-              </Link>
-            );
-          }
-        })}
+        {socials.map(({ href, icon }, index) => (
+          <Link
+            href={href}
+            key={index}
+            className={styles.link}
+          >
+            <Img
+              data={icon}
+              className={styles.icon}
+              sizes='40px'
+            />
+          </Link>
+        ))}
       </div>
     </section>
   );

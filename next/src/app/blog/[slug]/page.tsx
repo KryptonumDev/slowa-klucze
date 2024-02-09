@@ -129,7 +129,22 @@ async function getBlogData(slug: string) {
           name
         },
         author -> {
-          socials[],
+          socials[] {
+            href,
+            icon {
+            asset -> {
+              altText,
+              url,
+              metadata {
+                lqip,
+                dimensions {
+                  height,
+                  width
+                }
+              }
+            }
+            }
+          },
           description,
           fullName,
           photo {
