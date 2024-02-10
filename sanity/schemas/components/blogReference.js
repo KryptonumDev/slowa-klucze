@@ -7,16 +7,19 @@ export default {
       title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Tytuł',
       name: 'title',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Opis',
       name: 'description',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Przycisk',
