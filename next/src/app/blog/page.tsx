@@ -190,6 +190,7 @@ async function getBlogData() {
         }
       }`,
     params: { blogsPerPage },
+    isDraftMode: true,
   });
   return page;
 }

@@ -208,6 +208,7 @@ async function getBlogData(number: number) {
         }
       }`,
     params: { blogsPerPage, number },
+    isDraftMode: true,
   });
   page.content.forEach((item) => {
     if ('blogEntries' in item) {

@@ -372,6 +372,7 @@ async function getData() {
         }
       }
     }`,
+    isDraftMode: true,
   });
   return page;
 }

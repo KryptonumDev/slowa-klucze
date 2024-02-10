@@ -261,6 +261,7 @@ async function getBlogCategoryPaginationData(category: string, number: number) {
         }
       }`,
     params: { blogsPerPage, category, number },
+    isDraftMode: true,
   });
   page.content.forEach((item) => {
     if ('blogEntries' in item) {

@@ -164,6 +164,7 @@ async function getBlogData(slug: string) {
       }
     }`,
     params: { slug },
+    isDraftMode: true,
   });
   if (!page) {
     notFound();

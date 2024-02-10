@@ -210,6 +210,7 @@ async function getBlogCategoryData(category: string) {
         }
       }`,
     params: { blogsPerPage, category },
+    isDraftMode: true,
   });
   page.content.forEach((item) => {
     if ('blogEntries' in item) {
