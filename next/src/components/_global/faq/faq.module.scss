@@ -53,6 +53,10 @@
           padding: 15px 25px;
           border-radius: 20px;
 
+          &:hover {
+            cursor: pointer;
+          }
+
           &:has(summary:focus-visible) {
             outline: 1px solid var(--coffee-500);
           }
@@ -69,9 +73,6 @@
               outline: none;
             }
 
-            &:hover {
-              cursor: pointer;
-            }
 
             .image {
               grid-area: image;

@@ -32,7 +32,7 @@ export default function Button({
   return (
     <>
       {href ? (
-        isExternal ? (
+        (svg || isExternal) ? (
           <a
             className={linkClassName}
             href={href}

@@ -9,7 +9,7 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
   return (
     <section
       className={`${styles.contactFormSection}`}
-      id='contactForm'
+      id='formularz-kontaktowy'
     >
       <header>
         <Heading type='h2'>{heading}</Heading>

@@ -75,6 +75,7 @@
         font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
         font-weight: 300;
         align-items: center;
+        align-self: flex-start;
 
         .button {
           display: grid;

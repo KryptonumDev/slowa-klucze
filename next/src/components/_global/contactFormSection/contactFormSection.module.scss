@@ -55,6 +55,9 @@
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
         background: var(--neutral-400);
+        display: grid;
+        padding: 6px 0px;
+        justify-content: center;
 
         &:focus-visible {
           outline-offset: -1px;
@@ -78,6 +81,7 @@
         background: var(--gradient);
         padding: 6px 0px;
         color: white;
+        cursor: default;
 
         &:before {
           content: "• ";

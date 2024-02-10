@@ -50,6 +50,7 @@ export default function SwiperComponent({ children, length }: { children: React.
           <SwiperSlide
             className={styles.slide}
             data-selected={i == activeIndex}
+            onClick={() => swiperRef.current?.swiper?.slideToLoop(i)}
             key={i}
           >
             {children[i]}

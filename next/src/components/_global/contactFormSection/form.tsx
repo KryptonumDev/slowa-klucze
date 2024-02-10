@@ -76,11 +76,9 @@ export default function Form({ formCta }: { formCta: Cta }) {
 
   const handleTabClick = (e: MouseEvent<HTMLButtonElement>, tab: string) => {
     e.preventDefault();
-    if (tab == 'videoCall') {
-      window.open('https://calendly.com/kontakt-wky/30min', '_blank');
-      return;
+    if (tab != 'videoCall') {
+      setSelectedTab(tab);
     }
-    setSelectedTab(tab);
   };
 
   const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
@@ -97,21 +95,23 @@ export default function Form({ formCta }: { formCta: Cta }) {
         <button
           className={selectedTab == 'contact' ? `${styles.contact} ${styles.active}` : styles.contact}
           onClick={(event) => handleTabClick(event, 'contact')}
+          disabled={selectedTab == 'contact'}
         >
           Formularz kontaktowy
         </button>
         <button
           className={selectedTab == 'contact' ? `${styles.contactSmall} ${styles.active}` : styles.contactSmall}
           onClick={(event) => handleTabClick(event, 'contact')}
+          disabled={selectedTab == 'contact'}
         >
           Formularz
         </button>
-        <button
+        <a
           className={selectedTab == 'videoCall' ? `${styles.videoCall} ${styles.active}` : styles.videoCall}
-          onClick={(event) => handleTabClick(event, 'videoCall')}
+          href='https://calendly.com/slowa-klucze/30min'
         >
           Wideorozmowa
-        </button>
+        </a>
       </div>
       {selectedTab == 'contact' && isEmailSent == false && (
         <>
