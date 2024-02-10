@@ -12,6 +12,7 @@ export default {
     },
     {
       name: 'content',
+      title: 'Zawartość',
       type: 'portableText',
       title: 'Treść',
     },

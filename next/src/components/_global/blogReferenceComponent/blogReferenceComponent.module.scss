@@ -49,6 +49,10 @@
           filter: blur(0px);
         }
 
+        &:hover {
+          filter: blur(0px);
+        }
+
         .blogEntry {
           display: grid;
           gap: 25px;

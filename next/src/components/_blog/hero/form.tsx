@@ -28,7 +28,7 @@ export default function Form({ formCta, children }: { formCta: Cta; children }) 
 
   const onSubmit = (data) => {
     setSubmitProcessing(true);
-    fetch('/api/blog', {
+    fetch('/api/newsletter', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

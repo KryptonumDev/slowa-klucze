@@ -46,7 +46,7 @@ export default function Footer({ data: { description, portrait }, logo, socials,
           <p className={styles.copyright}>
             Copyright © {date} — <span>slowa-klucze.pl</span>{' '}
             <span>
-              <Link href={'https://kryptonum.eu/'}>Realizacja: Kryptonum</Link>
+              <Link href={'https://kryptonum.eu/pl'}>Realizacja: Kryptonum</Link>
             </span>
           </p>
           <div className={styles.links}>

@@ -41,6 +41,7 @@ export default {
     },
     {
       name: 'content',
+      title: 'Zawartość',
       type: 'array',
       of: [
         {type: 'tiles', title: 'Kafelki'},
