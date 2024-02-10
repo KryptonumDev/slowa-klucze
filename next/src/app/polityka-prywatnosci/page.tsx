@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import ContentComponent from '@/components/_global/contentComponent/contentComponent';
 import Hero from '@/components/_privacyPolicy/hero';
 import SEO from '@/global/Seo';
@@ -85,7 +86,7 @@ async function getData() {
           },
       }
     }`,
-    isDraftMode: true,
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }

@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import type { ContentItem, homepage } from '@/types/_pages/homepage';
 import { sanityFetch } from '@/utils/sanity-client';
 import Hero from '@/components/_homepage/hero/hero';
@@ -330,7 +331,7 @@ async function getData() {
         },
       }
     }`,
-    isDraftMode: true,
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }

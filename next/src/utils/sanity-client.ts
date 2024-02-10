@@ -20,7 +20,7 @@ export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false,
 });
 
 const DEFAULT_PARAMS = {} as QueryParams;

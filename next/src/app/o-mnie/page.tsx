@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import Hero from '@/components/_aboutMe/hero/hero';
 import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 import ContactFormSection from '@/components/_global/contactFormSection';
@@ -370,7 +371,7 @@ async function getData() {
         }
       }
     }`,
-    isDraftMode: true,
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }
