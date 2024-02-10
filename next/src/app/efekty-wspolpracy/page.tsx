@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import AchievementShowcaseComponent from '@/components/_global/achievementShowcaseComponent';
 import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 import CaseStudiesComponent from '@/components/_global/caseStudiesComponent/caseStudiesComponent';
@@ -373,6 +374,7 @@ async function getData() {
   }
 }
     `,
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }

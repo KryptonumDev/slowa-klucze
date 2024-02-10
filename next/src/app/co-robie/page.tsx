@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import { sanityFetch } from '@/utils/sanity-client';
 import { type ContentItem, type MyWorkPage } from '@/types/_pages/MyWorkPage';
 import Faq from '@/components/_global/faq/faq';
@@ -372,6 +373,7 @@ async function getData() {
         }
       }
     }`,
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }

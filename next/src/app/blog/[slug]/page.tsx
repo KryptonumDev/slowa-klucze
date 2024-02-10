@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import Hero from '@/components/_article/hero';
 import AuthorComponent from '@/components/_global/authorComponent';
@@ -28,7 +29,7 @@ export default async function blogPostPage({ params: { slug } }: { params: { slu
     <>
       <Hero data={{ hero_Description, hero_Image, hero_Title, categories }} />
       <ContentSection data={content} />
-      <AuthorComponent data={author} />
+    <AuthorComponent data={author} />
     </>
   );
 }
@@ -164,6 +165,7 @@ async function getBlogData(slug: string) {
       }
     }`,
     params: { slug },
+    isDraftMode: draftMode().isEnabled,
   });
   if (!page) {
     notFound();

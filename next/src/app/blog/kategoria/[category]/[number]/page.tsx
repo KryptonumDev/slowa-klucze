@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { blogsPerPage } from '@/app-config';
 import BlogReferenceSection from '@/components/_blog/blogReferenceSection';
@@ -261,6 +262,7 @@ async function getBlogCategoryPaginationData(category: string, number: number) {
         }
       }`,
     params: { blogsPerPage, category, number },
+    isDraftMode: draftMode().isEnabled,
   });
   page.content.forEach((item) => {
     if ('blogEntries' in item) {

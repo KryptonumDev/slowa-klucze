@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import { blogsPerPage } from '@/app-config';
 import BlogReferenceSection from '@/components/_blog/blogReferenceSection';
 import Hero from '@/components/_blog/hero';
@@ -190,6 +191,7 @@ async function getBlogData() {
         }
       }`,
     params: { blogsPerPage },
+    isDraftMode: draftMode().isEnabled,
   });
   return page;
 }
