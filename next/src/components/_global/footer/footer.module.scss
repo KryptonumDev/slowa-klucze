@@ -73,6 +73,10 @@
           >a {
             color: inherit;
           }
+
+          svg {
+            padding-top: 2px;
+          }
         }
       }
 
@@ -134,6 +138,14 @@
 
       @media(max-width: 678px) {
         grid-template-columns: 1.3fr 1fr;
+
+        .copyright {
+          >span {
+            svg {
+              padding-top: 0px;
+            }
+          }
+        }
       }
 
       @media (max-width: 599px) {

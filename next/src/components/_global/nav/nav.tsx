@@ -123,10 +123,10 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
                 <ChevronDown />
               </button>
               {isExpanded && (
-                <>
+                <div className={styles.expandedLinks}>
                   <Link href={'/co-robie'}>Co robię</Link>
                   <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-                </>
+                </div>
               )}
             </div>
             <Link href={'/blog'}>Blog</Link>
@@ -159,7 +159,7 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
         />
         <button
           onClick={() => setToggleNav(!toggleNav)}
-          aria-label='zamknji nawigację'
+          aria-label='zamknij nawigację'
         >
           {<Exit />}
         </button>
