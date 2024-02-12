@@ -1,12 +1,38 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+import { toPlainText } from '@portabletext/react';
 import styles from './readingTime.module.scss';
 
-export default function ReadingTime({ text, isBlogCard }: { text: string; isBlogCard?: boolean }) {
-  function calculateReadingTime(text: string) {
+export default function ReadingTime({ text, isBlogCard }: { text: any; isBlogCard?: boolean }) {
+  function calculateReadingTime(text: any) {
+    const countWords = (text: string) => {
+      const trimmedText = text.trim();
+      if (trimmedText === '') {
+        return 0;
+      }
+      const words = trimmedText.split(/\s+/);
+      return words.length;
+    };
+    const plainText = toPlainText(text);
+    const words = countWords(plainText);
     const wordsPerMinute = 200;
-    const numberOfWords = text.split(/\s/g).length;
-    const readingTime = numberOfWords / wordsPerMinute;
-    return Math.ceil(readingTime);
+    const readingTime = Math.ceil(words / wordsPerMinute);
+    return readingTime;
   }
+
+  function displayTime(time: number) {
+    if (time == 1) {
+      return 'minuta';
+    } else if (time >= 2 && time <= 4) {
+      return 'minuty';
+    }
+    return 'minut';
+  }
+
+  const readingTime = calculateReadingTime(text);
+  const displayedTime = displayTime(readingTime);
 
   return (
     <div
@@ -14,9 +40,7 @@ export default function ReadingTime({ text, isBlogCard }: { text: string; isBlog
       data-card={isBlogCard}
     >
       {isBlogCard ? blogReadingIcon() : readingIcon()}
-      <span>
-        {isBlogCard ? `${calculateReadingTime(text)} minut` : `Czas czytania: ${calculateReadingTime(text)} minut`}
-      </span>
+      <span>{isBlogCard ? `${readingTime} ${displayedTime}` : `Czas czytania: ${readingTime} ${displayedTime}`}</span>
     </div>
   );
 }

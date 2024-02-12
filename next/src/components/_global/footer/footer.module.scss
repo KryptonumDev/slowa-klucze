@@ -18,10 +18,15 @@
         "socials photo links"
         "copyright photo links";
 
-      .logo {
-        grid-area: logo;
-        height: auto;
+      .logoLink {
+        display: inline-block;
         width: 264px;
+
+        .logo {
+          grid-area: logo;
+          height: auto;
+          width: 100%;
+        }
       }
 
       .description {
@@ -35,8 +40,14 @@
         display: flex;
         column-gap: 24px;
         flex-direction: row;
-        width: 39px;
-        height: 39px;
+
+        .social {
+          outline-offset: 1px;
+
+          &:focus-visible {
+            border-radius: 4px;
+          }
+        }
       }
 
       .photo {
@@ -62,6 +73,10 @@
           >a {
             color: inherit;
           }
+
+          svg {
+            padding-top: 2px;
+          }
         }
       }
 
@@ -83,6 +98,11 @@
           align-items: start;
           color: var(--dark-neutral-900);
         }
+
+        >a {
+          display: inline-block;
+          width: fit-content;
+        }
       }
 
       @media (max-width:999px) {
@@ -96,6 +116,10 @@
 
         .links {
           grid-column-gap: 10px;
+        }
+
+        .copyright {
+          padding-bottom: 64px;
         }
 
         .photo {
@@ -114,6 +138,14 @@
 
       @media(max-width: 678px) {
         grid-template-columns: 1.3fr 1fr;
+
+        .copyright {
+          >span {
+            svg {
+              padding-top: 0px;
+            }
+          }
+        }
       }
 
       @media (max-width: 599px) {

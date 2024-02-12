@@ -45,7 +45,7 @@ export default function BlogReferenceSection({
         </div>
         <Markdown.h2 className={styles.title}>{hero_Title}</Markdown.h2>
         <Markdown>{hero_Description}</Markdown>
-        <ReadingTime text={JSON.stringify(content, null, 2)}/>
+        <ReadingTime text={content}/>
         <Button
           href={`/blog/${current}`}
           theme='borderless'

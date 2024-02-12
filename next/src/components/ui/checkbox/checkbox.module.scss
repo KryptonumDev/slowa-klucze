@@ -19,6 +19,10 @@
       border-radius: 5px;
       position: relative;
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &:checked::before {
         content: "";
         position: absolute;

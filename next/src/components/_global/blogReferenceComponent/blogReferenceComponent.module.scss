@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 7fr 5fr;
     align-items: center;
+    margin-bottom: -10px;
 
     .button {
       align-items: center;
@@ -57,6 +58,7 @@
           display: grid;
           gap: 25px;
           padding-bottom: 10px;
+          padding-top: 10px;
 
           .blogLink {
             position: relative;

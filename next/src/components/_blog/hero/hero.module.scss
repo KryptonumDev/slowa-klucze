@@ -21,6 +21,41 @@
   .form {
     display: grid;
     gap: 20px;
+    position: relative;
+
+    .loader {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(212, 212, 212, 0.171);
+      backdrop-filter: blur(2px);
+      z-index: 2;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      border-radius: 16px;
+
+      >span {
+        position: absolute;
+        color: var(--midnight-green-200);
+        font-size: 32px;
+      }
+
+      .circle {
+        animation: rotate 2s linear infinite;
+      }
+
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
 
     >label {
       padding: unset;

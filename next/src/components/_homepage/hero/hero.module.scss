@@ -54,5 +54,11 @@
         right: unset;
       }
     }
+
+    @media (max-width: 499px) {
+      .paragraph {
+        margin-bottom: 36px;
+      }
+    }
   }
 }

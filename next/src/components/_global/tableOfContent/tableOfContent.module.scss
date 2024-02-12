@@ -3,8 +3,8 @@
   position: sticky;
   top: 75px;
   overflow-y: auto;
-  max-height: calc(80vh - 75px);
-  max-height: calc(80dvh - 75px);
+  max-height: calc(90vh - 75px);
+  max-height: calc(90dvh - 75px);
   border-radius: 16px;
   padding: clamp(20px, calc(30vw/7.68), 40px);
 
@@ -36,6 +36,7 @@
   @media (max-width: 849px) {
     position: relative;
     top: unset;
+    max-height: unset;
 
     .list {
       .subList {

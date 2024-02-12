@@ -23,6 +23,7 @@
     display: grid;
     align-items: start;
     gap: 30px;
+    position: relative;
 
     .label {
       max-width: unset;
@@ -36,6 +37,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
+      position: relative;
 
 
       .contact,
@@ -111,6 +113,40 @@
         margin-top: 16px;
       }
     }
+
+    .loader {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(212, 212, 212, 0.171);
+      backdrop-filter: blur(2px);
+      z-index: 2;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      border-radius: 16px;
+
+      >span {
+        position: absolute;
+        color: var(--midnight-green-200);
+        font-size: 32px;
+      }
+
+      .circle {
+        animation: rotate 2s linear infinite;
+      }
+
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
 
   @media (max-width:999px) {
@@ -119,6 +155,14 @@
 
     header {
       margin-bottom: 40px;
+
+      .heading {
+        justify-self: center;
+      }
+
+      .subheading {
+        text-align: center;
+      }
     }
 
     .form {
@@ -135,11 +179,6 @@
   }
 
   @media (max-width: 499px) {
-    header {
-      .subheading {
-        text-align: center;
-      }
-    }
 
     .form {
       .label {

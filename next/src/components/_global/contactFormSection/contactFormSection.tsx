@@ -12,7 +12,7 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
       id='formularz-kontaktowy'
     >
       <header>
-        <Heading type='h2'>{heading}</Heading>
+        <Heading type='h2' className={styles.heading}>{heading}</Heading>
         <Markdown.h2 className={styles.subheading}>{subheading}</Markdown.h2>
       </header>
       <Img
@@ -20,7 +20,29 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
         data={image}
         sizes='(max-width: 999px) 100vw, 50vw'
       />
-      <Form formCta={formCta} />
+      <Form
+        formCta={formCta}
+        Loader={<Loader className={styles.circle} />}
+      />
     </section>
+  );
+}
+
+function Loader({ className }: { className: string }) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='323'
+      height='322'
+      fill='none'
+      className={className}
+    >
+      <path
+        stroke='#2D7C80'
+        strokeLinecap='round'
+        strokeWidth='12'
+        d='M195.004 31.023c47.093 12.121 84.168 49.196 96.289 96.289m4.222 33.505a134.014 134.014 0 01-241.227 80.409M30.06 186.962A134.015 134.015 0 01161.5 26.802'
+      ></path>
+    </svg>
   );
 }

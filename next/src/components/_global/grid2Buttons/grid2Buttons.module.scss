@@ -1,6 +1,8 @@
 .grid2Buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  row-gap: 32px;
+  gap: 32px;
 }
