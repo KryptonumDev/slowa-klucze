@@ -31,6 +31,8 @@ export default function Footer({ data: { description, portrait }, logo, socials,
                     href={href}
                     key={i}
                     aria-label={icon.name}
+                    target='_blank'
+                    className={styles.social}
                   >
                     {icon.icon}
                   </Link>
@@ -46,7 +48,7 @@ export default function Footer({ data: { description, portrait }, logo, socials,
           <p className={styles.copyright}>
             Copyright © {date} — <span>slowa-klucze.pl</span>{' '}
             <span>
-              <Link href={'https://kryptonum.eu/pl'}>Realizacja: Kryptonum</Link>
+              Realizacja: <Link href={'https://kryptonum.eu/pl'}>Kryptonum</Link>
             </span>
           </p>
           <div className={styles.links}>

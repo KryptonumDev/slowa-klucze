@@ -135,7 +135,7 @@ main {
   row-gap: 75px;
 
   @media (max-width: 1399px) {
-    padding-top: clamp(80px, calc(136vw/7.68), 136px);
+    padding-top: clamp(60px, calc(80vw/7.68), 100px);
   }
 }
 

@@ -112,11 +112,6 @@ export default function Form({
             Dzięki wielkie za <strong className={styles.success}>zapisanie się</strong>!
           </h3>
           <p>Super, że z ze mną jesteś i mnie wspierasz!</p>
-          <Button
-            data={{ text: 'Wypełnij ponownie', href: '', theme: 'secondary' }}
-            svg={false}
-            onClick={(event: MouseEvent<HTMLButtonElement>) => handleButtonClick(event)}
-          />
         </div>
       )}
     </form>

@@ -50,6 +50,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 24px;
     row-gap: 44px;
+    align-items: flex-start;
 
     .blogEntry {
       display: grid;

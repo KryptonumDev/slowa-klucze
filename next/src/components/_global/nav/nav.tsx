@@ -201,6 +201,7 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
                   href={href}
                   key={i}
                   aria-label={icon.name}
+                  target='_blank'
                 >
                   {icon.icon}
                 </Link>

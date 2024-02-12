@@ -25,7 +25,7 @@ export default function BlogEntries({ blogEntries }: { blogEntries: Page[] }) {
               sizes='(max-width: 599px) 100vw, (max-width: 899px) 50vw, 33vw'
             />
             <ReadingTime
-              text={JSON.stringify(entry.content, null, 2)}
+              text={entry.content}
               isBlogCard={true}
             />
           </Link>

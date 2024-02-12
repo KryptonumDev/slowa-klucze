@@ -34,6 +34,7 @@ export default function TestimonialComponent({
             href={href}
             key={index}
             className={styles.link}
+            target='_blank'
           >
             <Img
               data={icon}

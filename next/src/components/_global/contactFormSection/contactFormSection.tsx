@@ -12,7 +12,7 @@ export default function ContactFormSection({ data: { formCta, heading, image, su
       id='formularz-kontaktowy'
     >
       <header>
-        <Heading type='h2'>{heading}</Heading>
+        <Heading type='h2' className={styles.heading}>{heading}</Heading>
         <Markdown.h2 className={styles.subheading}>{subheading}</Markdown.h2>
       </header>
       <Img
