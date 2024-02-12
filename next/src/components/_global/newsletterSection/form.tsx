@@ -10,7 +10,13 @@ import Button from '@/components/ui/button/Button';
 import { regex } from '@/global/constants';
 import { Failed, Success } from '@/types/_ui/Icons';
 
-export default function Form({ data: { formCta, JsxDescription } }: { data: { formCta: Cta; JsxDescription } }) {
+export default function Form({
+  data: { formCta, JsxDescription },
+  Loader,
+}: {
+  data: { formCta: Cta; JsxDescription };
+  Loader: JSX.Element;
+}) {
   const {
     register,
     handleSubmit,
@@ -54,6 +60,12 @@ export default function Form({ data: { formCta, JsxDescription } }: { data: { fo
       onSubmit={handleSubmit(onSubmit) as React.FormEventHandler<HTMLFormElement>}
       className={styles.form}
     >
+      {submitProcessing && (
+        <div className={styles.loader}>
+          <span>Ładowanie</span>
+          {Loader}
+        </div>
+      )}
       {isEmailSent == false && (
         <>
           {JsxDescription}

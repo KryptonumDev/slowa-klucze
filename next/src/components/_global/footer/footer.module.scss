@@ -98,6 +98,10 @@
           grid-column-gap: 10px;
         }
 
+        .copyright {
+          padding-bottom: 64px;
+        }
+
         .photo {
           right: calc((var(--pageMargin) * -1) - 120px);
           width: auto;

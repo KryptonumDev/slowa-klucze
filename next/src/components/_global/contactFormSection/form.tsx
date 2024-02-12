@@ -13,7 +13,7 @@ import Button from '@/components/ui/button/Button';
 import Calendar from '@/components/ui/calendar/calendar';
 import { Failed, Success } from '@/types/_ui/Icons';
 
-export default function Form({ formCta }: { formCta: Cta }) {
+export default function Form({ formCta, Loader }: { formCta: Cta; Loader: JSX.Element }) {
   const {
     handleSubmit,
     reset,
@@ -37,12 +37,12 @@ export default function Form({ formCta }: { formCta: Cta }) {
         .then((response) => response.json() as Promise<{ success: boolean }>)
         .then((response) => {
           if (response.success) {
-            setIsEmailSent('success');
             setSubmitProcessing(false);
+            setIsEmailSent('success');
             reset();
           } else {
-            setIsEmailSent('failed');
             setSubmitProcessing(false);
+            setIsEmailSent('failed');
           }
         })
         .catch(() => {
@@ -59,17 +59,17 @@ export default function Form({ formCta }: { formCta: Cta }) {
         .then((response) => response.json() as Promise<{ success: boolean }>)
         .then((response) => {
           if (response.success) {
-            setIsEmailSent('success');
             setSubmitProcessing(false);
+            setIsEmailSent('success');
             reset();
           } else {
-            setIsEmailSent('failed');
             setSubmitProcessing(false);
+            setIsEmailSent('failed');
           }
         })
         .catch(() => {
-          setIsEmailSent('failed');
           setSubmitProcessing(false);
+          setIsEmailSent('failed');
         });
     }
   };
@@ -91,6 +91,12 @@ export default function Form({ formCta }: { formCta: Cta }) {
       className={styles.form}
       onSubmit={handleSubmit(onSubmit) as React.FormEventHandler<HTMLFormElement>}
     >
+      {submitProcessing && (
+        <div className={styles.loader}>
+          <span>Ładowanie</span>
+          {Loader}
+        </div>
+      )}
       <div className={styles.tabs}>
         <button
           className={selectedTab == 'contact' ? `${styles.contact} ${styles.active}` : styles.contact}
