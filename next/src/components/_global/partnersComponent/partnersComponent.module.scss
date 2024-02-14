@@ -28,6 +28,7 @@
     width: 100%;
     .slide {
       filter: blur(2px);
+      align-self: center;
 
       &[data-selected='true'] {
         filter: blur(0px);
