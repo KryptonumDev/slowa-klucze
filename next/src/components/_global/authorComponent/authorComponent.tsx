@@ -21,6 +21,7 @@ export default function AuthorComponent({ data: { description, fullName, photo, 
               href={href}
               key={index}
               className={styles.link}
+              target='_blank'
             >
               <Img
                 data={icon}

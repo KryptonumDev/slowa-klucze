@@ -43,7 +43,7 @@ export default function SwiperComponent({ children, length }: { children: React.
           },
           1600: {
             spaceBetween: 50,
-            slidesPerView: 5.5,
+            slidesPerView: 5.0,
           },
         }}
         speed={1000}
