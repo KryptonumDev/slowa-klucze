@@ -97,6 +97,7 @@ body {
   font-family: 'Kanit', sans-serif;
   display: grid;
   overflow-x: hidden;
+  --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
 }
 
 html {
@@ -106,7 +107,6 @@ html {
 main,
 .maxWidth {
   display: grid;
-  --pageMargin: clamp(24px, calc(24vw/7.68), 100px);
   grid-template-columns: 1fr;
   max-width: 1280px;
   width: calc(100% - var(--pageMargin)*2);

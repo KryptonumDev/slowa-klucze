@@ -153,11 +153,14 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
         data-show={toggleNav}
         ref={toggledNavRef}
       >
-        <Img
-          className={styles.logo}
-          data={logo}
-        />
+        <Link href={'/'}>
+          <Img
+            className={styles.logo}
+            data={logo}
+          />
+        </Link>
         <button
+          className={styles.closeNavigationButton}
           onClick={() => setToggleNav(!toggleNav)}
           aria-label='zamknij nawigację'
         >
