@@ -1,3 +1,4 @@
+import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import Hero from '@/components/_homepage/hero/hero';
 import type { ContentItem, LandingPage } from '@/types/_pages/LandingPage';
@@ -530,6 +531,7 @@ async function getData(slug: string) {
       }
     }`,
     params: { slug },
+    isDraftMode: draftMode().isEnabled,
   });
   !page && notFound();
   return page;
