@@ -1,6 +1,6 @@
 export default {
   name: 'LandingPage',
-  title: 'Strona lądowania',
+  title: 'Strony lądowania',
   type: 'document',
   icon: () => '🚀',
   fields: [
