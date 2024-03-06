@@ -24,6 +24,11 @@ export interface LandingPage {
     content: ContentItem[];
     seo?: Seo;
   };
+  landingPages: {
+    slug: {
+      current: string;
+    };
+  }[];
 }
 
 export type ContentItem =

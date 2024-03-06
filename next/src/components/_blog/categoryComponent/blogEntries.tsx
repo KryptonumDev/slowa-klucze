@@ -16,7 +16,7 @@ export default function BlogEntries({ blogEntries }: { blogEntries: Page[] }) {
           className={styles.blogEntry}
         >
           <Link
-            href={`blog/${entry.slug.current}`}
+            href={`/blog/${entry.slug.current}`}
             className={styles.blogLink}
           >
             <Img
