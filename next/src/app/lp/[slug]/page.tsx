@@ -27,6 +27,13 @@ import { type ProsAndCons } from '@/types/_global/ProsAndCons';
 import OffersComponent from '@/components/_global/offersComponent';
 import { type Offers } from '@/types/_global/Offers';
 
+export async function generateStaticParams() {
+  const allLandingPages = await getAllLandingPages();
+  return allLandingPages.map(({ slug }) => ({
+    slug: slug.current,
+  }));
+}
+
 export default async function LandingPage({ params: { slug } }: { params: { slug: string } }) {
   const { hero_Cta, hero_Heading, hero_Image, hero_Paragraph, hero_Subheading, content } = await getData(slug);
 
@@ -113,6 +120,19 @@ export default async function LandingPage({ params: { slug } }: { params: { slug
       })}
     </>
   );
+}
+
+async function getAllLandingPages() {
+  const { landingPages } = await sanityFetch<LandingPage>({
+    query: /* groq */ `{
+      "landingPages": *[_type == "LandingPage"] {
+        slug {
+          current
+        }
+      }
+    }`,
+  });
+  return landingPages;
 }
 
 async function getData(slug: string) {

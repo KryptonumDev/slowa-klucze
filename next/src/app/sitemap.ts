@@ -13,7 +13,7 @@ export default async function sitemap() {
     lastModified: currentDate,
   }));
   const mappedLandingPages = landingPages.map(({ slug: { current: slug } }) => ({
-    url: `${domain}/${slug}`,
+    url: `${domain}/lp/${slug}`,
     lastModified: currentDate,
   }));
   const mappedBlogCategories = blogCategories.map(({ slug: { current: slug } }) => ({
