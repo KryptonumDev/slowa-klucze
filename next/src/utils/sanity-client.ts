@@ -28,7 +28,6 @@ const DEFAULT_PARAMS = {} as QueryParams;
 export async function sanityFetch<QueryResponse>({
   query,
   params = DEFAULT_PARAMS,
-  isDraftMode = false,
 }: {
   query: string;
   params?: QueryParams;
@@ -36,9 +35,9 @@ export async function sanityFetch<QueryResponse>({
 }): Promise<QueryResponse> {
   return await client.fetch<QueryResponse>(query, params, {
     token: process.env.SANITY_API_TOKEN,
-    perspective: 'previewDrafts',
+    perspective: 'published',
     next: {
-      revalidate: isDraftMode ? 0 : 30,
+      revalidate: 30,
     },
   });
 }

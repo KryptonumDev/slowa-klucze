@@ -8,36 +8,41 @@ import Markdown from '@/components/ui/Markdown';
 export default function SliderComponent({ data: { centralizedHeading, centralizedHeading2, slides } }: Props) {
   return (
     <section className={`${styles.sliderComponent}`}>
-        <QuotaDecoration />
-        <CentralizedHeading
-          data={centralizedHeading}
-          className={`${styles.centralizedHeading}`}
-        />
-        <SwiperComponent length={slides.length}>
-          {slides.map(({ description, heading, icon, rating, url }, i) => (
-            <div
-              className={styles.sliderWrapper}
-              key={i}
-            >
-              <div className={styles.info}>
+      <QuotaDecoration />
+      <CentralizedHeading
+        data={centralizedHeading}
+        className={`${styles.centralizedHeading}`}
+      />
+      <SwiperComponent length={slides.length}>
+        {slides.map(({ description, heading, icon, rating, url }, i) => (
+          <div
+            className={styles.sliderWrapper}
+            key={i}
+          >
+            <div className={styles.info}>
+              {icon && (
                 <Img
                   className={styles.img}
                   data={icon}
                   sizes='49px'
                 />
-                <Markdown className={styles.heading}>{heading}</Markdown>
-                <Markdown className={styles.url}>{url}</Markdown>
-              </div>
-              <div className={styles.rating}>
-                {Array.from({ length: rating }).map((_, i) => (
-                  <Rating key={i} />
-                ))}
-              </div>
-              <Markdown className={styles.description}>{description}</Markdown>
+              )}
+              <Markdown className={styles.heading}>{heading}</Markdown>
+              <Markdown className={styles.url}>{url}</Markdown>
             </div>
-          ))}
-        </SwiperComponent>
-        <CentralizedHeading data={centralizedHeading2} className={styles.secondCentralizedHeading} />
+            <div className={styles.rating}>
+              {Array.from({ length: rating }).map((_, i) => (
+                <Rating key={i} />
+              ))}
+            </div>
+            <Markdown className={styles.description}>{description}</Markdown>
+          </div>
+        ))}
+      </SwiperComponent>
+      <CentralizedHeading
+        data={centralizedHeading2}
+        className={styles.secondCentralizedHeading}
+      />
     </section>
   );
 }

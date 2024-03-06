@@ -1,4 +1,4 @@
-import removeMarkdown from "../../utils/RemoveMarkdown"
+import removeMarkdown from '../../utils/RemoveMarkdown'
 
 export default {
   name: 'slider',
@@ -24,7 +24,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'centralizedHeading.heading'
+      title: 'centralizedHeading.heading',
     },
     prepare({title}) {
       return {
@@ -43,7 +43,6 @@ export const slides = {
       title: 'Ikona',
       name: 'icon',
       type: 'image',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Nagłówek',
