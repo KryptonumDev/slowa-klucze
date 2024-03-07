@@ -317,6 +317,7 @@ async function getData() {
               }
             },
             card {
+              href,
               heading,
               description,
               image {

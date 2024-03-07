@@ -4,6 +4,7 @@ import Form from './form';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
+import Link from 'next/link';
 
 export default function NewsletterSection({ data: { description, formCta, heading, image, subheading, card } }: Props) {
   const JsxDescription = <Markdown className={styles.description}>{description}</Markdown>;
@@ -26,7 +27,10 @@ export default function NewsletterSection({ data: { description, formCta, headin
         />
       </div>
       <div className={styles.visuals}>
-        <div className={styles.card}>
+        <Link
+          className={styles.card}
+          href={card.href}
+        >
           <Img
             className={styles.image}
             data={card.image}
@@ -34,7 +38,7 @@ export default function NewsletterSection({ data: { description, formCta, headin
           />
           <Markdown.h3 className={styles.heading}>{card.heading}</Markdown.h3>
           <Markdown className={styles.description}>{card.description}</Markdown>
-        </div>
+        </Link>
         <Img
           data={image}
           className={styles.image}

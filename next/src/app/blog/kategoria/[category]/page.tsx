@@ -190,6 +190,7 @@ async function getBlogCategoryData(category: string) {
               description,
               subheading,
               card {
+                href,
                 heading,
                 description,
                 image {

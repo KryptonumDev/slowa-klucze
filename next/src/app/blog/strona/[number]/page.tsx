@@ -188,6 +188,7 @@ async function getBlogData(number: number) {
               description,
               subheading,
               card {
+                href,
                 heading,
                 description,
                 image {

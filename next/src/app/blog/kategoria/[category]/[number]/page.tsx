@@ -241,6 +241,7 @@ async function getBlogCategoryPaginationData(category: string, number: number) {
               description,
               subheading,
               card {
+                href,
                 heading,
                 description,
                 image {
