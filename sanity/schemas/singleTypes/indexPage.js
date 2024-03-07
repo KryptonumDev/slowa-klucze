@@ -50,6 +50,7 @@ export default {
         {type: 'newsletter'},
         {type: 'contactForm'},
         {type: 'blogReference'},
+        {type: 'offers'},
       ],
     },
     {
