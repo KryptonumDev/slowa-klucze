@@ -308,7 +308,8 @@ async function getData() {
                 href,
                 text
               }
-            }
+            },
+            additionalInfo
           },
         _type == "newsletter" => {
           description,

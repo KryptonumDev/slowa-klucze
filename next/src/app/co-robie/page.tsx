@@ -348,7 +348,7 @@ async function getData() {
                   }
                 }
               }
-            }
+            },
           },
           _type == "offers" => {
             offers[] {
@@ -362,7 +362,8 @@ async function getData() {
                 href,
                 text
               }
-            }
+            },
+            additionalInfo
           },
           _type == "tilesSmall" => {
             centralizedHeading {

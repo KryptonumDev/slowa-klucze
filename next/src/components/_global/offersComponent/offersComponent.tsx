@@ -4,7 +4,7 @@ import { type Offers } from '@/types/_global/Offers';
 import Markdown from '@/components/ui/Markdown';
 import Button from '@/components/ui/button/Button';
 
-export default function OffersComponent({ data: { offers } }: { data: Offers }) {
+export default function OffersComponent({ data: { offers, additionalInfo } }: { data: Offers }) {
   return (
     <section className={`${styles.offersComponent} fullWidthBackground`}>
       <div className={styles.offers}>
@@ -36,6 +36,7 @@ export default function OffersComponent({ data: { offers } }: { data: Offers }) 
           </div>
         ))}
       </div>
+      {additionalInfo && <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>}
     </section>
   );
 }

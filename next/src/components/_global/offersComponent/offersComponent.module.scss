@@ -33,7 +33,7 @@
         }
 
         &::before {
-          background: unset;
+          background: #F5F5F5;
         }
       }
 
@@ -66,6 +66,17 @@
         padding: 10px 0px;
         width: 100%;
       }
+    }
+  }
+
+  .additionalInfo {
+    display: flex;
+    padding-top: 20px;
+    color: var(--neutral-900);
+    font-style: italic;
+
+    >p {
+      font-size: 16px;
     }
   }
 

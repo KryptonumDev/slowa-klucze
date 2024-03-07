@@ -5,7 +5,7 @@
   .content {
     display: grid;
     grid-template-columns: 7fr 5fr;
-    grid-template-areas: "header image" "icon image" "title image" "subtitle image" "description image";
+    grid-template-areas: "header image" "icon image" "subtitle image" "description image";
     gap: 8px;
     align-items: flex-start;
 
@@ -23,19 +23,25 @@
       grid-area: image;
     }
 
-    .icon {
-      width: clamp(40px, calc(40vw/7.68), 55px);
-      height: clamp(40px, calc(40vw/7.68), 55px);
-      display: block;
+    .iconWrapper {
       grid-area: icon;
-      margin-top: 30px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      padding-top: 30px;
+
+      .icon {
+        width: clamp(40px, calc(40vw/7.68), 55px);
+        height: clamp(40px, calc(40vw/7.68), 55px);
+        display: block;
+        align-self: center;
+      }
+
+      .title {
+        align-self: center;
+      }
     }
 
-    .title {
-      grid-area: title;
-      padding-top: 19px;
-      margin-bottom: 24px;
-    }
 
     .subtitle {
       grid-area: subtitle;

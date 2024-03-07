@@ -195,6 +195,16 @@ async function getData() {
             quote,
             heading
           }
+        },
+        centralizedHeading {
+          heading,
+          description,
+          title,
+          cta {
+            theme,
+            href,
+            text
+          },
         }
       },
       _type == "slider" => {
@@ -357,7 +367,8 @@ async function getData() {
                 href,
                 text
               }
-            }
+            },
+            additionalInfo
           },
       _type == "blogReference" => {
       cta {

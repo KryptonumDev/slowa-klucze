@@ -11,6 +11,11 @@ export default {
       name: 'offers',
       of: [{type: 'offer'}],
     },
+    {
+      title: 'dodatkowe informacje',
+      type: 'markdown',
+      name: 'additionalInfo'
+    }
   ],
   preview: {
     select: {

@@ -4,14 +4,18 @@ import { type CaseStudies } from '@/types/_global/CaseStudies';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
 import Quote from '@/components/ui/quote/quote';
+import CentralizedHeading from '@/components/ui/centralizedHeading';
 
 export default function CaseStudiesComponent({
-  data: { heading, subheading, description, projects },
+  data: { heading, subheading, description, projects, centralizedHeading },
 }: {
   data: CaseStudies;
 }) {
   return (
-    <section className={styles.caseStudiesComponent}>
+    <section
+      className={styles.caseStudiesComponent}
+      id='case-study'
+    >
       <header>
         <Heading type='h2'>{heading}</Heading>
         <Markdown.h2 className={styles.subheading}>{subheading}</Markdown.h2>
@@ -64,6 +68,7 @@ export default function CaseStudiesComponent({
           </div>
         ))}
       </div>
+      {centralizedHeading?.cta && <CentralizedHeading data={centralizedHeading} />}
     </section>
   );
 }
