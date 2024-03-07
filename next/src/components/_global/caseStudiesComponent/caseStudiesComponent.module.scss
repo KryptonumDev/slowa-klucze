@@ -91,7 +91,7 @@
         .item {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-template-areas: "heading image" "description image";
+          grid-template-areas: "heading heading" "description image";
           align-items: flex-start;
           column-gap: 24px;
           row-gap: clamp(calc(25rem/16), calc(25vw/7.68), calc(50rem/16));
