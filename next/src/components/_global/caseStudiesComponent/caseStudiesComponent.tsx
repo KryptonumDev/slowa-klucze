@@ -11,7 +11,7 @@ export default function CaseStudiesComponent({
   data: CaseStudies;
 }) {
   return (
-    <section className={styles.caseStudiesComponent}>
+    <section className={styles.caseStudiesComponent} id='case-study'>
       <header>
         <Heading type='h2'>{heading}</Heading>
         <Markdown.h2 className={styles.subheading}>{subheading}</Markdown.h2>
