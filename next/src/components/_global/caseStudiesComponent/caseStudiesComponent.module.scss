@@ -113,6 +113,8 @@
             width: 100%;
             object-fit: cover;
             border-radius: 16px;
+            position: sticky;
+            top: 100px;
           }
 
           &:nth-child(2n) {
@@ -161,6 +163,11 @@
           .item {
             grid-template-columns: 1fr;
             grid-template-areas: "heading" "image" "description";
+
+            .image {
+              top: unset;
+              position: unset;
+            }
           }
 
           .item:nth-child(2n) {
