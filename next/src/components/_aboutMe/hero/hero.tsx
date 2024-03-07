@@ -28,12 +28,14 @@ export default function Hero({
           </Heading>
           <Markdown.h2 className={styles.subheading}>{hero_Subheading}</Markdown.h2>
         </header>
-        <Img
-          className={styles.icon}
-          data={hero_ImageTitleSubtitleDescription.image}
-          sizes='55px'
-        />
-        <Markdown.h3 className={styles.title}>{hero_ImageTitleSubtitleDescription.title}</Markdown.h3>
+        <div className={styles.iconWrapper}>
+          <Img
+            className={styles.icon}
+            data={hero_ImageTitleSubtitleDescription.image}
+            sizes='55px'
+          />
+          <Markdown.h3 className={styles.title}>{hero_ImageTitleSubtitleDescription.title}</Markdown.h3>
+        </div>
         <Markdown className={styles.subtitle}>{hero_ImageTitleSubtitleDescription.subtitle}</Markdown>
         <Markdown className={styles.description}>{hero_ImageTitleSubtitleDescription.description}</Markdown>
         <Img

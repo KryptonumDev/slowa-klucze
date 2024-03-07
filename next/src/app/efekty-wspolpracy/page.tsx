@@ -195,6 +195,16 @@ async function getData() {
             quote,
             heading
           }
+        },
+        centralizedHeading {
+          heading,
+          description,
+          title,
+          cta {
+            theme,
+            href,
+            text
+          },
         }
       },
       _type == "slider" => {

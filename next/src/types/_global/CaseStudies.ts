@@ -1,4 +1,5 @@
-import { type Project } from "./Project";
+import { type CentralizedHeading } from './CentralizedHeading';
+import { type Project } from './Project';
 
 export interface CaseStudies {
   _type?: string;
@@ -6,4 +7,5 @@ export interface CaseStudies {
   subheading: string;
   description: string;
   projects: Project[];
+  centralizedHeading?: CentralizedHeading;
 }

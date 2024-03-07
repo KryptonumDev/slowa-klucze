@@ -26,6 +26,11 @@ export default {
       type: 'array',
       of: [{type: 'project'}],
     },
+    {
+      title: 'Wycentrowany nagłówek',
+      name: 'centralizedHeading',
+      type: 'centralizedHeading',
+    },
   ],
   preview: {
     select: {
