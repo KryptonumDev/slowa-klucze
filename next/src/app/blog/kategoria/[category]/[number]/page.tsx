@@ -32,7 +32,7 @@ export async function generateStaticParams() {
     number: string;
   }
 
-  const blogCategories: Entry[] = await getBlogCategories() as unknown as Entry[];
+  const blogCategories: Entry[] = (await getBlogCategories()) as unknown as Entry[];
 
   return blogCategories
     .flatMap((entry: Entry) =>
@@ -43,9 +43,7 @@ export async function generateStaticParams() {
     )
     .map((obj: MappedObject, index: number, array: MappedObject[]) => ({
       ...obj,
-      number: Math.ceil(
-        (array.filter((o) => o.category === obj.category).indexOf(obj) + 1) / blogsPerPage
-      ).toString(),
+      number: Math.ceil((array.filter((o) => o.category === obj.category).indexOf(obj) + 1) / blogsPerPage).toString(),
     }))
     .filter(
       (value: MappedObject, index: number, self: MappedObject[]) =>
@@ -190,7 +188,7 @@ async function getBlogCategoryPaginationData(category: string, number: number) {
                 },
               },
               "totalCount": count(*[_type=="blog_entries" && $category in categories[]->slug.current][]),
-              "blogEntries": *[_type=="blog_entries" && $category in categories[]->slug.current][$number-1 ... $blogsPerPage+$number-1] {
+              "blogEntries": *[_type=="blog_entries" && $category in categories[]->slug.current][$blogsPerPage * ($number-1) ... $blogsPerPage+ ($blogsPerPage * ($number-1))] {
                 slug {
                   current
                 },
