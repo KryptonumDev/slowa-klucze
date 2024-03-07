@@ -496,7 +496,8 @@ async function getData(slug: string) {
                 href,
                 text
               }
-            }
+            },
+            additionalInfo
           },
           _type == "process" => {
             centralizedHeading {
