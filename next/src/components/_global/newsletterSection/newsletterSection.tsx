@@ -1,10 +1,10 @@
+import Link from 'next/link';
 import styles from './newsletterSection.module.scss';
 import { type Props } from './newsletterSection.types';
 import Form from './form';
 import Heading from '@/components/ui/heading/Heading';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
-import Link from 'next/link';
 
 export default function NewsletterSection({ data: { description, formCta, heading, image, subheading, card } }: Props) {
   const JsxDescription = <Markdown className={styles.description}>{description}</Markdown>;
