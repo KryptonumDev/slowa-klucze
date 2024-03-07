@@ -17,7 +17,7 @@ import { type Slider } from '@/types/_global/Slider';
 import type { CooperationEffectsPage, ContentItem } from '@/types/_pages/CooperationEffectsPage';
 import { sanityFetch } from '@/utils/sanity-client';
 import OffersComponent from '@/components/_global/offersComponent/offersComponent';
-import { Offers } from '@/types/_global/Offers';
+import { type Offers } from '@/types/_global/Offers';
 
 export async function generateMetadata() {
   const { seo } = await getMetadata();

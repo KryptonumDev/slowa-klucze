@@ -18,7 +18,7 @@ import SEO from '@/global/Seo';
 import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 import { type BlogReference } from '@/types/_global/BlogReference';
 import OffersComponent from '@/components/_global/offersComponent/offersComponent';
-import { Offers } from '@/types/_global/Offers';
+import { type Offers } from '@/types/_global/Offers';
 
 export async function generateMetadata() {
   const { seo } = await getMetadata();
