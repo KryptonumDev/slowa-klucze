@@ -16,6 +16,7 @@ export default {
         {type: 'caseStudies'},
         {type: 'achievementsShowcase'},
         {type: 'blogReference'},
+        {type: 'offers'},
       ],
     },
     {

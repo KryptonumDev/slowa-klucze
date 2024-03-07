@@ -16,6 +16,8 @@ import { type Newsletter } from '@/types/_global/Newsletter';
 import { type Slider } from '@/types/_global/Slider';
 import type { CooperationEffectsPage, ContentItem } from '@/types/_pages/CooperationEffectsPage';
 import { sanityFetch } from '@/utils/sanity-client';
+import OffersComponent from '@/components/_global/offersComponent/offersComponent';
+import { type Offers } from '@/types/_global/Offers';
 
 export async function generateMetadata() {
   const { seo } = await getMetadata();
@@ -69,6 +71,12 @@ export default async function cooperationEffectsPage() {
     blogReference: (
       <BlogReferenceComponent
         data={component as BlogReference}
+        key={i}
+      />
+    ),
+    offers: (
+      <OffersComponent
+        data={component as Offers}
         key={i}
       />
     ),
@@ -319,6 +327,7 @@ async function getData() {
           }
         },
         card {
+          href,
           heading,
           description,
           image {
@@ -336,6 +345,20 @@ async function getData() {
           }
         }
       },
+      _type == "offers" => {
+            offers[] {
+              price,
+              description,
+              title,
+              addition,
+              heading,
+              cta {
+                theme,
+                href,
+                text
+              }
+            }
+          },
       _type == "blogReference" => {
       cta {
         href,

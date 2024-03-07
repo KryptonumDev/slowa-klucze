@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './newsletterSection.module.scss';
 import { type Props } from './newsletterSection.types';
 import Form from './form';
@@ -26,7 +27,10 @@ export default function NewsletterSection({ data: { description, formCta, headin
         />
       </div>
       <div className={styles.visuals}>
-        <div className={styles.card}>
+        <Link
+          className={styles.card}
+          href={card.href}
+        >
           <Img
             className={styles.image}
             data={card.image}
@@ -34,7 +38,7 @@ export default function NewsletterSection({ data: { description, formCta, headin
           />
           <Markdown.h3 className={styles.heading}>{card.heading}</Markdown.h3>
           <Markdown className={styles.description}>{card.description}</Markdown>
-        </div>
+        </Link>
         <Img
           data={image}
           className={styles.image}

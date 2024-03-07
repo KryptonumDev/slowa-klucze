@@ -77,5 +77,11 @@ export const card = {
       type: 'markdown',
       validation: (Rule) => Rule.required(),
     },
+    {
+      title: 'Link',
+      name: 'href',
+      type: 'url',
+      validation: (Rule) => Rule.required(),
+    }
   ],
 }

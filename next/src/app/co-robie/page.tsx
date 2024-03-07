@@ -17,6 +17,8 @@ import SmallTilesComponent from '@/components/_global/smallTilesComponent/smallT
 import SEO from '@/global/Seo';
 import BlogReferenceComponent from '@/components/_global/blogReferenceComponent';
 import { type BlogReference } from '@/types/_global/BlogReference';
+import OffersComponent from '@/components/_global/offersComponent/offersComponent';
+import { type Offers } from '@/types/_global/Offers';
 
 export async function generateMetadata() {
   const { seo } = await getMetadata();
@@ -76,6 +78,12 @@ export default async function MyWorkPage() {
     blogReference: (
       <BlogReferenceComponent
         data={component as BlogReference}
+        key={i}
+      />
+    ),
+    offers: (
+      <OffersComponent
+        data={component as Offers}
         key={i}
       />
     ),
@@ -243,6 +251,7 @@ async function getData() {
               }
             },
             card {
+              href,
               heading,
               description,
               image {
@@ -338,6 +347,20 @@ async function getData() {
                     }
                   }
                 }
+              }
+            }
+          },
+          _type == "offers" => {
+            offers[] {
+              price,
+              description,
+              title,
+              addition,
+              heading,
+              cta {
+                theme,
+                href,
+                text
               }
             }
           },

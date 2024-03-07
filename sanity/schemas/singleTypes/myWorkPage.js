@@ -17,6 +17,7 @@ export default {
         {type: 'tilesSmall'},
         {type: 'process'},
         {type: 'blogReference'},
+        {type: 'offers'},
       ],
     },
     {
