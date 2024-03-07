@@ -137,7 +137,7 @@ async function getBlogData(number: number) {
                 },
               },
               "totalCount": count(*[_type=="blog_entries"][]),
-              "blogEntries": *[_type=="blog_entries"][$number-1 ... $blogsPerPage+$number-1] {
+              "blogEntries": *[_type=="blog_entries"][$blogsPerPage * ($number-1) ... $blogsPerPage+ ($blogsPerPage * ($number-1))] {
                 slug {
                   current
                 },
