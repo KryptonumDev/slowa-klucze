@@ -68,7 +68,7 @@ export default function CaseStudiesComponent({
           </div>
         ))}
       </div>
-      {centralizedHeading.cta && <CentralizedHeading data={centralizedHeading} />}
+      {centralizedHeading?.cta && <CentralizedHeading data={centralizedHeading} />}
     </section>
   );
 }
