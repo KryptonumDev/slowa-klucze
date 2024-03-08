@@ -24,10 +24,12 @@ export default function OffersComponent({ data: { offers, additionalInfo } }: { 
               <p className={styles.price}>{price}</p>
             </div>
             <Markdown className={styles.list}>{description}</Markdown>
-            <div className={styles.additionWrapper}>
-              <RoundedPlusIcon />
-              <Markdown>{addition}</Markdown>
-            </div>
+            {addition && (
+              <div className={styles.additionWrapper}>
+                <RoundedPlusIcon />
+                <Markdown>{addition}</Markdown>
+              </div>
+            )}
             <Button
               data={cta}
               svg={false}
