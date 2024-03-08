@@ -22,7 +22,8 @@ export default {
     {
       name: 'socials',
       title: 'linki do mediów społecznościowych',
-      type: 'links',
+      type: 'array',
+      of: [{type: 'social'}],
     },
     {
       title: 'Stopka',

@@ -9,10 +9,9 @@ export interface global {
     logo: Image;
     navigation: navigation;
     socials: {
-      facebook: string;
-      linkedin: string;
-      instagram: string;
-    };
+      href: string;
+      icon: Image;
+    }[];
   };
 }
 
