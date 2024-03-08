@@ -5,12 +5,7 @@ export interface Props {
   data: navigation;
   logo: Image;
   socials: {
-    facebook: string;
-    linkedin: string;
-    instagram: string;
-  };
-  icons: {
-    icon: JSX.Element;
-    name: string;
+    href: string;
+    icon: Image;
   }[];
 }

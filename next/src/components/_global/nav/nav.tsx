@@ -7,7 +7,7 @@ import { type Props } from './nav.types';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
+export default function Nav({ data: { cta }, logo, socials }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [toggleNav, setToggleNav] = useState(false);
@@ -196,21 +196,16 @@ export default function Nav({ data: { cta }, logo, socials, icons }: Props) {
           </Link>
         </div>
         <div className={styles.socials}>
-          {Object.entries(socials).map(([name, href], i) => {
-            const icon = icons.find((icon) => icon.name.toLowerCase() === name.toLowerCase());
-            if (icon && href) {
-              return (
-                <Link
-                  href={href}
-                  key={i}
-                  aria-label={icon.name}
-                  target='_blank'
-                >
-                  {icon.icon}
-                </Link>
-              );
-            }
-          })}
+          {socials.map(({ href, icon }, i: number) => (
+            <Link
+              href={href}
+              key={i}
+              target='_blank'
+              className={styles.social}
+            >
+              <Img data={icon} />
+            </Link>
+          ))}
         </div>
         <Button
           className={styles.button}

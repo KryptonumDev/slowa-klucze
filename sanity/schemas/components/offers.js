@@ -14,8 +14,8 @@ export default {
     {
       title: 'dodatkowe informacje',
       type: 'markdown',
-      name: 'additionalInfo'
-    }
+      name: 'additionalInfo',
+    },
   ],
   preview: {
     select: {
@@ -67,7 +67,7 @@ export const offer = {
   ],
   preview: {
     select: {
-      title: 'heading',
+      title: 'title',
     },
     prepare({title}) {
       return {

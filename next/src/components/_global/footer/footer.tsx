@@ -4,7 +4,7 @@ import { type Props } from './footer.types';
 import Markdown from '@/components/ui/Markdown';
 import Img from '@/components/ui/Img';
 
-export default function Footer({ data: { description, portrait }, logo, socials, icons }: Props) {
+export default function Footer({ data: { description, portrait }, logo, socials }: Props) {
   const date = new Date().getFullYear();
 
   return (
@@ -23,22 +23,16 @@ export default function Footer({ data: { description, portrait }, logo, socials,
           </Link>
           <Markdown className={styles.description}>{description}</Markdown>
           <div className={styles.socials}>
-            {Object.entries(socials).map(([name, href], i) => {
-              const icon = icons.find((icon) => icon.name.toLowerCase() === name.toLowerCase());
-              if (icon && href) {
-                return (
-                  <Link
-                    href={href}
-                    key={i}
-                    aria-label={icon.name}
-                    target='_blank'
-                    className={styles.social}
-                  >
-                    {icon.icon}
-                  </Link>
-                );
-              }
-            })}
+            {socials.map(({ href, icon }, i: number) => (
+              <Link
+                href={href}
+                key={i}
+                target='_blank'
+                className={styles.social}
+              >
+                <Img data={icon} />
+              </Link>
+            ))}
           </div>
           <Img
             className={styles.photo}
