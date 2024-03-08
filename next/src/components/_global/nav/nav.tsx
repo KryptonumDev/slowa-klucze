@@ -124,7 +124,7 @@ export default function Nav({ data: { cta }, logo, socials }: Props) {
               </button>
               <div
                 className={styles.expandedLinks}
-                data-isExpanded={isExpanded}
+                data-isexpanded={isExpanded}
               >
                 <Link href={'/co-robie'}>Co robię</Link>
                 <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
