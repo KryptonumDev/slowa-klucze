@@ -42,7 +42,7 @@ export default function Faq({ data: { centralizedHeading, description, faq, imag
           <Img
             className={styles.image}
             data={image}
-            sizes='(max-width: 1349px) 100vw, 50vw' 
+            sizes='(max-width: 1349px) 100vw, 50vw'
           />
           <div className={styles.items}>
             <FaqItems
@@ -66,6 +66,7 @@ function Arrow({ ...props }) {
       xmlns='http://www.w3.org/2000/svg'
       width='45'
       height='45'
+      viewBox='0 0 45 45'
       fill='none'
       {...props}
     >
@@ -73,14 +74,14 @@ function Arrow({ ...props }) {
         stroke='#163C3E'
         strokeLinecap='round'
         strokeWidth='2'
-        d='M5.009 26.294a17.813 17.813 0 01.448-9.251c3.014-9.413 13.088-14.6 22.5-11.586 9.413 3.014 14.6 13.088 11.586 22.5-3.014 9.413-13.088 14.6-22.5 11.586a17.812 17.812 0 01-7.792-5.01'
+        d='M39.991 18.706a17.813 17.813 0 01-.448 9.251c-3.014 9.413-13.088 14.6-22.5 11.586-9.413-3.014-14.6-13.088-11.586-22.5 3.014-9.413 13.088-14.6 22.5-11.586a17.813 17.813 0 017.792 5.01'
       ></path>
       <path
         stroke='#163C3E'
         strokeLinecap='round'
         strokeLinejoin='round'
         strokeWidth='2'
-        d='M22.5 30.684V14.578m0 0l-7.158 6.903m7.158-6.903l7.158 6.903'
+        d='M22.5 14.316V30.42m0 0l7.158-6.902M22.5 30.421l-7.158-6.902'
       ></path>
     </svg>
   );

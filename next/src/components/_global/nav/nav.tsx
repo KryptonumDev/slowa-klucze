@@ -122,12 +122,13 @@ export default function Nav({ data: { cta }, logo, socials }: Props) {
                 <span>Oferta</span>
                 <ChevronDown />
               </button>
-              {isExpanded && (
-                <div className={styles.expandedLinks}>
-                  <Link href={'/co-robie'}>Co robię</Link>
-                  <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-                </div>
-              )}
+              <div
+                className={styles.expandedLinks}
+                data-isExpanded={isExpanded}
+              >
+                <Link href={'/co-robie'}>Co robię</Link>
+                <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+              </div>
             </div>
             <Link href={'/blog'}>Blog</Link>
           </div>
