@@ -430,8 +430,18 @@ async function getData(slug: string) {
               quote {
                 quote,
                 heading
-              }
-            }
+              },
+            },
+            centralizedHeading {
+              heading,
+              description,
+              title,
+              cta {
+                theme,
+                href,
+                text
+              },
+            },
           },
           _type == "tilesSmall" => {
             centralizedHeading {
