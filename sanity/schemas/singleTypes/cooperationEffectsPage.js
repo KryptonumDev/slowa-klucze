@@ -1,6 +1,6 @@
 export default {
   name: 'CooperationEffectsPage',
-  title: 'Efekty współpracy',
+  title: 'Współpraca',
   type: 'document',
   icon: () => '🤝',
   fields: [
