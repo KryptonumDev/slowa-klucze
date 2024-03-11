@@ -43,6 +43,13 @@
 
         .social {
           outline-offset: 1px;
+          display: block;
+
+          >img {
+            width: 39px;
+            height: 39px;
+            display: block;
+          }
 
           &:focus-visible {
             border-radius: 4px;
