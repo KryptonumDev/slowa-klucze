@@ -1,6 +1,6 @@
 export default {
   name: 'MyWorkPage',
-  title: 'Co robię',
+  title: 'Usługi',
   type: 'document',
   icon: () => '✒️',
   fields: [
