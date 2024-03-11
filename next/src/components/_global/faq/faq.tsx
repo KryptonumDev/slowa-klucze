@@ -67,6 +67,7 @@ function Arrow({ ...props }) {
       width='45'
       height='45'
       fill='none'
+      {...props}
     >
       <circle
         cx='22.5'
