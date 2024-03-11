@@ -1,0 +1,53 @@
+.partnersComponent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  background: var(--light-background);
+  align-items: center;
+  padding: 75px 0px;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  .centralizedHeading {
+    z-index: 1;
+
+    >h2 {
+      &:before {
+        background: var(--light-background);
+      }
+    }
+  }
+
+  .slider {
+    position: relative;
+    min-width: 0px;
+    width: 100%;
+    .slide {
+      filter: blur(2px);
+      align-self: center;
+
+      &[data-selected='true'] {
+        filter: blur(0px);
+      }
+    }
+
+    .imageWrapper {
+      display: grid;
+      padding: 20px 27px;
+      background: var(--background);
+      border-radius: 16px;
+      gap: 24px;
+      min-height: 300px;
+
+      .image {
+        height: auto;
+        width: 100%;
+        align-self: center;
+      }
+    }
+  }
+}

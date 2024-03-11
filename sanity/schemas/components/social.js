@@ -1,4 +1,5 @@
 export default {
+  title: 'Social Media',
   name: 'social',
   type: 'object',
   fields: [
@@ -11,7 +12,7 @@ export default {
     {
       name: 'icon',
       type: 'image',
-      title: 'Icon',
+      title: 'Ikona',
       validation: (Rule) => Rule.required(),
     },
   ],

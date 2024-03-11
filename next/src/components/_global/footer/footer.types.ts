@@ -4,9 +4,8 @@ import { type footer } from '@/types/_pages/global';
 export interface Props {
   data: footer;
   logo: Image;
-  socialsList: string[];
-  icons: {
-    icon: JSX.Element;
-    name: string;
+  socials: {
+    href: string;
+    icon: Image;
   }[];
 }

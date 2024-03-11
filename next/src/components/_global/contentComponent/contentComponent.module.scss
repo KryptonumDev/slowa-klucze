@@ -1,0 +1,28 @@
+.contentComponent {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: clamp(16px, calc(40vw/7.68), 87px);
+  align-items: flex-start;
+
+  nav {
+    transition: transform .5s;
+  }
+
+  @media (max-width: 849px) {
+    grid-template-columns: 1fr;
+
+    nav {
+      order: -1;
+    }
+  }
+}
+
+.transform {
+  @media(min-width: 850px) {
+
+    nav {
+      transform: translateY(75px);
+    }
+  }
+
+}

@@ -1,6 +1,8 @@
+import removeMarkdown from '../../utils/RemoveMarkdown'
+
 export default {
   name: 'slider',
-  title: 'Slider',
+  title: 'Karuzela',
   type: 'object',
   fields: [
     {
@@ -22,11 +24,11 @@ export default {
   ],
   preview: {
     select: {
-      title: 'centralizedHeading.heading'
+      title: 'centralizedHeading.heading',
     },
     prepare({title}) {
       return {
-        title: `[Karuzela] ${title}`,
+        title: `[Karuzela] - ${title}`,
       }
     },
   },
@@ -46,16 +48,19 @@ export const slides = {
       title: 'Nagłówek',
       name: 'heading',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Link url',
       name: 'url',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Opis',
       name: 'description',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Ocena (liczba gwiazdek od 1 do 5)',
@@ -70,7 +75,7 @@ export const slides = {
     },
     prepare({title}) {
       return {
-        title: title,
+        title: removeMarkdown(title),
       }
     },
   },

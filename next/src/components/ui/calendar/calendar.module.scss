@@ -1,0 +1,114 @@
+.calendar {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+
+  .datePicker {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  .months {
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+
+    .item {
+      padding: 8px 25px;
+      border-radius: 20px;
+
+      &:focus-visible {
+        outline: 1px solid var(--midnight-green-500);
+        outline-offset: -1px;
+      }
+
+      &[data-selected='true'] {
+        background: var(--background-color);
+      }
+    }
+  }
+
+  .dates {
+    display: grid;
+    padding: 20px clamp(16px, calc(40vw/7.68), 60px);
+    justify-content: stretch;
+    row-gap: 5px;
+    background: linear-gradient(var(--neutral-100), var(--neutral-100)) padding-box,
+      var(--gradient) border-box;
+    border: 1px solid transparent;
+    border-radius: 16px;
+
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      justify-content: stretch;
+
+      >p {
+        font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
+        padding: 10px;
+      }
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      justify-content: stretch;
+
+      >button {
+        font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
+        padding: 10px;
+        color: var(--midnight-green-500);
+
+        span[data-selected='true'] {
+          background: var(--background-color);
+          border-radius: 6px;
+          padding: 10px;
+        }
+
+        &:disabled {
+          color: var(--neutral-900);
+        }
+
+        &:focus-visible {
+          outline: 1px solid var(--midnight-green-500);
+          outline-offset: -1px;
+        }
+      }
+    }
+  }
+
+  .hoursWrapper {
+    display: grid;
+    gap: 20px;
+
+    .hours {
+      display: flex;
+      overflow-x: hidden;
+      width: 100%;
+
+      .item {
+        padding: 8px 25px;
+        border-radius: 20px;
+
+        &[data-selected='true'] {
+          background: var(--background-color);
+        }
+
+        &:focus-visible {
+          outline: 1px solid var(--midnight-green-500);
+          outline-offset: -1px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 499px) {
+    .dates {
+      border: unset;
+      background: unset;
+      padding: unset;
+    }
+  }
+}

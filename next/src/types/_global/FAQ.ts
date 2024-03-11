@@ -1,10 +1,10 @@
-import { type CentralizedHeading } from "./CentralizedHeading";
-import { type HeadingDescription } from "./HeadingDescription";
-import { type Image } from "./Image";
+import { type CentralizedHeading } from './CentralizedHeading';
+import { type Image } from './Image';
+import { type ImageTitleDescription } from './ImageTitleDescription';
 
 export interface FAQ {
   _type?: string;
-  faq: HeadingDescription[];
+  faq: ImageTitleDescription[];
   heading: string;
   description: string;
   centralizedHeading: CentralizedHeading;

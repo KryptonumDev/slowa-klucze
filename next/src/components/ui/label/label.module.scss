@@ -2,6 +2,7 @@
   display: grid;
   row-gap: 10px;
   position: relative;
+  max-width: 500px;
 
   .title {
     font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
@@ -13,12 +14,11 @@
   .inputWrapper {
     display: grid;
     position: relative;
-    max-width: 500px;
 
     .input {
       border-radius: 20px;
       border: 1px solid #000;
-      height: 56px;
+      min-height: 56px;
       padding-left: 22px;
       font-size: clamp(calc(20rem/16), calc(26vw/7.68), calc(32rem/16));
       background-clip: padding-box;
@@ -47,10 +47,19 @@
       }
     }
 
+    textarea {
+      padding-top: 4px;
+    }
+
     .smallError {
       position: absolute;
-      bottom: 0px;
+      bottom: 4px;
       right: 13px;
+    }
+
+    .info {
+      font-size: 16px;
+      padding-left: 8px;
     }
   }
 
@@ -62,10 +71,10 @@
       font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
     }
   }
+
   @media (max-width: 1199px) {
-    .title {
-      justify-self: center;
-    }
+    max-width: unset;
+
     .inputWrapper {
       max-width: unset;
     }

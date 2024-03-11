@@ -9,6 +9,7 @@ export interface Newsletter {
   description: string;
   image: Image;
   card: {
+    href: string;
     image: Image;
     heading: string;
     description: string;

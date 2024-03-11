@@ -7,7 +7,7 @@ import { type Props } from './nav.types';
 import Img from '@/components/ui/Img';
 import Button from '@/components/ui/button/Button';
 
-export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) {
+export default function Nav({ data: { cta }, logo, socials }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [toggleNav, setToggleNav] = useState(false);
@@ -97,7 +97,7 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
 
   return (
     <nav
-      className={styles.navWrapper}
+      className={`${styles.navWrapper} nav`}
       ref={navRef}
     >
       <div className={`maxWidth ${styles.nav}`}>
@@ -120,16 +120,17 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
                 className={styles.button}
               >
                 <span>Oferta</span>
-                {ChevronDown()}
+                <ChevronDown />
               </button>
-              {isExpanded && (
-                <>
-                  <Link href={'/co-robie'}>Co robię</Link>
-                  <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-                </>
-              )}
+              <div
+                className={styles.expandedLinks}
+                data-isexpanded={isExpanded}
+              >
+                <Link href={'/co-robie'}>Co robię</Link>
+                <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+              </div>
             </div>
-            <Link href={'/Blog'}>Blog</Link>
+            <Link href={'/blog'}>Blog</Link>
           </div>
         </div>
         <Button
@@ -141,54 +142,78 @@ export default function Nav({ data: { cta }, logo, socialsList, icons }: Props) 
           <button
             onClick={() => setToggleNav(!toggleNav)}
             className={styles.exit}
+            aria-label='rozwiń nawigację'
           >
-            {Hamburger()}
+            <Hamburger />
           </button>
         </div>
       </div>
-      {toggleNav && (
-        <div
-          className={styles.toggled}
-          onMouseLeave={() => setToggleNav(!toggleNav)}
-          ref={toggledNavRef}
-        >
+      <div
+        className={styles.toggled}
+        onMouseLeave={() => setToggleNav(false)}
+        data-show={toggleNav}
+        ref={toggledNavRef}
+      >
+        <Link href={'/'}>
           <Img
             className={styles.logo}
             data={logo}
           />
-          <button onClick={() => setToggleNav(!toggleNav)}>{Exit()}</button>
-          <div className={styles.links}>
-            <Link href={'/o-mnie'}>O mnie</Link>
-            <Link href={'/oferta'}>Oferta</Link>
-            <div className={styles.sublinks}>
-              <Link href={'/co-robie'}>Co robię</Link>
-              <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
-            </div>
-            <Link href={'/blog'}>Blog</Link>
+        </Link>
+        <button
+          className={styles.closeNavigationButton}
+          onClick={() => setToggleNav(!toggleNav)}
+          aria-label='zamknij nawigację'
+        >
+          {<Exit />}
+        </button>
+        <div className={styles.links}>
+          <Link
+            href={'/o-mnie'}
+            onClick={() => setToggleNav(!toggleNav)}
+          >
+            O mnie
+          </Link>
+          <span className={styles.span}>Oferta</span>
+          <div className={styles.sublinks}>
+            <Link
+              href={'/co-robie'}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              Co robię
+            </Link>
+            <Link
+              href={'/efekty-wspolpracy'}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              Efekty współpracy
+            </Link>
           </div>
-          <div className={styles.socials}>
-            {socialsList.map(( href , i) => {
-              const icon = icons.find(({ name }) => href.toLowerCase().includes(name.toLowerCase()));
-              if (icon) {
-                return (
-                  <Link
-                    href={href}
-                    key={i}
-                    aria-label={icon.name}
-                  >
-                    {icon.icon}
-                  </Link>
-                );
-              }
-            })}
-          </div>
-          <Button
-            className={styles.button}
-            svg={false}
-            data={cta}
-          />
+          <Link
+            href={'/blog'}
+            onClick={() => setToggleNav(!toggleNav)}
+          >
+            Blog
+          </Link>
         </div>
-      )}
+        <div className={styles.socials}>
+          {socials.map(({ href, icon }, i: number) => (
+            <Link
+              href={href}
+              key={i}
+              target='_blank'
+              className={styles.social}
+            >
+              <Img data={icon} />
+            </Link>
+          ))}
+        </div>
+        <Button
+          className={styles.button}
+          svg={false}
+          data={cta}
+        />
+      </div>
     </nav>
   );
 }
@@ -200,13 +225,12 @@ function Hamburger() {
       width='62'
       height='61'
       fill='none'
-      viewBox='0 0 62 61'
     >
       <path
         stroke='#163C3E'
         strokeLinecap='round'
         strokeWidth='4'
-        d='M10.917 17.792h7.625m33.042 0H28.709M51.583 43.208h-7.625m-33.042 0h22.875M10.917 30.5h40.667'
+        d='M10.917 17.792h7.625m33.042 0H28.709m22.874 25.416h-7.625m-33.042 0h22.875M10.917 30.5h40.667'
       ></path>
     </svg>
   );
@@ -219,7 +243,6 @@ function Exit() {
       width='42'
       height='42'
       fill='none'
-      viewBox='0 0 42 42'
     >
       <path
         stroke='#163C3E'
@@ -238,10 +261,9 @@ function ChevronDown() {
       width='18'
       height='13'
       fill='none'
-      viewBox='0 0 18 13'
     >
       <path
-        stroke='currentColor'
+        stroke='#163C3E'
         strokeWidth='3'
         d='M1.5 1.5l7.5 9 7.5-9'
       ></path>

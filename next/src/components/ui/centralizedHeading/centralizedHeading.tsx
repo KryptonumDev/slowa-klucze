@@ -6,7 +6,6 @@ import Markdown from '@/components/ui/Markdown';
 
 export default function CentralizedHeading({
   data: { title, description, heading, cta },
-  backgroundColor,
   className,
 }: Props) {
   return (
@@ -14,7 +13,6 @@ export default function CentralizedHeading({
       {heading && (
         <Heading
           type='h2'
-          backgroundColor={backgroundColor}
         >
           {heading}
         </Heading>

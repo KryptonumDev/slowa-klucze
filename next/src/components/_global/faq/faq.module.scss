@@ -14,6 +14,12 @@
       .description {
         margin-top: 2px;
       }
+
+      .heading {
+        &:before {
+          background: var(--background);
+        }
+      }
     }
 
     row-gap: 64px;
@@ -41,41 +47,82 @@
 
         .item {
           display: grid;
-          grid-template-columns: auto 1fr auto;
-          grid-template-areas: "chart heading icon" "description description description";
+          grid-template-columns: 1fr;
+          grid-template-areas: "button" "description";
           background: var(--neutral-100);
-          gap: 10px;
-          padding: 15px 25px 20px;
+          padding: 15px 25px;
           border-radius: 20px;
 
-          .chart {
-            grid-area: chart;
-            height: clamp(30px, calc(52vw/7.68), 52px);
-            width: clamp(30px, calc(52vw/7.68), 52px);
-          }
+          &:hover {
+            cursor: pointer;
 
-          .heading {
-            grid-area: heading;
-            font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
-          }
-
-          .icon {
-            grid-area: icon;
-            border-left: 1px solid var(--dark-neutral-100);
-            padding-left: 10px;
-            height: clamp(35px, calc(45vw/7.68), 45px);
-            width: clamp(35px, calc(45vw/7.68), 45px);
-            align-self: center;
-
-            >svg {
-              transition: transform 0.3s ease-in-out;
+            .button {
+              .svgWrapper {
+                >svg {
+                  >circle {
+                    stroke-dasharray: 118;
+                  }
+                }
+              }
             }
           }
 
-          &.active {
-            .icon {
+          &:has(summary:focus-visible) {
+            outline: 1px solid var(--coffee-500);
+          }
+
+          .button {
+            display: grid;
+            column-gap: 10px;
+            grid-template-columns: auto 1fr auto;
+            align-items: flex-start;
+            text-align: start;
+            grid-template-areas: "image title icon";
+
+            &:focus-visible {
+              outline: none;
+            }
+
+
+            .image {
+              grid-area: image;
+              height: clamp(30px, calc(52vw/7.68), 52px);
+              width: clamp(30px, calc(52vw/7.68), 52px);
+              margin-top: -10px;
+              align-self: start;
+            }
+
+
+            .heading {
+              >h3 {
+                font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+              }
+            }
+
+            .svgWrapper {
+              border-left: 1px solid var(--dark-neutral-100);
+              padding-left: 10px;
+              height: clamp(35px, calc(45vw/7.68), 45px);
+              width: clamp(35px, calc(45vw/7.68), 45px);
+              align-self: center;
+
               >svg {
-                transform: rotate(180deg);
+                circle {
+                  stroke-dasharray: 106;
+                  transition: stroke-dasharray 0.5s ease-in-out;
+                }
+
+                transition: transform 0.3s ease-in-out;
+              }
+            }
+          }
+
+          &[open] {
+            .button {
+              .svgWrapper {
+                >svg {
+                  transform: rotate(180deg);
+                }
               }
             }
           }
@@ -90,8 +137,9 @@
             transition: opacity 0.3s ease-in-out;
           }
 
-          &.active {
+          &[open] {
             .description {
+              margin-top: 10px;
               visibility: visible;
               max-height: 100%;
               opacity: 1;
@@ -110,6 +158,16 @@
           aspect-ratio: 16/9;
           object-fit: cover;
           border-radius: 16px;
+        }
+
+        .items {
+          .item {
+            .image {
+              align-self: center;
+              aspect-ratio: unset;
+              position: unset;
+            }
+          }
         }
       }
     }

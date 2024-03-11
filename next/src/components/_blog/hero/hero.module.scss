@@ -1,0 +1,91 @@
+.hero {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: flex-start;
+  gap: clamp(27px, calc(40vw/7.68), 70px);
+
+  header {
+    display: grid;
+    row-gap: 14px;
+    align-items: flex-start;
+
+    .description {
+      padding-top: 20px;
+    }
+  }
+
+  .title {
+    max-width: 404px;
+  }
+
+  .form {
+    display: grid;
+    gap: 20px;
+    position: relative;
+
+    .loader {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(212, 212, 212, 0.171);
+      backdrop-filter: blur(2px);
+      z-index: 2;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      border-radius: 16px;
+
+      >span {
+        position: absolute;
+        color: var(--midnight-green-200);
+        font-size: 32px;
+      }
+
+      .circle {
+        animation: rotate 2s linear infinite;
+      }
+
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    >label {
+      padding: unset;
+    }
+  }
+
+  .state {
+    display: grid;
+    grid-row-gap: 24px;
+
+    >h3 {
+      .success {
+        color: var(--green-800);
+      }
+
+      .failed {
+        color: var(--error-800);
+      }
+    }
+
+    >p {
+      font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(24rem/16));
+    }
+
+    >button {
+      margin-top: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}

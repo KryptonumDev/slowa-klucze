@@ -20,15 +20,10 @@ export default {
       type: 'image',
     },
     {
-      name: 'socialsList',
+      name: 'socials',
       title: 'linki do mediów społecznościowych',
       type: 'array',
-      of: [
-        {
-          name: 'href',
-          type: 'string',
-        },
-      ],
+      of: [{type: 'social'}],
     },
     {
       title: 'Stopka',

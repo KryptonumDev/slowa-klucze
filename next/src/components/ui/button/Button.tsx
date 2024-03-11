@@ -10,6 +10,7 @@ export default function Button({
   href,
   className,
   svg = true,
+  onClick,
   ...props
 }: Button) {
   if (data) {
@@ -20,19 +21,24 @@ export default function Button({
 
   const isExternal = href && href.startsWith('https://');
 
-  const linkClassName = `${styles.button} ${theme === 'secondary' ? styles.secondary : styles.primary} ${
-    className || ''
-  } `;
+  const themeStyles = {
+    secondary: styles.secondary,
+    primary: styles.primary,
+    borderless: styles.borderless,
+  };
+
+  const linkClassName = `${styles.button} ${themeStyles[theme] || styles.primary} ${className || ''} `;
 
   return (
     <>
       {href ? (
-        isExternal ? (
+        (svg || isExternal) ? (
           <a
             className={linkClassName}
             href={href}
             target='_blank'
             rel='noreferrer'
+            onClick={onClick}
             {...props}
           >
             <span>{children}</span>
@@ -42,6 +48,7 @@ export default function Button({
           <Link
             className={linkClassName}
             href={href}
+            onClick={onClick}
             {...props}
           >
             <span>{children}</span>
@@ -52,6 +59,7 @@ export default function Button({
         <button
           className={linkClassName}
           type='submit'
+          onClick={onClick}
           disabled={disabled}
           {...props}
         >
@@ -74,7 +82,16 @@ export const externalIcon = () => {
     >
       <path
         stroke='#784B36'
-        d='M12 10l9-9m0 0h-5.344M21 1v5.344M1 11c0-4.714 0-7.071 1.464-8.536C3.93 1 6.286 1 11 1m10 10c0 4.714 0 7.071-1.465 8.535C18.072 21 15.714 21 11 21s-7.071 0-8.536-1.465c-.973-.973-1.3-2.342-1.409-4.535'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
+        d='M12 10l9-9m0 0h-5.344M21 1v5.344'
+      ></path>
+      <path
+        stroke='#784B36'
+        strokeLinecap='round'
+        strokeWidth='2'
+        d='M1 11c0-4.714 0-7.071 1.464-8.536C3.93 1 6.286 1 11 1m10 10c0 4.714 0 7.071-1.465 8.535C18.072 21 15.714 21 11 21s-7.071 0-8.536-1.465c-.973-.973-1.3-2.342-1.409-4.535'
       ></path>
     </svg>
   );

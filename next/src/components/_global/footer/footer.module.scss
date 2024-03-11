@@ -1,117 +1,176 @@
 .footer {
   margin-top: 75px;
-  background-color: var(--background);
-  .footerWrapper {
-    position: relative;
-    padding: 48px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: flex-start;
-    row-gap: 28px;
+  overflow: hidden;
+  padding-top: 100px;
 
-    grid-template-areas: "logo photo links"
-      "description photo links"
-      "socials photo links"
-      "copyright photo links";
+  .background {
+    background-color: var(--background);
 
-    .logo {
-      grid-area: logo;
-      height: auto;
-      width: 264px;
-    }
+    .footerWrapper {
+      position: relative;
+      padding: 48px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 28px;
 
-    .description {
-      grid-area: description;
-      font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
-    }
+      grid-template-areas: "logo photo links"
+        "description photo links"
+        "socials photo links"
+        "copyright photo links";
 
-    .socials {
-      grid-area: socials;
-      padding: 2px 0px;
-      display: flex;
-      column-gap: 24px;
-      flex-direction: row;
-      width: 39px;
-      height: 39px;
-    }
+      .logoLink {
+        display: inline-block;
+        width: 264px;
 
-    .photo {
-      grid-area: photo;
-      height: calc(100% + 203px);
-      width: calc(250px + 40%);
-      object-fit: cover;
-      object-position: top;
-      position: absolute;
-      top: -155px;
-      left: -70px;
-      display: block;
-    }
-
-    .copyright {
-      grid-area: copyright;
-      font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
-
-      >span {
-        white-space: nowrap;
-        >a {
-          color: inherit;
+        .logo {
+          grid-area: logo;
+          height: auto;
+          width: 100%;
         }
       }
-    }
 
-    .links {
-      z-index: 1;
-      grid-area: links;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 28px;
-      grid-column-gap: 74px;
-      font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+      .description {
+        grid-area: description;
+        font-size: clamp(calc(16rem/16), calc(24vw/7.68), calc(24rem/16));
+      }
 
-      .button {
+      .socials {
+        grid-area: socials;
+        padding: 2px 0px;
+        display: flex;
+        column-gap: 24px;
+        flex-direction: row;
+
+        .social {
+          outline-offset: 1px;
+          display: block;
+
+          >img {
+            width: 39px;
+            height: 39px;
+            display: block;
+          }
+
+          &:focus-visible {
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .photo {
+        grid-area: photo;
+        height: calc(100% + 203px);
+        width: calc(250px + 40%);
+        object-fit: cover;
+        object-position: top;
+        position: absolute;
+        top: -155px;
+        left: -70px;
+        display: block;
+      }
+
+      .copyright {
+        grid-area: copyright;
+        font-size: clamp(calc(16rem/16), calc(20vw/7.68), calc(20rem/16));
+        color: var(--dark-neutral-900);
+
+        >span {
+          white-space: nowrap;
+
+          >a {
+            color: inherit;
+          }
+
+          svg {
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .links {
+        z-index: 1;
+        grid-area: links;
         display: grid;
-        justify-items: start;
-        align-items: start;
-      }
-    }
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 28px;
+        grid-column-gap: 74px;
+        font-size: clamp(calc(20rem/16), calc(20vw/7.68), calc(24rem/16));
+        font-weight: 300;
+        align-items: center;
+        align-self: flex-start;
 
-    @media (max-width:999px) {
-      grid-template-columns: 2fr 1fr;
-      grid-template-areas: "logo photo"
-        "description photo"
-        "socials photo"
-        "links photo"
-        "copyright photo";
-      padding-bottom: unset;
+        .button {
+          display: grid;
+          justify-items: start;
+          align-items: start;
+          color: var(--dark-neutral-900);
+        }
 
-      .links {
-        grid-column-gap: 10px;
-      }
-
-      .photo {
-        right: calc(var(--pageMargin) * -1);
-        width: auto;
-        left: unset;
-        bottom: unset;
-        height: calc(100% + 155px);
-      }
-    }
-
-    @media (max-width: 799px) {
-      grid-template-columns: 1fr;
-      grid-template-areas: "logo"
-        "description"
-        "socials"
-        "links"
-        "photo"
-        "copyright";
-
-      .photo {
-        display: none;
+        >a {
+          display: inline-block;
+          width: fit-content;
+        }
       }
 
-      .links {
+      @media (max-width:999px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "logo photo"
+          "description photo"
+          "socials photo"
+          "links photo"
+          "copyright photo";
+        padding-bottom: unset;
+
+        .links {
+          grid-column-gap: 10px;
+        }
+
+        .copyright {
+          padding-bottom: 64px;
+        }
+
+        .photo {
+          right: calc((var(--pageMargin) * -1) - 120px);
+          width: auto;
+          left: unset;
+          bottom: unset;
+          height: calc(100% + 155px);
+          object-position: bottom;
+        }
+      }
+
+      @media(max-width: 799px) {
+        grid-template-columns: 1.8fr 1fr;
+      }
+
+      @media(max-width: 678px) {
+        grid-template-columns: 1.3fr 1fr;
+
+        .copyright {
+          >span {
+            svg {
+              padding-top: 0px;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 599px) {
         grid-template-columns: 1fr;
+        grid-template-areas: "logo"
+          "description"
+          "socials"
+          "links"
+          "photo"
+          "copyright";
+
+        .photo {
+          display: none;
+        }
+
+        .links {
+          grid-template-columns: 1fr;
+        }
       }
     }
   }

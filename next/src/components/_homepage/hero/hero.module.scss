@@ -13,6 +13,12 @@
       grid-row-gap: 14px;
       padding: 75px 0px;
 
+      .heading {
+        &:before {
+          background: var(--background);
+        }
+      }
+
       .subheading {
         margin-bottom: 20px;
       }
@@ -30,11 +36,11 @@
       width: auto;
       top: -95px;
       position: absolute;
-      right: 0px;
+      right: calc((var(--pageMargin)*-1));
       display: block;
     }
 
-    @media (max-width: 1199px) {
+    @media (max-width: 949px) {
       grid-template-columns: 1fr;
 
       .img {
@@ -45,6 +51,13 @@
         top: unset;
         align-self: center;
         justify-self: center;
+        right: unset;
+      }
+    }
+
+    @media (max-width: 499px) {
+      .paragraph {
+        margin-bottom: 36px;
       }
     }
   }

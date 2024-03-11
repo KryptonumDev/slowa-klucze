@@ -4,10 +4,15 @@
   border-radius: 16px;
   width: fit-content;
   position: relative;
-  font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(20rem/16));
 
   >p {
     color: var(--coffee-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 170%;
+    align-self: center;
+    justify-self: center;
+    font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(20rem/16));
   }
 
   &:before {
@@ -18,10 +23,5 @@
     width: 15%;
     height: 2px;
     background: var(--neutral-100);
-  }
-  &.background {
-    &:before {
-      background: var(--background-color);
-    }
   }
 }

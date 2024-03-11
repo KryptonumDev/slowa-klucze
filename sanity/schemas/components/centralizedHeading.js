@@ -1,3 +1,5 @@
+import removeMarkdown from "../../utils/RemoveMarkdown"
+
 export default {
   name: 'centralizedHeading',
   title: 'Wyśrodkowany nagłówek',
@@ -30,7 +32,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: title,
+        title: removeMarkdown(title),
       }
     },
   },

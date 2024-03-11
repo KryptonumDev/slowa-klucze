@@ -3,11 +3,12 @@ export interface Button {
     theme?: string;
     href?: string;
     text?: string;
-  },
+  };
   theme?: string;
   href?: string;
   children?: string;
   className?: string;
   svg: boolean;
   disabled?: boolean;
+  onClick?: (event) => void;
 }

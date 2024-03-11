@@ -20,7 +20,7 @@ export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false,
 });
 
 const DEFAULT_PARAMS = {} as QueryParams;
@@ -31,8 +31,11 @@ export async function sanityFetch<QueryResponse>({
 }: {
   query: string;
   params?: QueryParams;
+  isDraftMode?: boolean;
 }): Promise<QueryResponse> {
   return await client.fetch<QueryResponse>(query, params, {
+    token: process.env.SANITY_API_TOKEN,
+    perspective: 'published',
     next: {
       revalidate: 30,
     },

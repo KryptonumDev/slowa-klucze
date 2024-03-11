@@ -7,12 +7,12 @@ import Img from '@/components/ui/Img';
 
 export default function Hero({ data: { hero_Cta, hero_Image, hero_Paragraph, hero_Subheading, hero_Heading } }: Props) {
   return (
-    <section className={styles.heroWrapper}>
-      <div className={`${styles.hero} maxWidth`}>
+    <section className={`${styles.heroWrapper} fullWidthBackground`}>
+      <div className={`${styles.hero}`}>
         <div className={styles.content}>
           <Heading
             type='h1'
-            backgroundColor={'var(--background)'}
+            className={styles.heading}
           >
             {hero_Heading}
           </Heading>
@@ -27,6 +27,8 @@ export default function Hero({ data: { hero_Cta, hero_Image, hero_Paragraph, her
         <Img
           className={styles.img}
           data={hero_Image}
+          priority={true}
+          sizes='(max-width: 949px) 500px, 50vw'
         />
       </div>
     </section>

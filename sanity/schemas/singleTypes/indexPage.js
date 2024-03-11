@@ -41,8 +41,17 @@ export default {
     },
     {
       name: 'content',
+      title: 'Zawartość',
       type: 'array',
-      of: [{type: 'tiles', title: 'Kafelki'}, {type: 'slider'}, {type: 'faq'}, {type: 'newsletter'}],
+      of: [
+        {type: 'tiles', title: 'Kafelki'},
+        {type: 'slider'},
+        {type: 'faq'},
+        {type: 'newsletter'},
+        {type: 'contactForm'},
+        {type: 'blogReference'},
+        {type: 'offers'},
+      ],
     },
     {
       name: 'seo',

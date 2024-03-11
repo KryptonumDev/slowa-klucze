@@ -1,22 +1,27 @@
+import removeMarkdown from '../../utils/RemoveMarkdown'
+
 export default {
   name: 'imageTitleDescription',
-  title: 'ImageTitleDescription',
+  title: 'Zdjęcie, tytuł i opis',
   type: 'object',
   fields: [
     {
       title: 'Zdjęcie',
       name: 'image',
       type: 'image',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Tytuł',
       name: 'title',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Opis',
       name: 'description',
       type: 'markdown',
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
@@ -26,8 +31,8 @@ export default {
     },
     prepare({title, subtitle}) {
       return {
-        title: title,
-        subtitle: subtitle,
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
       }
     },
   },
