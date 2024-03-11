@@ -109,9 +109,9 @@ export default function Form({
         <div className={styles.state}>
           <Success />
           <h3>
-            Dzięki wielkie za <strong className={styles.success}>zapisanie się</strong>!
+            Hurra! Brygida już do <strong className={styles.success}>Ciebie pisze!</strong>!
           </h3>
-          <p>Super, że z ze mną jesteś i mnie wspierasz!</p>
+          <p>Jeszcze tylko potwierdź adres e-mail (link pofrunął na Twoją skrzynkę).</p>
         </div>
       )}
     </form>

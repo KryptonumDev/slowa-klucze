@@ -98,6 +98,11 @@
             justify-self: center;
           }
         }
+        &:first-child {
+          .item {
+            background: #DBF8E9;
+          }
+        }
       }
     }
   }
