@@ -1,5 +1,6 @@
 import '../assets/global.scss';
 import localFont from 'next/font/local';
+import Fathom from './fathom';
 import Footer from '@/components/_global/footer/footer';
 import { sanityFetch } from '@/utils/sanity-client';
 import { type global } from '@/types/_pages/global';
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang='en'>
       <body className={kanit.className}>
+        <Fathom />
         <Nav
           data={navigation}
           logo={logo}
