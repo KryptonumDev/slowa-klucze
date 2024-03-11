@@ -66,16 +66,16 @@ function Arrow({ ...props }) {
       xmlns='http://www.w3.org/2000/svg'
       width='45'
       height='45'
-      viewBox='0 0 45 45'
       fill='none'
       {...props}
     >
-      <path
+      <circle
+        cx='22.5'
+        cy='22.5'
+        r='18.75'
         stroke='#163C3E'
-        strokeLinecap='round'
         strokeWidth='2'
-        d='M39.991 18.706a17.813 17.813 0 01-.448 9.251c-3.014 9.413-13.088 14.6-22.5 11.586-9.413-3.014-14.6-13.088-11.586-22.5 3.014-9.413 13.088-14.6 22.5-11.586a17.813 17.813 0 017.792 5.01'
-      ></path>
+      ></circle>
       <path
         stroke='#163C3E'
         strokeLinecap='round'

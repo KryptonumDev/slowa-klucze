@@ -55,6 +55,16 @@
 
           &:hover {
             cursor: pointer;
+
+            .button {
+              .svgWrapper {
+                >svg {
+                  >circle {
+                    stroke-dasharray: 118;
+                  }
+                }
+              }
+            }
           }
 
           &:has(summary:focus-visible) {
@@ -97,6 +107,11 @@
               align-self: center;
 
               >svg {
+                circle {
+                  stroke-dasharray: 106;
+                  transition: stroke-dasharray 0.5s ease-in-out;
+                }
+
                 transition: transform 0.3s ease-in-out;
               }
             }
