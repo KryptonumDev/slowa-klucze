@@ -24,7 +24,7 @@ export async function generateMetadata() {
   return SEO({
     title: seo?.title,
     description: seo?.description,
-    url: '/efekty-wspolpracy',
+    url: '/wspolpraca',
   });
 }
 

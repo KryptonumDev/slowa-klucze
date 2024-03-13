@@ -3,7 +3,7 @@ import { sanityFetch } from '@/utils/sanity-client';
 import { type Sitemap } from '@/types/_sitemap/sitemap';
 
 const currentDate = new Date();
-const staticPages = ['/', '/blog', '/polityka-prywatnosci', '/o-mnie', '/efekty-wspolpracy', '/co-robie'];
+const staticPages = ['/', '/blog', '/polityka-prywatnosci', '/o-mnie', '/wspolpraca', '/uslugi'];
 
 export default async function sitemap() {
   const { landingPages, blogCategories, blogEntries } = await getSitemapData();
