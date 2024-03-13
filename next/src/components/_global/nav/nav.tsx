@@ -126,8 +126,8 @@ export default function Nav({ data: { cta }, logo, socials }: Props) {
                 className={styles.expandedLinks}
                 data-isexpanded={isExpanded}
               >
-                <Link href={'/co-robie'}>Co robię</Link>
-                <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+                <Link href={'/uslugi'}>Usługi</Link>
+                <Link href={'/wspolpraca'}>Współpraca</Link>
               </div>
             </div>
             <Link href={'/blog'}>Blog</Link>
@@ -177,16 +177,16 @@ export default function Nav({ data: { cta }, logo, socials }: Props) {
           <span className={styles.span}>Oferta</span>
           <div className={styles.sublinks}>
             <Link
-              href={'/co-robie'}
+              href={'/uslugi'}
               onClick={() => setToggleNav(!toggleNav)}
             >
-              Co robię
+              Usługi
             </Link>
             <Link
-              href={'/efekty-wspolpracy'}
+              href={'/wspolpraca'}
               onClick={() => setToggleNav(!toggleNav)}
             >
-              Efekty współpracy
+              Współpraca
             </Link>
           </div>
           <Link

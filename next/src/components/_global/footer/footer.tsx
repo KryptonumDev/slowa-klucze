@@ -51,8 +51,8 @@ export default function Footer({ data: { description, portrait }, logo, socials 
           </p>
           <div className={styles.links}>
             <Link href={'/o-mnie'}>O mnie</Link>
-            <Link href={'/co-robie'}>Co robię</Link>
-            <Link href={'/efekty-wspolpracy'}>Efekty współpracy</Link>
+            <Link href={'/uslugi'}>Usługi</Link>
+            <Link href={'/wspolpraca'}>Współpraca</Link>
             <Link href={'/blog'}>Blog</Link>
             <Link href={'/polityka-prywatnosci'}>Polityka prywatności</Link>
           </div>
