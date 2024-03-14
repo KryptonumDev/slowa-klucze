@@ -25,7 +25,7 @@ export async function generateMetadata() {
   return SEO({
     title: seo?.title,
     description: seo?.description,
-    url: '/co-robie',
+    url: '/uslugi',
   });
 }
 

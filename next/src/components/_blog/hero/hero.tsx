@@ -28,7 +28,7 @@ function Loader({ className }: { className: string }) {
       xmlns='http://www.w3.org/2000/svg'
       width='323'
       height='322'
-      fill='none'
+    fill='none'
       className={className}
     >
       <path

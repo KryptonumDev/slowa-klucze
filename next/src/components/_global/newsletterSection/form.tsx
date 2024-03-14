@@ -109,7 +109,7 @@ export default function Form({
         <div className={styles.state}>
           <Success />
           <h3>
-            Hurra! Brygida już do <strong className={styles.success}>Ciebie pisze!</strong>!
+            Hurra! Brygida już do <strong className={styles.success}>Ciebie pisze</strong>!
           </h3>
           <p>Jeszcze tylko potwierdź adres e-mail (link pofrunął na Twoją skrzynkę).</p>
         </div>
