@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: 'https://mailer.slowa-klucze.pl/',
+      disallow: '/mailer',
     },
     sitemap: `${domain}/sitemap.xml`,
   };
