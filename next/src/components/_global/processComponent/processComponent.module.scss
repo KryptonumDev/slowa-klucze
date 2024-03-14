@@ -60,6 +60,7 @@
           background: var(--background);
           border-radius: 16px;
           box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+          transition: background 0.5s cubic-bezier(0.77, 0, 0.18, 1);
 
           .image {
             grid-area: image;
@@ -98,7 +99,14 @@
             justify-self: center;
           }
         }
+
         &:first-child {
+          .item {
+            background: #DBF8E9;
+          }
+        }
+
+        &:hover {
           .item {
             background: #DBF8E9;
           }
